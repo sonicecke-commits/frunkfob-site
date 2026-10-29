@@ -243,6 +243,38 @@ footer{position:sticky;bottom:0;z-index:1;min-height:100svh;display:grid;grid-te
 #signup#signup .ml-form-embedSubmit button.primary:hover{background:#000!important}
 #waitlist.ff-done h2,#waitlist.ff-done .cta-base>p,#waitlist.ff-done .consent{display:none}
 @media (max-width:899px){.ff-embed{margin-top:32px}}
+
+/* Night drive: one sticky canvas inside a tall scroll track, between the hero and the adapter picker.
+   Everything is namespaced nd- so it can't collide with the page's own classes. */
+.nd{--lime:#c6f24e;--nd-muted:#a2a9ad;position:relative;height:950vh;background:#121415}
+.nd-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.nd-stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.nd-mark{position:absolute;top:18px;right:max(20px,env(safe-area-inset-right,0px));font:400 12px/1 "Hanken Grotesk",sans-serif;color:var(--ink);opacity:.8;background:rgba(23,25,27,.6);padding:6px 9px;border-radius:999px;z-index:3}
+.nd-beat{position:absolute;left:max(24px,6vw);top:50%;width:min(460px,36vw);transform:translateY(-50%);display:grid;gap:14px;opacity:0;pointer-events:none;z-index:2;text-shadow:0 1px 18px rgba(10,11,12,.6)}
+.nd-beat h2{font-size:clamp(32px,3.8vw,54px);line-height:1;font-weight:500;letter-spacing:-.035em;margin:0}
+.nd-beat p{font-size:18px;line-height:1.45;color:#d3d7d2;max-width:36ch;margin:0}
+.nd-beat .nd-small{font-size:14px;color:var(--nd-muted)}
+.nd-steps{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:8px}
+.nd-steps li{display:flex;justify-content:space-between;gap:16px;max-width:300px;font:500 21px/1.2 "Hanken Grotesk",sans-serif;letter-spacing:-.02em;color:rgba(236,238,234,.38);border-bottom:1px solid rgba(236,238,234,.14);padding-bottom:8px;transition:color .2s ease}
+.nd-steps li span{font-weight:400;font-size:15px;color:inherit}
+.nd-steps li.on{color:var(--ink)}
+.nd-steps li.on span{color:var(--lime)}
+.nd-clock{font:500 clamp(64px,8vw,112px)/.9 "Hanken Grotesk",sans-serif;letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+.nd-clock small{font-size:.35em;letter-spacing:-.02em;color:var(--nd-muted);margin-left:.15em}
+.nd-hint{position:absolute;left:50%;bottom:calc(26px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);font:400 13px/1 "Hanken Grotesk",sans-serif;color:var(--nd-muted);display:grid;justify-items:center;gap:10px;z-index:2}
+.nd-hint i{display:block;width:1px;height:34px;background:linear-gradient(var(--lime),transparent);transform-origin:top}
+@media (prefers-reduced-motion:no-preference){.nd-hint i{animation:ndDrop 1.8s ease-in-out infinite}}
+@keyframes ndDrop{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+@media (max-width:760px){
+  .nd{height:1050vh}
+  .nd-beat{left:max(20px,env(safe-area-inset-left,0px));right:max(20px,env(safe-area-inset-right,0px));top:auto;bottom:calc(40px + env(safe-area-inset-bottom,0px));width:auto;transform:none;gap:10px}
+  .nd-beat h2{font-size:32px}
+  .nd-beat p{font-size:16px}
+  .nd-steps li{font-size:18px}
+  .nd-clock{font-size:64px}
+  .nd-stage::after{content:"";position:absolute;inset:auto 0 0 0;height:50%;background:linear-gradient(transparent,rgba(14,15,16,.86) 52%);pointer-events:none;z-index:1}
+  .nd-hint{display:none}
+}
 </style>
 </head>
 <body class="no-js">
@@ -252,7 +284,7 @@ footer{position:sticky;bottom:0;z-index:1;min-height:100svh;display:grid;grid-te
   <ul>
     <li><a href="#adapter">Your adapter</a></li>
     <li><a href="#pack">Try it</a></li>
-    <li><a href="#grab">The grab</a></li>
+    <li><a href="#drive">The drive</a></li>
     <li><a href="#questions">Questions</a></li>
   </ul>
   <span class="charge" aria-hidden="true"><svg viewBox="0 0 34 16"><rect x=".5" y=".5" width="29" height="15" rx="3" fill="none" stroke="currentColor"/><rect x="30" y="5" width="3" height="6" rx="1" fill="currentColor"/><rect id="cell" x="3" y="3" width="0" height="10" rx="1.5" fill="var(--accent)"/></svg><span id="pct">0%</span></span>
@@ -284,6 +316,44 @@ footer{position:sticky;bottom:0;z-index:1;min-height:100svh;display:grid;grid-te
   </div>
 </section>
 
+<section id="drive" class="nd" aria-label="The adapter case on a night drive, as an animation">
+  <div class="nd-stage">
+    <canvas id="ndCv" aria-hidden="true"></canvas>
+    <div class="nd-mark">Made with AI · Illustration</div>
+    <div class="nd-beat" data-a="-1" data-b="0.075">
+      <h2>Here's the problem.</h2>
+      <p>Scroll to take a drive with the adapter loose in the frunk.</p>
+    </div>
+    <div class="nd-beat" data-a="0.085" data-b="0.235">
+      <h2>Every corner, the same clunk.</h2>
+      <p>Loose in the frunk, the adapter slides into the wall on every turn.</p>
+    </div>
+    <div class="nd-beat" data-a="0.31" data-b="0.465">
+      <h2>Foam cut to its shape.</h2>
+      <ol class="nd-steps" id="ndPack">
+        <li data-a="0.32">Lift it in</li>
+        <li data-a="0.42">It seats in the foam</li>
+        <li data-a="0.44">The lid shuts</li>
+      </ol>
+    </div>
+    <div class="nd-beat" data-a="0.5" data-b="0.635">
+      <h2>Same corners. Nothing moves.</h2>
+      <p>A hard case about the size of the adapter, with a loop to hang it on a frunk hook.</p>
+    </div>
+    <div class="nd-beat" data-a="0.71" data-b="9">
+      <h2>The 3-second grab.</h2>
+      <div class="nd-clock" id="ndClock">0.0<small>s</small></div>
+      <ol class="nd-steps" id="ndGrab">
+        <li data-a="0.74">Open the lid <span>1 s</span></li>
+        <li data-a="0.77">Lift it out <span>1 s</span></li>
+        <li data-a="0.80">Onto the cable <span>1 s</span></li>
+      </ol>
+      <p class="nd-small">Planned design. Times are a goal, not a test result.</p>
+    </div>
+    <div class="nd-hint" id="ndHint"><span>Scroll</span><i></i></div>
+  </div>
+</section>
+
 <section id="adapter" class="show grid" aria-labelledby="h-show">
   <figure class="plate rise">
     <img src="assets/cable.jpg" alt="A portable EV charging cable coiled on a concrete floor" width="1920" height="1275">
@@ -303,7 +373,7 @@ footer{position:sticky;bottom:0;z-index:1;min-height:100svh;display:grid;grid-te
     </div>
     <div class="cells">
       <a class="btn" href="#waitlist" id="mine">This is mine</a>
-      <a class="btn alt" href="#grab">How it works</a>
+      <a class="btn alt" href="#pack">Try it yourself</a>
     </div>
   </div>
 </section>
@@ -357,29 +427,6 @@ footer{position:sticky;bottom:0;z-index:1;min-height:100svh;display:grid;grid-te
     </svg>
   </div>
 </section>
-
-<section id="grab" class="how grid" aria-labelledby="h-how">
-  <div class="how-copy">
-    <h2 id="h-how" class="rise">The 3-second grab</h2>
-    <p class="rise">The adapter waits in its cut-out with the lid shut. At the charger, you open, lift and plug in.</p>
-    <img class="rise" src="assets/plug.jpg" alt="Close-up of a J1772 charging plug and its pins" width="1568" height="1259">
-  </div>
-  <div class="slip rise" aria-label="The planned routine, step by step">
-    <h3>At home</h3>
-    <div class="row"><span>Adapter into the foam</span><i class="dots"></i><span>1 s</span></div>
-    <div class="row"><span>Lid clicks shut</span><i class="dots"></i><span>1 s</span></div>
-    <div class="row"><span>Hang it on the loop</span><i class="dots"></i><span>1 s</span></div>
-    <h3>On the road</h3>
-    <div class="row"><span>Drive, no rattle</span><i class="dots"></i><span>any distance</span></div>
-    <h3>At the charger</h3>
-    <div class="row"><span>Open the lid</span><i class="dots"></i><span>1 s</span></div>
-    <div class="row"><span>Lift the adapter out</span><i class="dots"></i><span>1 s</span></div>
-    <div class="row"><span>Onto the cable</span><i class="dots"></i><span>1 s</span></div>
-    <div class="row total"><span>Adapter in hand, case back in place</span><i class="dots"></i><span>3 s</span></div>
-    <small>Planned design. Times are a goal, not a test result.</small>
-  </div>
-</section>
-
 <section class="feat" aria-labelledby="h-feat">
   <div class="feat-head"><h2 id="h-feat" class="rise">Small thing, done properly</h2></div>
   <div class="sheets">
@@ -426,9 +473,9 @@ footer{position:sticky;bottom:0;z-index:1;min-height:100svh;display:grid;grid-te
   <h2 id="h-foot" class="sr">Frunk &amp; Fob</h2>
   <div class="fcols">
     <div><span>Contact</span><span>frunkandfob@gmail.com</span></div>
-    <div><a href="#adapter">Your adapter</a><a href="#grab">The grab</a><a href="#questions">Questions</a><a href="#waitlist">Waitlist</a></div>
+    <div><a href="#adapter">Your adapter</a><a href="#drive">The drive</a><a href="#questions">Questions</a><a href="#waitlist">Waitlist</a></div>
     <div id="privacy"><span>Privacy</span><span>Your email and form answers are used to tell you about Frunk &amp; Fob, never sold or used for ads. <a href="privacy.html">Privacy notice</a>.</span></div>
-    <div><span>Not affiliated</span><span>Not made by, or connected to, any carmaker or charging network. <span class="ai-note">Some visuals made with AI.</span></span></div>
+    <div><span>Not affiliated</span><span>Not made by, or connected to, any carmaker or charging network. <span class="ai-note">Some visuals made with AI. The night drive is an animation of the planned design.</span></span></div>
     <p class="credits">Pictures and footage: <a href="https://commons.wikimedia.org/wiki/File:SAE_J1772_7058855567.jpg">“SAE J1772”</a> by Michael Hicks, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Gipe-Nies_home_charge_cable_02.jpg">“Home charge cable 02”</a> by Paul Gipe, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Quincy_Adams_station_parking_garage_at_night_July_2025.jpg">“Quincy Adams station parking garage at night”</a> by 4300streetcar, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>; <a href="https://commons.wikimedia.org/wiki/File:LEVA_charging_station_at_night_in_Tuntorp_2.jpg">“LEVA charging station at night in Tuntorp 2”</a> by W.carter, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Ionity_Charging_Station_For_Electric_Cars_(2024).webm">“Ionity Charging Station For Electric Cars”</a> by Maximilian Schönherr, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons; <a href="https://www.flickr.com/photos/48718829@N00/322940783">“workbench”</a> by Bludgeoner86, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, via Flickr.</p>
   </div>
   <div class="word" aria-hidden="true"><svg viewBox="0 0 1000 150"><text x="500" y="128" text-anchor="middle" textLength="990" lengthAdjust="spacingAndGlyphs" font-family="Hanken Grotesk, sans-serif" font-weight="500" font-size="160" letter-spacing="-6" fill="#eceeea">Frunk &amp; Fob</text></svg></div>
@@ -479,7 +526,7 @@ new IntersectionObserver(([e],o)=>{if(e.isIntersecting){const h=document.getElem
 const wd=document.querySelector('.word');new IntersectionObserver(([e],o)=>{if(e.isIntersecting){wd.classList.add('in');o.disconnect()}}).observe(wd);
 /* the slip ticks its steps one at a time */
 const rows=[...document.querySelectorAll('.slip .row')];
-new IntersectionObserver(([e],o)=>{if(!e.isIntersecting)return;rows.forEach((r,i)=>setTimeout(()=>r.classList.add('on'),reduce?0:300+i*260));o.disconnect()},{threshold:.35}).observe(document.querySelector('.slip'));
+document.querySelector('.slip')&&new IntersectionObserver(([e],o)=>{if(!e.isIntersecting)return;rows.forEach((r,i)=>setTimeout(()=>r.classList.add('on'),reduce?0:300+i*260));o.disconnect()},{threshold:.35}).observe(document.querySelector('.slip'));
 /* a new adapter drops into the foam on every pick */
 const cut=document.getElementById('cut');
 document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>{if(reduce)return;
@@ -582,6 +629,247 @@ shape(0);requestAnimationFrame(frame)})();
 (function(){var host=document.getElementById('signup');if(!host)return;var mo=new MutationObserver(function(){var ok=host.querySelector('.ml-form-successBody');
   if(ok&&getComputedStyle(ok).display!=='none'){document.getElementById('waitlist').classList.add('ff-done');mo.disconnect()}});
   mo.observe(host,{childList:true,subtree:true,attributes:true,attributeFilter:['style','class']})})();
+</script>
+<script>
+/* night drive */
+(function(){
+'use strict';
+var film=document.getElementById('drive'),cv=document.getElementById('ndCv'),ctx=cv.getContext('2d');
+var beats=[].slice.call(document.querySelectorAll('.nd-beat'));
+var packSteps=[].slice.call(document.querySelectorAll('#ndPack li')),grabSteps=[].slice.call(document.querySelectorAll('#ndGrab li'));
+var clock=document.getElementById('ndClock'),hint=document.getElementById('ndHint');
+
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var W=0,H=0,DPR=1,phone=false,base=1;
+var pT=0,p=0,last=performance.now(),boost=0,lastY=scrollY;
+
+function cl(v,a,b){return v<a?a:v>b?b:v}
+function seg(v,a,b){return cl((v-a)/(b-a),0,1)}
+function ease(x){return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2}
+function eo(x){return 1-Math.pow(1-x,3)}
+function lerp(a,b,x){return a+(b-a)*x}
+function sm(x){return x*x*(3-2*x)}
+function rr(x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath()}
+
+/* the three adapters, same drawing as the live site's "Pack it" demo */
+var SH=[{w:250,h:84,r:72},{w:290,h:60,r:52},{w:360,h:70,r:58}],NAMES=['NACS to CCS1','NACS to J1772','J1772 to NACS'];
+function adSVG(q){var L=-q.w/2-q.r*.4,R=q.w/2-q.r*.4,ribs='';for(var i=0;i<6;i++)ribs+='<rect x="'+(L+26+i*16)+'" y="'+(-q.h/2+q.h*.3)+'" width="6" height="'+(q.h*.4)+'" rx="3"/>';
+  return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-280 -90 520 180" width="1040" height="360">'+
+  '<rect x="'+L+'" y="'+(-q.h/2)+'" width="'+q.w+'" height="'+q.h+'" rx="'+(q.h/2)+'" fill="#eceeea"/>'+
+  '<rect x="'+(L+10)+'" y="'+(-q.h/2+6)+'" width="'+(q.w-40)+'" height="'+(q.h*.22)+'" rx="'+(q.h*.11)+'" fill="#ffffff" opacity=".55"/>'+
+  '<g fill="#c8ccc6">'+ribs+'</g>'+
+  '<rect x="'+(L-34)+'" y="-12" width="40" height="24" rx="10" fill="#2b2f33"/><rect x="'+(L-60)+'" y="-8" width="30" height="16" rx="8" fill="#1d2023"/>'+
+  '<circle cx="'+R+'" cy="0" r="'+q.r+'" fill="#eceeea"/><circle cx="'+R+'" cy="0" r="'+(q.r*.72)+'" fill="#d9dcd6"/><circle cx="'+R+'" cy="0" r="'+(q.r*.58)+'" fill="#2b2f33"/>'+
+  '<g fill="#c6f24e"><circle cx="'+(R-q.r*.22)+'" cy="'+(-q.r*.16)+'" r="'+(q.r*.11)+'"/><circle cx="'+(R+q.r*.22)+'" cy="'+(-q.r*.16)+'" r="'+(q.r*.11)+'"/><circle cx="'+R+'" cy="'+(q.r*.22)+'" r="'+(q.r*.08)+'"/></g>'+
+  '<circle cx="'+(R-q.r*.22)+'" cy="'+(q.r*.2)+'" r="'+(q.r*.06)+'" fill="#eceeea"/><circle cx="'+(R+q.r*.22)+'" cy="'+(q.r*.2)+'" r="'+(q.r*.06)+'" fill="#eceeea"/></svg>'}
+function cutPath(q){var m=10,L=-q.w/2-q.r*.4-m-60,R=q.w/2-q.r*.4,h=q.h/2+m,r=q.r+m,d=Math.sqrt(r*r-h*h);
+  return 'M'+(L+h)+' '+(-h)+' H'+(R-d)+' A'+r+' '+r+' 0 1 1 '+(R-d)+' '+h+' H'+(L+h)+' A'+h+' '+h+' 0 0 1 '+(L+h)+' '+(-h)+' Z'}
+var IMG=SH.map(function(q){var im=new Image();im.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(adSVG(q));return im});
+var CUT=new Path2D(cutPath(SH[0]));
+function adapter(i,x,y,rot,s,a){var im=IMG[i];if(!im.complete)return;ctx.save();ctx.translate(x,y);ctx.rotate(rot);ctx.globalAlpha*=a==null?1:a;ctx.drawImage(im,-280*s,-90*s,520*s,180*s);ctx.restore()}
+
+/* the road: d is distance driven; the car's world position is (lane(d), -d) */
+function roadX(d){var f=1-sm(seg(d,6400,7050));return f*(250*Math.sin(d/880)+105*Math.sin(d/360+1))}
+function lane(d){var k=sm(seg(d,7080,7560));return roadX(d)+lerp(78,0,k)+lerp(0,300,k)}
+function heading(d){return Math.atan((lane(d+30)-lane(d-30))/60)}
+function curve(d){return (lane(d+90)-2*lane(d)+lane(d-90))/8100}
+var BAY=[300,-7600],POST=[300,-7905];
+
+function driven(q){
+  return 600*seg(q,0,.06)+3000*seg(q,.06,.24)+300*eo(seg(q,.24,.30))+3000*ease(seg(q,.50,.64))+700*ease(seg(q,.64,.72));
+}
+
+/* loose adapter, a small spring that slams into the frunk walls */
+var lx=0,lv=0,ly=0,lyv=0,lastD=0,pops=[],hitL=0;
+var POPW=['clunk','thunk','clack','rattle'];
+
+function resize(){
+  DPR=Math.min(2,devicePixelRatio||1);W=innerWidth;H=innerHeight;phone=W<=760;
+  cv.width=Math.round(W*DPR);cv.height=Math.round(H*DPR);
+  base=phone?Math.min(W/430,H/900):Math.min(W/1150,H/820);
+}
+
+function draw(q,dt,now){
+  ctx.setTransform(DPR,0,0,DPR,0,0);
+  ctx.fillStyle='#121415';ctx.fillRect(0,0,W,H);
+  var d=driven(q),cx=lane(d),cy=-d,ang=heading(d);carP=[cx,cy,ang];
+  /* camera: follows the car, then pushes in to the frunk for the packing and the grab */
+  var zin=Math.max(ease(seg(q,.255,.32))*(1-ease(seg(q,.465,.52))),ease(seg(q,.715,.76))*(1-ease(seg(q,.845,.885))));
+  var fr=[cx+Math.sin(ang)*140,cy-Math.cos(ang)*140];
+  var grabFocus=ease(seg(q,.79,.83));
+  var focus=[lerp(fr[0],lerp(fr[0],(BAY[0]+POST[0])/2+20,.5),grabFocus*(q>.7?1:0)),lerp(fr[1],lerp(fr[1],-7810,.6),grabFocus*(q>.7?1:0))];
+  var sDrive=base*(lerp(.42,.78,ease(seg(q,0,.09)))),sIn=base*(phone?2.55:3.4);
+  var s=lerp(sDrive,sIn,zin);
+  var cam=[lerp(cx,focus[0],zin),lerp(cy-170,focus[1],zin)];
+  var fx=phone?W*.5:W*.64,fy=phone?H*.36:H*.5;
+  ctx.save();ctx.translate(fx,fy);ctx.scale(s,s);ctx.translate(-cam[0],-cam[1]);
+  var top=cam[1]-fy/s-200,bot=cam[1]+(H-fy)/s+200,lef=cam[0]-fx/s-200,rig=cam[0]+(W-fx)/s+200;
+
+  /* ground */
+  ctx.fillStyle='#141617';ctx.fillRect(lef,top,rig-lef,bot-top);
+  /* lot */
+  if(top<-6900){ctx.fillStyle='#1f2224';ctx.fillRect(-700,-8400,1500,1450);
+    ctx.strokeStyle='rgba(236,238,234,.5)';ctx.lineWidth=6;
+    for(var i=-1;i<4;i++){ctx.beginPath();ctx.moveTo(i*240+60,-7950);ctx.lineTo(i*240+60,-7380);ctx.stroke()}
+    ctx.beginPath();ctx.moveTo(-180,-7950);ctx.lineTo(780,-7950);ctx.stroke();
+  }
+  /* road */
+  var y0=Math.max(top,-7150),y1=Math.min(bot,600);
+  if(y1>y0){
+    ctx.lineCap='butt';ctx.lineJoin='round';
+    var pts=[];for(var y=y1;y>=y0-40;y-=40)pts.push([roadX(-y),y]);
+    function path(off){ctx.beginPath();pts.forEach(function(pt,i){i?ctx.lineTo(pt[0]+off,pt[1]):ctx.moveTo(pt[0]+off,pt[1])})}
+    ctx.strokeStyle='#26292c';ctx.lineWidth=360;path(0);ctx.stroke();
+    ctx.strokeStyle='rgba(236,238,234,.28)';ctx.lineWidth=5;path(-170);ctx.stroke();path(170);ctx.stroke();
+    ctx.setLineDash([70,80]);ctx.strokeStyle='rgba(236,238,234,.55)';ctx.lineWidth=6;path(0);ctx.stroke();ctx.setLineDash([]);
+  }
+  /* street lights: warm pools on alternating sides */
+  for(var k=Math.floor(-bot/700)-1;k<=Math.ceil(-top/700)+1;k++){
+    var ly0=-k*700;if(ly0<-7000||ly0>400)continue;var side=k%2?1:-1,lxp=roadX(-ly0)+side*235;
+    var g=ctx.createRadialGradient(lxp,ly0,0,lxp,ly0,260);g.addColorStop(0,'rgba(255,214,160,.14)');g.addColorStop(1,'rgba(255,214,160,0)');
+    ctx.fillStyle=g;ctx.fillRect(lxp-260,ly0-260,520,520);ctx.fillStyle='#3a3f44';ctx.beginPath();ctx.arc(lxp,ly0,9,0,7);ctx.fill();
+  }
+  /* charger */
+  if(top<-7700){
+    ctx.fillStyle='#2b2f33';rr(POST[0]-50,POST[1]-34,100,60,12);ctx.fill();
+    ctx.strokeStyle='#c6f24e';ctx.lineWidth=4;rr(POST[0]-36,POST[1]-22,72,8,4);ctx.stroke();
+    var gl=ctx.createRadialGradient(POST[0],POST[1],0,POST[0],POST[1],180);gl.addColorStop(0,'rgba(198,242,78,.16)');gl.addColorStop(1,'rgba(198,242,78,0)');ctx.fillStyle=gl;ctx.fillRect(POST[0]-180,POST[1]-180,360,360);
+  }
+  /* the car */
+  var xr=Math.min(1,seg(q,.08,.13)+0)*(1-seg(q,.855,.9));
+  ctx.save();ctx.translate(cx,cy);ctx.rotate(ang);
+  // headlight beams
+  var beam=ctx.createLinearGradient(0,-210,0,-620);beam.addColorStop(0,'rgba(236,238,234,.16)');beam.addColorStop(1,'rgba(236,238,234,0)');
+  ctx.fillStyle=beam;ctx.beginPath();ctx.moveTo(-80,-200);ctx.lineTo(-170,-620);ctx.lineTo(170,-620);ctx.lineTo(80,-200);ctx.closePath();ctx.fill();
+  ctx.fillStyle='rgba(0,0,0,.45)';rr(-104,-206,208,430,64);ctx.fill();
+  var body=ctx.createLinearGradient(-95,0,95,0);body.addColorStop(0,'#2a2e32');body.addColorStop(.5,'#3a3f44');body.addColorStop(1,'#2a2e32');
+  ctx.fillStyle=body;rr(-95,-212,190,420,62);ctx.fill();
+  ctx.fillStyle='#2a2e32';rr(-108,-40,16,26,6);ctx.fill();rr(92,-40,16,26,6);ctx.fill();
+  ctx.fillStyle='#0f1112';rr(-80,-66,160,84,26);ctx.fill();rr(-76,122,152,52,20);ctx.fill();
+  ctx.fillStyle='#202326';rr(-80,22,160,96,28);ctx.fill();
+  ctx.fillStyle='rgba(236,238,234,.07)';rr(-60,-60,60,70,20);ctx.fill();
+  ctx.fillStyle='#eceeea';rr(-84,-206,42,9,4);ctx.fill();rr(42,-206,42,9,4);ctx.fill();
+  ctx.fillStyle='#b8322a';rr(-84,198,48,7,3);ctx.fill();rr(36,198,48,7,3);ctx.fill();
+  // hood: goes see-through so you can watch the frunk
+  ctx.strokeStyle='rgba(236,238,234,'+(.12*(1-xr))+')';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(-70,-196);ctx.quadraticCurveTo(0,-206,70,-196);ctx.stroke();
+  if(xr>0){
+    ctx.globalAlpha=xr;
+    ctx.fillStyle='#0c0d0e';rr(-78,-194,156,108,18);ctx.fill();
+    ctx.strokeStyle='rgba(198,242,78,.55)';ctx.lineWidth=2.5;ctx.setLineDash([8,7]);rr(-78,-194,156,108,18);ctx.stroke();ctx.setLineDash([]);
+    ctx.globalAlpha=1;
+    drawFrunk(q,dt,now,d,xr);
+  }
+  ctx.restore();
+  /* cable from the charger to the plug end */
+  if(top<-7700){
+    var plug=[POST[0]+70,-7838];
+    ctx.strokeStyle='#0c0d0e';ctx.lineWidth=14;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(POST[0]+40,POST[1]);ctx.bezierCurveTo(POST[0]+140,POST[1]+10,plug[0]+90,plug[1]-30,plug[0]+22,plug[1]);ctx.stroke();
+    ctx.fillStyle='#2b2f33';rr(plug[0]-14,plug[1]-16,40,32,10);ctx.fill();
+  }
+  ctx.restore();
+
+  /* sound words float up from the frunk */
+  for(var j=pops.length-1;j>=0;j--){var o=pops[j],a=(now-o.t)/700;if(a>=1){pops.splice(j,1);continue}
+    var e=eo(Math.min(1,a/.18));ctx.save();ctx.translate(fx+(o.x-cam[0])*s,fy+(o.y-cam[1])*s-a*46);ctx.rotate(o.r);ctx.scale(1.6-.6*e,1.6-.6*e);
+    ctx.globalAlpha=a<.7?1:(1-a)/.3;ctx.fillStyle='#c6f24e';ctx.font='600 '+(phone?26:32)+'px "Hanken Grotesk",sans-serif';ctx.textAlign='center';ctx.fillText(o.w,0,0);ctx.restore()}
+
+  /* the picker: adapters turn on a ring, like the cans on a shelf */
+  var pk=ease(seg(q,.855,.9));
+  if(pk>0){
+    ctx.fillStyle='rgba(18,20,21,'+(pk*.94)+')';ctx.fillRect(0,0,W,H);
+    var spin=lerp(1.6,0,ease(seg(q,.86,.93)));
+    rot+=((pickI<0||pickI>2?0:pickI)*2.0944-rot)*Math.min(1,dt*6);
+    var R=(phone?W*.4:Math.min(W*.22,330)),ccx=phone?W*.5:W*.66,ccy=phone?H*.3:H*.5;
+    var order=[0,1,2].map(function(i){var t=i*2.0944-rot-spin;return{i:i,x:Math.sin(t),z:Math.cos(t)}}).sort(function(a,b){return a.z-b.z});
+    order.forEach(function(o){var sc=(phone?.5:.56)*base*(.42+.58*(o.z+1)/2);
+      var alpha=pk*(.25+.75*Math.pow((o.z+1)/2,2));
+      if(pickI===3)alpha*=.45;
+      var px=ccx+o.x*R,py=ccy+(1-o.z)*(phone?10:18);
+      if(o.z>.9&&pickI>=0&&pickI<3){ctx.save();ctx.globalAlpha=pk;var g2=ctx.createRadialGradient(px,py+40,0,px,py+40,180*sc*2);g2.addColorStop(0,'rgba(198,242,78,.22)');g2.addColorStop(1,'rgba(198,242,78,0)');ctx.fillStyle=g2;ctx.fillRect(px-400,py-300,800,600);ctx.restore()}
+      adapter(o.i,px,py,-.12+o.x*.1,sc,alpha);
+      if(o.z>.9){ctx.save();ctx.globalAlpha=pk*(pickI===3?.4:1);ctx.fillStyle='#eceeea';ctx.font='500 '+(phone?18:22)+'px "Hanken Grotesk",sans-serif';ctx.textAlign='center';ctx.fillText(NAMES[o.i],px,py+90*sc+34);ctx.restore()}
+    });
+  }
+}
+
+var rot=0,pickI=-1,carP=[0,0,0];
+function toWorld(x,y){var c=Math.cos(carP[2]),n=Math.sin(carP[2]);return[carP[0]+x*c-y*n,carP[1]+x*n+y*c]}
+function drawFrunk(q,dt,now,d,xr){
+  /* frunk centre in car coordinates is (0,-140); the adapter is drawn at 0.26 scale */
+  var S=.26,cxF=0,cyF=-140,lim=36;
+  // loose phase: sway with the road's bends
+  var loose=q<.32;
+  if(loose&&!reduce){
+    var tg=cl(-curve(d)*9e5,-lim*1.6,lim*1.6),dd=d-lastD;
+    lv+=((tg-lx)*60-lv*5)*dt+(Math.random()-.5)*Math.min(1,Math.abs(dd)/40)*120;lx+=lv*dt;
+    lyv+=((cl(-dd*1.5,-18,18)-ly)*50-lyv*6)*dt;ly+=lyv*dt;ly=cl(ly,-24,24);
+    if(Math.abs(lx)>lim){var hv=Math.abs(lv);lx=Math.sign(lx)*lim;lv=-lv*.35;
+      if(hv>35&&q>.085&&now-hitL>260&&Math.abs(dd)>.5){hitL=now;var w=POPW[pops.length%4];var wp=toWorld(cxF+Math.sign(lx)*70,cyF-30);pops.push({w:w,t:now,x:wp[0],y:wp[1],r:(Math.random()-.5)*.3})}}
+  }
+  lastD=d;
+  var caseIn=ease(seg(q,.335,.37)),lift=ease(seg(q,.32,.345))*(1-ease(seg(q,.405,.42))),toCut=ease(seg(q,.365,.415)),seat=seg(q,.415,.43);
+  var lid=ease(seg(q,.43,.46))*(1-ease(seg(q,.735,.77)));
+  var out=ease(seg(q,.77,.795)),toPlug=ease(seg(q,.795,.83));
+  // case
+  if(caseIn>0){
+    ctx.save();ctx.translate(cxF+(1-caseIn)*170,cyF);
+    ctx.fillStyle='#2b2f33';rr(-66,-40,132,80,12);ctx.fill();
+    ctx.fillStyle='#3d4247';rr(-60,-34,120,68,8);ctx.fill();
+    ctx.save();ctx.translate(4,0);ctx.scale(S,S);ctx.fillStyle='#16181a';ctx.fill(CUT);ctx.strokeStyle='rgba(198,242,78,.7)';ctx.lineWidth=5;ctx.stroke(CUT);ctx.restore();
+    ctx.strokeStyle='#5a6066';ctx.lineWidth=5;ctx.beginPath();ctx.arc(70,0,10,-1.2,1.2);ctx.stroke();
+    ctx.restore();
+  }
+  // adapter
+  var ax,ay,ar,as=S,show=true;
+  var looseX=cxF+(reduce?0:lx),looseY=cyF+10+(reduce?0:ly),looseR=reduce?.4:(.35+lx*.012);
+  if(q<.32){ax=looseX;ay=looseY;ar=looseR}
+  else if(q<.77){ax=lerp(looseX,cxF+4,toCut);ay=lerp(looseY,cyF,toCut);ar=lerp(looseR,0,toCut);as=S*(1+.22*lift)*(1-.03*Math.sin(seat*Math.PI))}
+  else{var plugL=[70,-238];ax=lerp(cxF+4,plugL[0]-30,toPlug);ay=lerp(cyF,plugL[1],toPlug);ar=lerp(0,-Math.PI/2,toPlug);as=S*(1+.22*out*(1-toPlug*.7))}
+  if(q>=.835)show=false;
+  if(show){
+    if(as>S*1.02){ctx.save();ctx.globalAlpha=.35;ctx.filter='blur(4px)';adapterTint(ax+6,ay+8,ar,as);ctx.restore()}
+    adapter(0,ax,ay,ar,as,1);
+  }
+  // lid
+  if(lid>0){ctx.save();ctx.translate(cxF,cyF);var hgt=80*lid;
+    ctx.fillStyle='#30353a';rr(-66,-40,132,hgt,12);ctx.fill();
+    if(lid>.9){ctx.fillStyle='#c6f24e';ctx.font='600 15px "Hanken Grotesk",sans-serif';ctx.textAlign='center';ctx.fillText('F&F',0,6)}
+    ctx.restore()}
+  if(lid<1&&q>.44&&q<.8){ctx.save();ctx.translate(cxF,cyF-40);ctx.fillStyle='rgba(48,53,58,.85)';rr(-66,-26*(1-lid),132,26*(1-lid),6);ctx.fill();ctx.restore()}
+  if(seat>0&&seat<1&&!reduce&&!drawFrunk.seated){drawFrunk.seated=1;addPop('click',cxF,cyF-50)}
+  if(q<.4)drawFrunk.seated=0;
+  if(lid>.98&&!drawFrunk.shut&&q<.6){drawFrunk.shut=1;addPop('shut',cxF,cyF-50)}
+  if(q<.43)drawFrunk.shut=0;
+  if(toPlug>.98&&!drawFrunk.plug&&q<.85){drawFrunk.plug=1;addPop('click',70,-260)}
+  if(q<.82)drawFrunk.plug=0;
+  function addPop(w,x,y){var wp=toWorld(x,y);pops.push({w:w,t:now,x:wp[0],y:wp[1],r:0})}
+}
+function adapterTint(x,y,r,s){ctx.save();ctx.translate(x,y);ctx.rotate(r);ctx.fillStyle='#000';rr(-200*s,-40*s,380*s,80*s,40*s);ctx.fill();ctx.restore()}
+
+function ui(q){
+  beats.forEach(function(b){var a=+b.dataset.a,e=+b.dataset.b,f=Math.min(seg(q,a,a+.018),1-seg(q,e-.018,e));
+    if(a<0)f=1-seg(q,e-.018,e);b.style.opacity=f.toFixed(3);b.classList.toggle('on',f>.5);
+    if(!phone)b.style.transform='translateY(calc(-50% + '+((1-f)*14).toFixed(1)+'px))'});
+  packSteps.forEach(function(li){li.classList.toggle('on',q>=+li.dataset.a)});
+  grabSteps.forEach(function(li){li.classList.toggle('on',q>=+li.dataset.a)});
+  clock.firstChild.nodeValue=(3*seg(q,.74,.83)).toFixed(1);
+  hint.style.opacity=(1-seg(q,0,.02)).toFixed(2);
+}
+
+function target(){var len=film.offsetHeight-innerHeight,top=film.getBoundingClientRect().top+scrollY;return cl((scrollY-top)/len,0,1)*.85}
+function frame(now){
+  var dt=Math.min(.05,(now-last)/1000);last=now;
+  pT=target();p+=(pT-p)*(reduce?1:Math.min(1,dt*7));
+  if(Math.abs(pT-p)<1e-5)p=pT;
+  var r=cv.getBoundingClientRect();
+  if(r.bottom>0){
+    draw(p,dt,now);ui(p);
+  }
+  requestAnimationFrame(frame);
+}
+addEventListener('resize',resize);
+resize();p=pT=target();requestAnimationFrame(frame);
+})();
 </script>
 </body>
 </html>
