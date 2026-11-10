@@ -44,6 +44,8 @@ main{position:relative;z-index:2;background:var(--bg)}
 .top ul a{text-decoration:none}
 .top ul a:hover{text-decoration:underline;text-underline-offset:4px}
 @media (max-width:899px){.top ul{display:none}.top .btn{padding:.8em 1.1em}}
+.top .picks-link{color:var(--accent);font-weight:500;text-decoration:none;white-space:nowrap}
+@media (max-width:899px){.top .charge{display:none}.top .picks-link{margin-left:auto;margin-right:10px;font-size:15px}}
 
 /* hero: the open case, cropped by the fold */
 .hero{position:relative;height:100svh;min-height:640px;overflow:hidden}
@@ -288,6 +290,7 @@ footer{position:sticky;bottom:0;z-index:1;min-height:100svh;display:grid;grid-te
     <li><a href="#questions">Questions</a></li>
   </ul>
   <span class="charge" aria-hidden="true"><svg viewBox="0 0 34 16"><rect x=".5" y=".5" width="29" height="15" rx="3" fill="none" stroke="currentColor"/><rect x="30" y="5" width="3" height="6" rx="1" fill="currentColor"/><rect id="cell" x="3" y="3" width="0" height="10" rx="1.5" fill="var(--accent)"/></svg><span id="pct">0%</span></span>
+  <a class="picks-link" href="picks/">EV gear picks</a>
   <a class="btn" href="#waitlist">Join the waitlist</a>
 </header>
 <div class="meter" aria-hidden="true"><i id="bar"></i></div>
@@ -473,7 +476,7 @@ footer{position:sticky;bottom:0;z-index:1;min-height:100svh;display:grid;grid-te
   <h2 id="h-foot" class="sr">Frunk &amp; Fob</h2>
   <div class="fcols">
     <div><span>Contact</span><span>frunkandfob@gmail.com</span></div>
-    <div><a href="#adapter">Your adapter</a><a href="#drive">The drive</a><a href="#questions">Questions</a><a href="#waitlist">Waitlist</a></div>
+    <div><a href="#adapter">Your adapter</a><a href="#drive">The drive</a><a href="#questions">Questions</a><a href="#waitlist">Waitlist</a><a href="picks/">EV gear picks (paid links)</a></div>
     <div id="privacy"><span>Privacy</span><span>Your email and form answers are used to tell you about Frunk &amp; Fob, never sold or used for ads. <a href="privacy.html">Privacy notice</a>.</span></div>
     <div><span>Not affiliated</span><span>Not made by, or connected to, any carmaker or charging network. <span class="ai-note">Some visuals made with AI. The night drive is an animation of the planned design.</span></span></div>
     <p class="credits">Pictures and footage: <a href="https://commons.wikimedia.org/wiki/File:SAE_J1772_7058855567.jpg">“SAE J1772”</a> by Michael Hicks, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Gipe-Nies_home_charge_cable_02.jpg">“Home charge cable 02”</a> by Paul Gipe, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Quincy_Adams_station_parking_garage_at_night_July_2025.jpg">“Quincy Adams station parking garage at night”</a> by 4300streetcar, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>; <a href="https://commons.wikimedia.org/wiki/File:LEVA_charging_station_at_night_in_Tuntorp_2.jpg">“LEVA charging station at night in Tuntorp 2”</a> by W.carter, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Ionity_Charging_Station_For_Electric_Cars_(2024).webm">“Ionity Charging Station For Electric Cars”</a> by Maximilian Schönherr, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons; <a href="https://www.flickr.com/photos/48718829@N00/322940783">“workbench”</a> by Bludgeoner86, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, via Flickr.</p>
