@@ -9,3 +9,6 @@ Static site for GitHub Pages (Settings > Pages > Deploy from branch `main`, fold
   - GoatCounter code `frunkfob` counts visits (source = `?src=`), clicks on "See it on Amazon" (`out/<ASIN>`) and sign-ups (`signup`). Nothing is fetched from Amazon.
 
 Bio links: use `?src=instagram`, `?src=tiktok` or `?src=facebook` so visits, clicks and sign-ups show where they came from.
+
+## Custom domain (frunkandfob.com)
+`CNAME` points GitHub Pages at `frunkandfob.com`, and canonical, share-image and sitemap URLs use it. Merge only after the domain is bought and its DNS points at GitHub Pages (see ecommerce-team `reports/domains/switch-plan.md`). Once it is live, the old `sonicecke-commits.github.io/frunkfob-site/` links forward to `frunkandfob.com` by themselves.
