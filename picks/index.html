@@ -104,7 +104,12 @@ footer .cols strong{color:var(--ink);font-weight:500;display:block;margin-bottom
 .js .hero h1:not(.in) span{opacity:0;transform:translateY(40px)}
 .hero h1 span:nth-child(2){transition-delay:.09s}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}.js .rise:not(.in),.js .hero h1:not(.in) span{opacity:1;transform:none}}
+.su{background:var(--paper);color:var(--paper-ink);padding:clamp(48px,7vw,96px) var(--m)}.su .su-in{max-width:760px}.su h2{font-size:clamp(34px,4.6vw,64px);line-height:.95;letter-spacing:-.04em;font-weight:700;margin:0 0 16px}.su p{max-width:52ch;margin:0 0 20px}.su label{display:block;font-weight:500;margin-bottom:8px}.su-row{display:flex;gap:10px;flex-wrap:wrap}.su input[type=email]{flex:1 1 260px;min-height:56px;border:0;border-radius:8px;background:#c7cbc4;color:var(--paper-ink);font:inherit;padding:0 16px}.su button{min-height:56px;border:0;border-radius:999px;background:var(--paper-ink);color:var(--lime);font:500 18px/1 "Hanken Grotesk",sans-serif;padding:0 26px;cursor:pointer}.su button:disabled{opacity:.6}.su input:focus-visible,.su button:focus-visible{outline:3px solid var(--paper-ink);outline-offset:2px}.su .su-small{font-size:15px;color:var(--paper-muted);margin:14px 0 0}.su .su-msg{font-weight:500;margin:10px 0 0;min-height:1.5em}.su-done .su-row{display:none}
 </style>
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:image" content="https://sonicecke-commits.github.io/frunkfob-site/og.png">
+<meta property="og:url" content="https://sonicecke-commits.github.io/frunkfob-site/picks/">
 </head>
 <body>
 <header class="bar">
@@ -198,6 +203,19 @@ footer .cols strong{color:var(--ink);font-weight:500;display:block;margin-bottom
     <a class="btn rise" href="#top">Choose your plug</a>
   </div>
 </section>
+<section class="su" id="updates" aria-labelledby="h-updates">
+  <div class="su-in">
+    <h2 id="h-updates">New picks, by email</h2>
+    <p>We add and swap chargers and adapters as better ones show up. Leave your email and we'll tell you when this page changes. Our emails link back to this page, never straight to a store.</p>
+    <form class="su-form" data-kit-signup action="https://assets.mailerlite.com/jsonp/2745570/forms/202515034386990483/subscribe" method="post">
+      <label for="su-email">Your email</label>
+      <div class="su-row"><input id="su-email" type="email" name="fields[email]" autocomplete="email" required placeholder="name@example.com"><button type="submit">Email me new picks</button></div>
+      <input type="hidden" name="fields[signup_source]" value="picks-page"><input type="hidden" name="ml-submit" value="1"><input type="hidden" name="anticsrf" value="true">
+      <p class="su-msg" role="status" aria-live="polite"></p>
+      <p class="su-small">We send one email first so you can confirm. Unsubscribe any time. <a href="../privacy.html">Privacy notice</a>.</p>
+    </form>
+  </div>
+</section>
 </main>
 
 <footer>
@@ -205,7 +223,7 @@ footer .cols strong{color:var(--ink);font-weight:500;display:block;margin-bottom
   <div class="cols">
     <p><strong>Paid links</strong>Frunk &amp; Fob earns a commission on purchases made through this page. As an Amazon Associate we earn from qualifying purchases. Amazon and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.</p>
     <p><strong>About this page</strong>Frunk &amp; Fob is an AI-run brand; its posts and pages are made with AI and labelled. Product names belong to their makers. Neither Amazon nor any maker endorses this page. <a href="../privacy.html">Privacy notice</a>.</p>
-    <p><strong>Pictures</strong>"SAE J1772" by Michael Hicks, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>; "Gipe-Nies home charge cable 02" by Paul Gipe, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>; the night and station pictures as credited on the <a href="../#h-foot">Frunk &amp; Fob home page</a>, via Wikimedia Commons. Icons drawn for this page.</p>
+    <p><strong>Pictures</strong>"SAE J1772" by Michael Hicks, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>; "Gipe-Nies home charge cable 02" by Paul Gipe, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>; <a href="https://commons.wikimedia.org/wiki/File:LEVA_charging_station_at_night_in_Tuntorp_2.jpg">“LEVA charging station at night in Tuntorp 2”</a> by W.carter, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Ionity_Charging_Station_For_Electric_Cars_(2024).webm">“Ionity Charging Station For Electric Cars”</a> by Maximilian Schönherr, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>; all via Wikimedia Commons. Icons drawn for this page.</p>
   </div>
 </footer>
 
@@ -221,5 +239,6 @@ function apply(v){let n=0;picks.forEach(p=>{const on=v==='all'||p.dataset.plug==
  count.textContent=v==='all'?n+' picks below.':'Showing the '+n+' picks that fit a '+(v==='nacs'?'Tesla-plug':'J1772')+' car.';}
 document.querySelectorAll('input[name=plug]').forEach(r=>r.addEventListener('change',()=>apply(r.value)));
 </script>
+<script src="kit.js" data-gc="frunkfob" defer></script>
 </body>
 </html>
