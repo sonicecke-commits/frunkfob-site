@@ -96,7 +96,7 @@ section.road{background:var(--paper);color:var(--paper-ink)}
 .btn:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
 .paidtag{font-size:14px;opacity:.75}
 .tier{display:inline-block;margin:0 0 8px;padding:4px 10px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.02em;background:#c6f24e;color:#17191b}
-.still{list-style:none;margin:18px 0 0;font-size:15px;opacity:.8}
+.still{list-style:none;margin:18px 0 0;font-size:15px;opacity:1}
 .pick.off{opacity:.18;transform:translateX(12px)}
 .pick.off .btn{pointer-events:none}
 @media (max-width:640px){.pick{grid-template-columns:56px 1fr}.pick .ic{width:56px;height:56px}.pick .ic svg{width:40px;height:40px}.pick .buy{grid-column:2;grid-row:auto;align-items:flex-start;margin-top:10px}.pick.off{display:none}}
@@ -262,7 +262,7 @@ section.road{background:var(--bg)!important;color:var(--ink)!important;border-to
 <meta property="og:url" content="https://frunkandfob.com/picks/">
 <meta property="og:title" content="EV charging picks, sorted by your plug | Frunk &amp; Fob">
 <meta property="og:description" content="Home chargers, adapters and cable holders for J1772 and Tesla-plug cars, each with who it suits and its trade-off. Paid links.">
-<style>@media (max-width:860px){p.start{display:none}}.film .facts{bottom:50px}</style>
+<style>.film .facts{bottom:50px}@media (max-width:640px){.pick{grid-template-columns:56px minmax(0,1fr)!important}.pick>div{min-width:0}.pick .buy,.pick.most .buy{flex-wrap:wrap;row-gap:6px}.most-tag{white-space:normal}}@media (max-width:360px){.pick{column-gap:14px!important}}</style>
 <style>
 /* motion v2: text and picks readable at once; only a short, small slide */
 .rise{transition:transform .28s cubic-bezier(.2,.8,.2,1)!important}
@@ -276,7 +276,7 @@ section.road{background:var(--bg)!important;color:var(--ink)!important;border-to
 <header class="bar">
   <a class="mark" href="../">Frunk&amp;Fob</a>
   <nav aria-label="Sections"><a href="#glance">At a glance</a><a href="#home">At home</a><a href="#road">On the road</a><a href="#how">How we pick</a></nav>
-  <a class="act" href="#road">See the picks</a>
+  <a class="act" href="#home">See the picks</a>
 </header>
 
 <main>
@@ -339,7 +339,7 @@ section.road{background:var(--bg)!important;color:var(--ink)!important;border-to
     <ul class="picks">
       <li class="pick most rise" id="most" data-plug="all">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="12" y="6" width="22" height="30" rx="4" fill="#c6f24e"/><rect x="17" y="12" width="12" height="8" fill="#212427"/><path d="M23 36v6c0 4 3 4 6 4h10" fill="none" stroke="#c6f24e" stroke-width="3"/></svg></div>
-        <div><span class="most-tag">Our pick for most cars · Mid-range</span><h3>Emporia Level 2 charger</h3><p class="most-why"><b>Start here.</b> It comes in J1772 and Tesla-plug versions, so it suits either car, and home is where most EV owners do most of their charging (<a href="https://afdc.energy.gov/fuels/electricity-charging-home" rel="noopener" target="_blank">US Department of Energy</a>).</p><p class="who">Suits a garage or driveway</p><p class="why">The maker says up to 48 A when hardwired on a 60 A circuit (less on a plug-in). Its app tracks the energy each charge uses. Choose the J1772 or Tesla-plug version for your car when you check the price. Trade-off: the full 48 A needs hardwiring on a 60 A circuit. Skip it if you park on the street.</p></div>
+        <div><span class="most-tag">Our pick for most cars · Mid-range</span><h3>Emporia Level 2 charger</h3><p class="most-why"><b>Start here.</b> It comes in J1772 and Tesla-plug versions, so it suits either car. Most EV charging happens at home (<a href="https://afdc.energy.gov/fuels/electricity-charging-home" rel="noopener" target="_blank">US Department of Energy</a>).</p><p class="who">Suits a garage or driveway</p><p class="why">The maker says up to 48 A when hardwired on a 60 A circuit (less on a plug-in). Its app tracks the energy each charge uses. Choose the J1772 or Tesla-plug version for your car when you check the price. Trade-off: the full 48 A needs hardwiring on a 60 A circuit. Skip it if you park on the street.</p></div>
         <div class="buy"><a class="btn" href="https://www.amazon.com/dp/B0CKKPTDPK?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
       </li>
       <li class="pick rise" id="pk-autel" data-plug="j1772">
@@ -354,7 +354,7 @@ section.road{background:var(--bg)!important;color:var(--ink)!important;border-to
       </li>
       <li class="pick rise" id="pk-holster" data-plug="j1772">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="8" y="10" width="18" height="24" rx="3" fill="#c6f24e"/><circle cx="17" cy="22" r="5" fill="#212427"/><path d="M36 10v20c0 6 8 6 8 0" fill="none" stroke="#c6f24e" stroke-width="3"/></svg></div>
-        <div><span class="tier">Budget pick</span><h3>Lectron holster dock and J-hook</h3><p class="who">Suits a J1772 home charger whose plug lives on the floor</p><p class="why">Gets the plug off the floor and out of the wet, and gives the coil a hook. Trade-off: it fits J1772 plugs only, and it screws to the wall.</p></div>
+        <div><span class="tier">Budget pick</span><h3>Lectron holster dock and J-hook</h3><p class="who">Suits a J1772 home charger whose plug lives on the floor</p><p class="why">The maker says it gets the plug off the floor and gives the coil a hook. Trade-off: it fits J1772 plugs only, and it screws to the wall.</p></div>
         <div class="buy"><a class="btn" href="https://www.amazon.com/dp/B07FC9M4YF?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
       </li>
       <li class="pick rise" id="pk-tesla-holder" data-plug="nacs">
@@ -362,6 +362,7 @@ section.road{background:var(--bg)!important;color:var(--ink)!important;border-to
         <div><span class="tier">Budget pick</span><h3>Flush-mount Tesla-plug wall holder</h3><p class="who">Suits a Tesla wall charger whose plug lives on the floor</p><p class="why">Does the same job for the NACS connector on a Tesla wall charger. Trade-off: it fits the Tesla plug only, and it screws to the wall.</p></div>
         <div class="buy"><a class="btn" href="https://www.amazon.com/dp/B0DSJ38MCC?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
       </li>
+      <li class="still">Budget home charger: nothing has passed our bar here yet, so the slot stays empty.</li>
     </ul>
     <figure class="rise"><img src="../assets/home-charge.jpg" alt="A blue electric car charging from a wall charger on a house beside the garage" loading="lazy" style="object-position:72% 50%"><figcaption>Charging at home. Stock photo. Not one of the picks.</figcaption></figure>
   </div>
@@ -388,6 +389,7 @@ section.road{background:var(--bg)!important;color:var(--ink)!important;border-to
         <div><span class="any-tag">Good for any EV</span> <span class="tier">Budget pick</span><h3>AstroAI AIRUN H tire inflator</h3><p class="most-why">No charging here: it lives in the frunk until a cold morning drops your tire pressure.</p><p class="who">Suits any EV that came without a spare tire</p><p class="why">Check whether your EV has a spare. An inflator with auto-stop stops at the pressure you set. Trade-off: it tops up air for a soft tire. A puncture still needs a repair.</p></div>
         <div class="buy"><a class="btn" href="https://www.amazon.com/dp/B08TWCMQ8D?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
       </li>
+      <li class="still">Budget adapter: nothing has passed our bar here yet, so the slot stays empty.</li>
     </ul>
   </div>
 </section>
