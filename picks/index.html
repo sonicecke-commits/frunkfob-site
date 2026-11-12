@@ -133,6 +133,26 @@ footer .cols strong{color:var(--ink);font-weight:500;display:block;margin-bottom
 .most-tag{display:inline-block;margin:0 6px 8px 0;padding:3px 10px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.02em;background:var(--paper-ink);color:var(--lime)}
 .most-why{font-weight:600;margin:6px 0}
 .start{margin:0 0 18px}.start a{color:var(--lime);font-weight:600}
+/* at a glance + how we pick (competitor study, reviewed by marketer + psychology, Sam OK 2026-11-12) */
+.glance{padding:clamp(48px,7vw,96px) var(--m) clamp(40px,6vw,80px)}
+.glance h2,.how h2{font-size:clamp(34px,4.6vw,64px);line-height:.95;letter-spacing:-.04em;font-weight:700;margin:0 0 12px}
+.glance>p{margin:0 0 28px;color:var(--muted);max-width:52ch}
+.gl{width:100%;border-collapse:collapse;font-size:17px}
+.gl th{text-align:left;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);padding:0 16px 10px 0;border-bottom:1px solid #3a3f43}
+.gl td{padding:16px 16px 16px 0;border-bottom:1px solid #2c3033;vertical-align:top}
+.gl td a{font-weight:600;text-decoration:none;border-bottom:2px solid var(--lime)}
+.gl td a:hover{color:var(--lime)}
+.gl .gl-most{display:block;margin-top:6px;font-size:13px;font-weight:600;color:var(--lime)}
+.gl .tier{margin:0}
+.gl tr.off{display:none}
+@media (max-width:700px){.gl thead{display:none}.gl,.gl tbody,.gl tr,.gl td{display:block;width:100%}.gl tr{padding:16px 0;border-bottom:1px solid #2c3033}.gl td{border:0;padding:3px 0}.gl td[data-l]::before{content:attr(data-l) ": ";color:var(--muted);font-size:14px}}
+.oneway{margin:0 0 clamp(32px,4vw,56px);padding:14px 16px;border-left:4px solid var(--paper-ink);background:rgba(23,25,27,.06);max-width:60ch;font-size:17px}
+.how{padding:clamp(56px,8vw,120px) var(--m)}
+.how ul{list-style:none;margin:24px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px)}
+.how li strong{display:block;font-size:20px;margin-bottom:6px;color:var(--lime)}
+.how li{color:var(--ink);max-width:36ch}
+.how .checked{margin:0;color:var(--muted)}
+@media (max-width:760px){.how ul{grid-template-columns:1fr}}
 </style>
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -142,7 +162,7 @@ footer .cols strong{color:var(--ink);font-weight:500;display:block;margin-bottom
 <body>
 <header class="bar">
   <a class="mark" href="../">Frunk&amp;Fob</a>
-  <nav aria-label="Sections"><a href="#road">On the road</a><a href="#home">At home</a></nav>
+  <nav aria-label="Sections"><a href="#glance">At a glance</a><a href="#road">On the road</a><a href="#home">At home</a><a href="#how">How we pick</a></nav>
   <a class="act" href="#road">See the picks</a>
 </header>
 
@@ -181,17 +201,34 @@ footer .cols strong{color:var(--ink);font-weight:500;display:block;margin-bottom
   </figure>
 </section>
 
+<section class="glance" id="glance" aria-labelledby="h-glance">
+  <h2 id="h-glance" class="rise">At a glance</h2>
+  <p class="rise">Every pick on one screen. Tap a name to jump to it.</p>
+  <table class="gl rise">
+    <thead><tr><th scope="col">Pick</th><th scope="col">Suits</th><th scope="col">Trade-off</th><th scope="col">Tier</th></tr></thead>
+    <tbody>
+      <tr data-plug="all"><td><a href="#most">AstroAI AIRUN H tire inflator</a><span class="gl-most">Our pick for most cars</span></td><td data-l="Suits">Any EV without a spare tire</td><td data-l="Trade-off">Tops up air; it won't fix a puncture</td><td><span class="tier">Budget</span></td></tr>
+      <tr data-plug="j1772"><td><a href="#pk-nacs-j1772">Lectron NACS-to-J1772 adapter</a></td><td data-l="Suits">J1772 cars at Tesla-plug AC chargers</td><td data-l="Trade-off">Doesn't work at Superchargers</td><td><span class="tier">Premium</span></td></tr>
+      <tr data-plug="nacs"><td><a href="#pk-j1772-tesla">Lectron J1772-to-Tesla adapter</a></td><td data-l="Suits">Teslas at public J1772 stations</td><td data-l="Trade-off">Level 2 (AC) stations only</td><td><span class="tier">Mid-range</span></td></tr>
+      <tr data-plug="all"><td><a href="#pk-emporia">Emporia Level 2 charger</a></td><td data-l="Suits">A garage or driveway</td><td data-l="Trade-off">Full 48 A needs hardwiring on a 60 A circuit</td><td><span class="tier">Mid-range</span></td></tr>
+      <tr data-plug="j1772"><td><a href="#pk-holster">Lectron holster dock and J-hook</a></td><td data-l="Suits">A J1772 home charger</td><td data-l="Trade-off">Fits J1772 plugs only</td><td><span class="tier">Budget</span></td></tr>
+      <tr data-plug="nacs"><td><a href="#pk-tesla-holder">Flush-mount Tesla-plug wall holder</a></td><td data-l="Suits">A Tesla wall charger</td><td data-l="Trade-off">Fits the Tesla plug only</td><td><span class="tier">Budget</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
 <section class="group road" id="road" aria-labelledby="h-road">
   <div class="gh"><h2 id="h-road" class="rise">On the road</h2><p class="rise">Adapters for when the station's plug isn't yours, and air for when the tire's soft.</p></div>
+  <p class="oneway rise"><strong>Which way does an adapter work?</strong> One way only. Match the plug on the charger to the plug on your car before you buy.</p>
   <div class="split">
     <figure class="rise"><img src="../assets/plug.jpg" alt="A J1772 charging plug on a public charger" loading="lazy"><figcaption>A J1772 plug on a public charger</figcaption></figure>
     <ul class="picks">
-      <li class="pick rise" data-plug="j1772">
+      <li class="pick rise" id="pk-nacs-j1772" data-plug="j1772">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="6" y="18" width="20" height="16" rx="8" fill="#c6f24e"/><rect x="26" y="20" width="8" height="12" fill="#c6f24e"/><circle cx="40" cy="26" r="9" fill="none" stroke="#c6f24e" stroke-width="3"/><circle cx="37" cy="24" r="1.6" fill="#c6f24e"/><circle cx="43" cy="24" r="1.6" fill="#c6f24e"/><circle cx="40" cy="29" r="1.4" fill="#c6f24e"/></svg></div>
         <div><span class="tier">Premium pick</span><h3>Lectron NACS-to-J1772 adapter</h3><p class="who">Suits a non-Tesla EV driver who wants Tesla-plug destination chargers on road trips</p><p class="why">Lets a J1772 car use Tesla-plug AC chargers (destination and home chargers), not Superchargers. Lectron says it is UL 2252 listed.</p></div>
         <div class="buy"><a class="btn" href="https://www.amazon.com/dp/B0FQP87YDG?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
       </li>
-      <li class="pick rise" data-plug="nacs">
+      <li class="pick rise" id="pk-j1772-tesla" data-plug="nacs">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><circle cx="13" cy="26" r="9" fill="none" stroke="#c6f24e" stroke-width="3"/><rect x="22" y="22" width="8" height="8" fill="#c6f24e"/><path d="M30 18h10c4 0 6 3 6 8s-2 8-6 8H30z" fill="#c6f24e"/></svg></div>
         <div><span class="tier">Mid-range pick</span><h3>Lectron J1772-to-Tesla adapter</h3><p class="who">Suits a Tesla owner who uses public J1772 stations now and then</p><p class="why">Lets a Tesla use public J1772 stations. Small enough for a glovebox. Lectron says it is UL 2252 listed.</p></div>
         <div class="buy"><a class="btn" href="https://www.amazon.com/dp/B0DFH43NYN?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
@@ -223,17 +260,17 @@ footer .cols strong{color:var(--ink);font-weight:500;display:block;margin-bottom
   <div class="gh"><h2 id="h-home" class="rise">At home</h2><p class="rise">A Level 2 charger on the wall, and somewhere tidy to park the plug.</p></div>
   <div class="split">
     <ul class="picks">
-      <li class="pick rise" data-plug="all">
+      <li class="pick rise" id="pk-emporia" data-plug="all">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="12" y="6" width="22" height="30" rx="4" fill="#c6f24e"/><rect x="17" y="12" width="12" height="8" fill="#212427"/><path d="M23 36v6c0 4 3 4 6 4h10" fill="none" stroke="#c6f24e" stroke-width="3"/></svg></div>
         <div><span class="tier">Mid-range pick</span><h3>Emporia Level 2 charger</h3><p class="who">Suits someone with a garage or driveway who wants faster charging at home</p><p class="why">The maker says up to 48 A when hardwired on a 60 A circuit (less on a plug-in). Its app tracks the energy each charge uses. Comes in J1772 and NACS versions.</p></div>
         <div class="buy"><a class="btn" href="https://www.amazon.com/dp/B0CKKPTDPK?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
       </li>
-      <li class="pick rise" data-plug="j1772">
+      <li class="pick rise" id="pk-holster" data-plug="j1772">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="8" y="10" width="18" height="24" rx="3" fill="#c6f24e"/><circle cx="17" cy="22" r="5" fill="#212427"/><path d="M36 10v20c0 6 8 6 8 0" fill="none" stroke="#c6f24e" stroke-width="3"/></svg></div>
         <div><span class="tier">Budget pick</span><h3>Lectron holster dock and J-hook</h3><p class="who">Suits a J1772 home charger whose plug lives on the floor</p><p class="why">Gets the plug off the floor and out of the wet, and gives the coil a hook.</p></div>
         <div class="buy"><a class="btn" href="https://www.amazon.com/dp/B07FC9M4YF?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
       </li>
-      <li class="pick rise" data-plug="nacs">
+      <li class="pick rise" id="pk-tesla-holder" data-plug="nacs">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="10" y="10" width="22" height="30" fill="#c6f24e"/><path d="M15 20c0-3 3-5 6-5s6 2 6 5v6c0 3-3 5-6 5s-6-2-6-5z" fill="#212427"/><rect x="36" y="14" width="6" height="22" fill="#c6f24e"/></svg></div>
         <div><span class="tier">Budget pick</span><h3>Flush-mount Tesla-plug wall holder</h3><p class="who">Suits a Tesla wall charger whose plug lives on the floor</p><p class="why">Does the same job for the NACS connector on a Tesla wall charger.</p></div>
         <div class="buy"><a class="btn" href="https://www.amazon.com/dp/B0DSJ38MCC?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
@@ -244,6 +281,15 @@ footer .cols strong{color:var(--ink);font-weight:500;display:block;margin-bottom
   </div>
 </section>
 
+<section class="how" id="how" aria-labelledby="h-how">
+  <h2 id="h-how" class="rise">How we pick</h2>
+  <p class="checked rise">Picks checked November 10, 2026.</p>
+  <ul>
+    <li class="rise"><strong>Plug first.</strong>We sort by the plug on your car, using each maker's own specs.</li>
+    <li class="rise"><strong>Safety listing.</strong>An adapter carries your full charging current, so we only list ones whose maker says they're UL 2252 listed.</li>
+    <li class="rise"><strong>What we haven't done.</strong>We haven't used these ourselves. If nothing meets our bar in a tier, we leave it empty.</li>
+  </ul>
+</section>
 <section class="close" aria-labelledby="h-close">
   <img src="../assets/night.jpg" alt="" loading="lazy">
   <div class="scrim"></div>
@@ -288,6 +334,7 @@ const picks=[...document.querySelectorAll('.pick')],count=document.getElementByI
 document.getElementById('npicks').textContent=picks.length;
 function apply(v){let n=0;picks.forEach(p=>{const on=v==='all'||p.dataset.plug==='all'||p.dataset.plug===v;p.classList.toggle('off',!on);p.setAttribute('aria-hidden',on?'false':'true');if(on)n++});
  count.textContent=v==='all'?n+' picks below.':'Showing the '+n+' picks that fit a '+(v==='nacs'?'Tesla-plug':'J1772')+' car.';}
+const glRows=[...document.querySelectorAll('.gl tbody tr')];document.querySelectorAll('input[name=plug]').forEach(r=>r.addEventListener('change',()=>glRows.forEach(t=>t.classList.toggle('off',!(r.value==='all'||t.dataset.plug==='all'||t.dataset.plug===r.value)))));
 document.querySelectorAll('input[name=plug]').forEach(r=>r.addEventListener('change',()=>apply(r.value)));
 </script>
 <script src="kit.js" data-gc="frunkfob" data-bar="Want a heads-up when a pick changes?" data-bar-btn="Email me" defer></script>
