@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>EV gear picks · Frunk &amp; Fob</title>
+<title>EV charging picks, sorted by your plug · Frunk &amp; Fob</title>
 <meta name="description" content="EV charging gear, sorted by the plug on your car: adapters, home chargers and cable storage. Paid links.">
 <link href="../assets/fonts/fonts.css" rel="stylesheet">
 <style>
@@ -30,7 +30,7 @@ img,video{display:block;max-width:100%}
 .hero .kicker{font-size:clamp(17px,1.6vw,22px);font-weight:600;letter-spacing:.01em;color:var(--paper);margin:0 0 14px}
 .hero h1{font-size:clamp(40px,5.4vw,84px);line-height:.98;letter-spacing:-.035em;text-wrap:balance;max-width:13ch}
 .hero .lede{font-size:clamp(19px,1.6vw,23px);max-width:34ch;margin:0 0 18px}
-.hero .paid{display:inline-block;margin:0 0 28px;color:var(--ink);font-size:13px;line-height:1.4;background:var(--surface);padding:5px 10px;border-left:3px solid var(--lime)}
+.hero .paid{display:inline-block;margin:0 0 28px;color:var(--ink);font-size:15px;line-height:1.4;background:var(--surface);padding:5px 10px;border-left:3px solid var(--lime)}
 .film{position:relative;margin:0;min-height:560px;overflow:hidden;background:#000;border-radius:4px}
 .film video,.film img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 50%}
 .film .kb{animation:kb 4.5s ease-out 1 both;transform-origin:70% 55%}@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.12)}}@media (prefers-reduced-motion:reduce){.film .kb{animation:none}}
@@ -96,7 +96,7 @@ section.road{background:var(--paper);color:var(--paper-ink)}
 .btn:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
 .paidtag{font-size:14px;opacity:.75}
 .tier{display:inline-block;margin:0 0 8px;padding:4px 10px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.02em;background:#c6f24e;color:#17191b}
-.still{list-style:none;margin:18px 0 0;font-size:15px;opacity:1}
+.still{list-style:none;margin:10px 0;padding:14px 0;border-top:1px dashed #3a3f44;border-bottom:1px dashed #3a3f44;font-size:15px;opacity:1}
 .pick.off{opacity:.18;transform:translateX(12px)}
 .pick.off .btn{pointer-events:none}
 @media (max-width:640px){.pick{grid-template-columns:56px 1fr}.pick .ic{width:56px;height:56px}.pick .ic svg{width:40px;height:40px}.pick .buy{grid-column:2;grid-row:auto;align-items:flex-start;margin-top:10px}.pick.off{display:none}}
@@ -262,7 +262,7 @@ section.road{background:var(--bg)!important;color:var(--ink)!important;border-to
 <meta property="og:url" content="https://frunkandfob.com/picks/">
 <meta property="og:title" content="EV charging picks, sorted by your plug | Frunk &amp; Fob">
 <meta property="og:description" content="Home chargers, adapters and cable holders for J1772 and Tesla-plug cars, each with who it suits and its trade-off. Paid links.">
-<style>.film .facts{bottom:50px}@media (max-width:640px){.pick{grid-template-columns:56px minmax(0,1fr)!important}.pick>div{min-width:0}.pick .buy,.pick.most .buy{flex-wrap:wrap;row-gap:6px}.most-tag{white-space:normal}}@media (max-width:360px){.pick{column-gap:14px!important}}</style>
+<style>.btn:active{transform:translateY(1px);filter:brightness(.92)}.jump{display:none}@media (max-width:860px){.jump{display:flex;gap:8px;overflow-x:auto;padding:12px var(--m);scrollbar-width:none}.jump a{flex:none;padding:10px 14px;border:1px solid #3a3f44;border-radius:999px;color:var(--ink);text-decoration:none;font-weight:600;font-size:15px}}a:focus-visible,summary:focus-visible{outline:3px solid var(--lime);outline-offset:3px}.skiplink{position:absolute;left:8px;top:-60px;z-index:50;background:var(--lime);color:var(--paper-ink);padding:10px 14px;font-weight:600}.skiplink:focus{top:8px}@media (max-width:860px){.film{aspect-ratio:16/9!important}}.pick .give,.pick .skip{margin:8px 0 0;font-size:inherit;line-height:1.55;max-width:52ch}.pick .give b,.pick .skip b{font-weight:600}.film .facts{bottom:50px}@media (max-width:640px){.pick{grid-template-columns:56px minmax(0,1fr)!important}.pick>div{min-width:0}.pick .buy,.pick.most .buy{flex-wrap:wrap;row-gap:6px}.most-tag{white-space:normal}}@media (max-width:360px){.pick{column-gap:14px!important}}</style>
 <style>
 /* motion v2: text and picks readable at once; only a short, small slide */
 .rise{transition:transform .28s cubic-bezier(.2,.8,.2,1)!important}
@@ -273,6 +273,7 @@ section.road{background:var(--bg)!important;color:var(--ink)!important;border-to
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "EV charging picks by plug", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Emporia Level 2 charger", "url": "https://frunkandfob.com/picks/#most"}, {"@type": "ListItem", "position": 2, "name": "Autel MaxiCharger 50A Level 2 charger", "url": "https://frunkandfob.com/picks/#pk-autel"}, {"@type": "ListItem", "position": 3, "name": "Lectron Nexus Level 2 charger (Tesla plug)", "url": "https://frunkandfob.com/picks/#pk-nexus"}, {"@type": "ListItem", "position": 4, "name": "Lectron holster dock and J-hook", "url": "https://frunkandfob.com/picks/#pk-holster"}, {"@type": "ListItem", "position": 5, "name": "Flush-mount Tesla-plug wall holder", "url": "https://frunkandfob.com/picks/#pk-tesla-holder"}, {"@type": "ListItem", "position": 6, "name": "Lectron NACS-to-J1772 adapter", "url": "https://frunkandfob.com/picks/#pk-nacs-j1772"}, {"@type": "ListItem", "position": 7, "name": "Lectron J1772-to-Tesla adapter", "url": "https://frunkandfob.com/picks/#pk-j1772-tesla"}, {"@type": "ListItem", "position": 8, "name": "AstroAI AIRUN H tire inflator", "url": "https://frunkandfob.com/picks/#pk-inflator"}]}</script>
 </head>
 <body>
+<a class="skiplink" href="#glance">Skip to the picks</a>
 <header class="bar">
   <a class="mark" href="../">Frunk&amp;Fob</a>
   <nav aria-label="Sections"><a href="#glance">At a glance</a><a href="#home">At home</a><a href="#road">On the road</a><a href="#how">How we pick</a></nav>
@@ -285,7 +286,7 @@ section.road{background:var(--bg)!important;color:var(--ink)!important;border-to
     <p class="kicker">Charge smarter. Carry less.</p>
     <h1 id="h1"><span>The right charger or adapter for the plug on your car.</span></h1>
     <p class="lede rise">EV charging gear, sorted by the plug on your car and labelled budget, mid-range or premium. Each one says who it suits and its trade-off.</p>
-    <p class="paid rise"><strong>Paid links:</strong> As an Amazon Associate we earn from qualifying purchases.</p>
+    <p class="paid rise"><strong>Paid links:</strong> As an Amazon Associate we earn from qualifying purchases. The commission doesn't decide what we list.</p>
     <p class="start rise"><a href="#most">See where we'd start</a></p>
     <form class="rise" id="top" onsubmit="return false">
       <fieldset class="picker">
@@ -313,19 +314,20 @@ section.road{background:var(--bg)!important;color:var(--ink)!important;border-to
     <figcaption>Stock photo · An EV plugged in to charge</figcaption>
   </figure>
 </section>
+<nav class="jump" aria-label="Jump to a section"><a href="#glance">At a glance</a><a href="#home">At home</a><a href="#road">On the road</a><a href="#how">How we pick</a></nav>
 
 <section class="glance" id="glance" aria-labelledby="h-glance">
   <h2 id="h-glance" class="rise">At a glance</h2>
-  <p class="rise">Three to start with. Tap a name to jump to it.</p>
+  <p class="rise">Start with these. Tap a name to jump to it.</p>
   <table class="gl">
     <thead><tr><th scope="col">Pick</th><th scope="col">Suits</th><th scope="col">Trade-off</th><th scope="col">Tier</th></tr></thead>
     <tbody>
       <tr class="gl-top" data-plug="all"><td><a href="#most">Emporia Level 2 charger</a><span class="gl-most">Our pick for most cars</span></td><td data-l="Suits">A garage or driveway</td><td data-l="Trade-off">Full 48 A needs hardwiring on a 60 A circuit</td><td class="gl-t" data-t="2"><i class="gl-m" aria-hidden="true"><b></b><b></b><b></b></i><span class="tier">Mid-range</span></td></tr>
-      <tr data-plug="j1772"><td><a href="#pk-nacs-j1772">Lectron NACS-to-J1772 adapter</a></td><td data-l="Suits">J1772 cars at Tesla-plug AC chargers</td><td data-l="Trade-off">Doesn't work at Superchargers</td><td class="gl-t" data-t="3"><i class="gl-m" aria-hidden="true"><b></b><b></b><b></b></i><span class="tier">Premium</span></td></tr>
       <tr data-plug="nacs"><td><a href="#pk-j1772-tesla">Lectron J1772-to-Tesla adapter</a></td><td data-l="Suits">Teslas at public J1772 stations</td><td data-l="Trade-off">Level 2 (AC) stations only</td><td class="gl-t" data-t="2"><i class="gl-m" aria-hidden="true"><b></b><b></b><b></b></i><span class="tier">Mid-range</span></td></tr>
+      <tr data-plug="j1772"><td><a href="#pk-holster">Lectron holster dock and J-hook</a></td><td data-l="Suits">A J1772 home charger</td><td data-l="Trade-off">Fits J1772 plugs only</td><td class="gl-t" data-t="1"><i class="gl-m" aria-hidden="true"><b></b><b></b><b></b></i><span class="tier">Budget</span></td></tr>
       <tr data-plug="j1772"><td><a href="#pk-autel">Autel MaxiCharger 50A Level 2 charger</a></td><td data-l="Suits">J1772 cars, hardwired at home</td><td data-l="Trade-off">Hardwired only, so it needs an electrician</td><td class="gl-t" data-t="3"><i class="gl-m" aria-hidden="true"><b></b><b></b><b></b></i><span class="tier">Premium</span></td></tr>
       <tr data-plug="nacs"><td><a href="#pk-nexus">Lectron Nexus Level 2 charger (Tesla plug)</a></td><td data-l="Suits">Tesla-plug cars, hardwired at home</td><td data-l="Trade-off">Hardwired only; newer listing</td><td class="gl-t" data-t="3"><i class="gl-m" aria-hidden="true"><b></b><b></b><b></b></i><span class="tier">Premium</span></td></tr>
-      <tr data-plug="j1772"><td><a href="#pk-holster">Lectron holster dock and J-hook</a></td><td data-l="Suits">A J1772 home charger</td><td data-l="Trade-off">Fits J1772 plugs only</td><td class="gl-t" data-t="1"><i class="gl-m" aria-hidden="true"><b></b><b></b><b></b></i><span class="tier">Budget</span></td></tr>
+      <tr data-plug="j1772"><td><a href="#pk-nacs-j1772">Lectron NACS-to-J1772 adapter</a></td><td data-l="Suits">J1772 cars at Tesla-plug AC chargers</td><td data-l="Trade-off">Doesn't work at Superchargers</td><td class="gl-t" data-t="3"><i class="gl-m" aria-hidden="true"><b></b><b></b><b></b></i><span class="tier">Premium</span></td></tr>
       <tr data-plug="nacs"><td><a href="#pk-tesla-holder">Flush-mount Tesla-plug wall holder</a></td><td data-l="Suits">A Tesla wall charger</td><td data-l="Trade-off">Fits the Tesla plug only</td><td class="gl-t" data-t="1"><i class="gl-m" aria-hidden="true"><b></b><b></b><b></b></i><span class="tier">Budget</span></td></tr>
       <tr data-plug="all"><td><a href="#pk-inflator">AstroAI AIRUN H tire inflator</a></td><td data-l="Suits">Any EV without a spare tire</td><td data-l="Trade-off">Tops up air only</td><td class="gl-t" data-t="1"><i class="gl-m" aria-hidden="true"><b></b><b></b><b></b></i><span class="tier">Budget</span></td></tr>
     </tbody>
@@ -339,30 +341,30 @@ section.road{background:var(--bg)!important;color:var(--ink)!important;border-to
     <ul class="picks">
       <li class="pick most rise" id="most" data-plug="all">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="12" y="6" width="22" height="30" rx="4" fill="#c6f24e"/><rect x="17" y="12" width="12" height="8" fill="#212427"/><path d="M23 36v6c0 4 3 4 6 4h10" fill="none" stroke="#c6f24e" stroke-width="3"/></svg></div>
-        <div><span class="most-tag">Our pick for most cars · Mid-range</span><h3>Emporia Level 2 charger</h3><p class="most-why"><b>Start here.</b> It comes in J1772 and Tesla-plug versions, so it suits either car. Most EV charging happens at home (<a href="https://afdc.energy.gov/fuels/electricity-charging-home" rel="noopener" target="_blank">US Department of Energy</a>).</p><p class="who">Suits a garage or driveway</p><p class="why">The maker says up to 48 A when hardwired on a 60 A circuit (less on a plug-in). Its app tracks the energy each charge uses. Choose the J1772 or Tesla-plug version for your car when you check the price. Trade-off: the full 48 A needs hardwiring on a 60 A circuit. Skip it if you park on the street.</p></div>
-        <div class="buy"><a class="btn" href="https://www.amazon.com/dp/B0CKKPTDPK?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
+        <div><span class="most-tag">Our pick for most cars · Mid-range</span><h3>Emporia Level 2 charger</h3><p class="most-why"><b>Start here.</b> It comes in J1772 and Tesla-plug versions, so it suits either car. Most EV charging happens at home (<a href="https://afdc.energy.gov/fuels/electricity-charging-home" rel="noopener" target="_blank">US Department of Energy</a>).</p><p class="who">Suits a garage or driveway</p><p class="why">The maker says up to 48 A (less on a plug-in), and its app tracks the energy each charge uses.</p><p class="give"><b>Trade-off:</b> The full 48 A needs hardwiring on a 60 A circuit.</p><p class="skip"><b>Skip it if</b> you park on the street.</p></div>
+        <div class="buy"><a class="btn" aria-label="Check today's price: Emporia Level 2 charger (paid link)" href="https://www.amazon.com/dp/B0CKKPTDPK?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
       </li>
       <li class="pick rise" id="pk-autel" data-plug="j1772">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="12" y="6" width="22" height="30" rx="4" fill="#c6f24e"/><rect x="17" y="12" width="12" height="8" fill="#212427"/><circle cx="23" cy="28" r="2.5" fill="#212427"/><path d="M23 36v6c0 4 3 4 6 4h10" fill="none" stroke="#c6f24e" stroke-width="3"/></svg></div>
-        <div><span class="tier">Premium pick</span><h3>Autel MaxiCharger 50A Level 2 charger</h3><p class="who">Suits a J1772 car and a garage or driveway with a hardwired install</p><p class="why">The maker says up to 50 A when hardwired, with a 25 ft cable and an outdoor-rated case. The listing says it's CSA certified. Trade-off: it's hardwired only, so you'll need an electrician to fit it, and at 4.4 stars it sits just under our usual ratings bar.</p></div>
-        <div class="buy"><a class="btn" href="https://www.amazon.com/Autel-MaxiCharger-Electric-Bluetooth-Charging/dp/B0B8NFFYXT?dib=eyJ2IjoiMSJ9.j7kNaO22YamMBb1gALE7GAPHanhqUovrrKD2OD4Z1dc00y4arUZohXXPAvWXw-8t_MauXLWzgh3LUPegzoGS2LjXGraCrdDSBD4Dxh9u_cVfP_3SqvFOtSLSE9n2wSEYewb-egOoSYLYJbeRsqCknaafCLZuKXa8qWzAhfiFlXonQ3BEZSbjWleXvsSVV3T3maVyTMPyfR5t8ds2Fsmi6LUKqBj8-5ZIQgq-pMYvgZpmBD2L8owaZz1rgGvGodhlGCZlD0c2EcBbbTS0NDv9zUzSzhtkrV8_N5aEBxKw6P8.5xM9zEmvguhpd3erIEBA0cdizz4pnydqZhiNtjIDdjU&amp;dib_tag=se&amp;keywords=Autel+MaxiCharger+Home+50A&amp;qid=1794460013&amp;sr=8-1-spons&amp;sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&amp;psc=1&amp;linkCode=ll2&amp;tag=frunkfob-20&amp;linkId=6e2ecd19a6e4116ab915337268e3cf52&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
+        <div><span class="tier">Premium pick</span><h3>Autel MaxiCharger 50A Level 2 charger</h3><p class="who">Suits a J1772 car and a garage or driveway with a hardwired install</p><p class="why">The maker says up to 50 A when hardwired, with a 25 ft cable and an outdoor-rated case. The listing says it's CSA certified.</p><p class="give"><b>Trade-off:</b> It's hardwired only, so you'll need an electrician to fit it, and at 4.4 stars it sits just under our usual ratings bar.</p><p class="skip"><b>Skip it if</b> you want to plug in without an electrician.</p></div>
+        <div class="buy"><a class="btn" aria-label="Check today's price: Autel MaxiCharger 50A Level 2 charger (paid link)" href="https://www.amazon.com/Autel-MaxiCharger-Electric-Bluetooth-Charging/dp/B0B8NFFYXT?dib=eyJ2IjoiMSJ9.j7kNaO22YamMBb1gALE7GAPHanhqUovrrKD2OD4Z1dc00y4arUZohXXPAvWXw-8t_MauXLWzgh3LUPegzoGS2LjXGraCrdDSBD4Dxh9u_cVfP_3SqvFOtSLSE9n2wSEYewb-egOoSYLYJbeRsqCknaafCLZuKXa8qWzAhfiFlXonQ3BEZSbjWleXvsSVV3T3maVyTMPyfR5t8ds2Fsmi6LUKqBj8-5ZIQgq-pMYvgZpmBD2L8owaZz1rgGvGodhlGCZlD0c2EcBbbTS0NDv9zUzSzhtkrV8_N5aEBxKw6P8.5xM9zEmvguhpd3erIEBA0cdizz4pnydqZhiNtjIDdjU&amp;dib_tag=se&amp;keywords=Autel+MaxiCharger+Home+50A&amp;qid=1794460013&amp;sr=8-1-spons&amp;sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&amp;psc=1&amp;linkCode=ll2&amp;tag=frunkfob-20&amp;linkId=6e2ecd19a6e4116ab915337268e3cf52&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
       </li>
       <li class="pick rise" id="pk-nexus" data-plug="nacs">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="12" y="6" width="22" height="30" rx="4" fill="#c6f24e"/><rect x="17" y="12" width="12" height="8" fill="#212427"/><circle cx="23" cy="28" r="2.5" fill="#212427"/><path d="M23 36v6c0 4 3 4 6 4h10" fill="none" stroke="#c6f24e" stroke-width="3"/></svg></div>
-        <div><span class="tier">Premium pick</span><h3>Lectron Nexus Level 2 charger (Tesla plug)</h3><p class="who">Suits a Tesla-plug (NACS) car and a hardwired install</p><p class="why">The maker says up to 48 A when hardwired, with a 23 ft cable and a plug holder, and says it's UL 2594 listed. Trade-off: it's hardwired only, and it's a newer listing, so fewer owners have reviewed it so far.</p></div>
-        <div class="buy"><a class="btn" href="https://www.amazon.com/Lectron-Certified-Charging-Hardwired-Compatible/dp/B0GVSFPHMG?crid=1YRK9LSAF3INB&amp;dib=eyJ2IjoiMSJ9.l2KGUFNdDmnjQlzsivUMvInejFrRcZTrb6sDG5FySw-cWz54IbKSI44k3DMJucFoKHwY6YA6dvn7Zme32-24sX22GILyDz423iFwkBRuMZ2PF0OOpNSqadq0WnRzxrdso4s_Z06wC9bNrmkYzVT4qB1FeBb0nKiV9nFNU5he_P2yTglgwQpTEwdBSra1ILym_eZ4cZh7WlU9Mgt3WeS73kAkTi43OmR2zmhrfAsYcDwrCEnT9SgxLwipZU9IJSNqL23l-d6EH2UsS3tezJd2zELDpaZOrqL2FzM_Pdn4Tsg.AIkxIqsYhEfBkrzyA1pMlw8ssXEYJmbQWVtQLigyREE&amp;dib_tag=se&amp;keywords=ChargePoint%2BHome%2BFlex%2BNACS&amp;qid=1794460189&amp;sprefix=chargepoint%2Bhome%2Bflex%2Bnacs%2Caps%2C239&amp;sr=8-2-spons&amp;sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&amp;th=1&amp;linkCode=ll2&amp;tag=frunkfob-20&amp;linkId=70992fdaccd123a7c3a628f39ab086d3&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
+        <div><span class="tier">Premium pick</span><h3>Lectron Nexus Level 2 charger (Tesla plug)</h3><p class="who">Suits a Tesla-plug (NACS) car and a hardwired install</p><p class="why">The maker says up to 48 A when hardwired, with a 23 ft cable and a plug holder, and says it's UL 2594 listed.</p><p class="give"><b>Trade-off:</b> It's hardwired only, and it's a newer listing, so fewer owners have reviewed it so far.</p><p class="skip"><b>Skip it if</b> your car has a J1772 port.</p></div>
+        <div class="buy"><a class="btn" aria-label="Check today's price: Lectron Nexus Level 2 charger (Tesla plug) (paid link)" href="https://www.amazon.com/Lectron-Certified-Charging-Hardwired-Compatible/dp/B0GVSFPHMG?crid=1YRK9LSAF3INB&amp;dib=eyJ2IjoiMSJ9.l2KGUFNdDmnjQlzsivUMvInejFrRcZTrb6sDG5FySw-cWz54IbKSI44k3DMJucFoKHwY6YA6dvn7Zme32-24sX22GILyDz423iFwkBRuMZ2PF0OOpNSqadq0WnRzxrdso4s_Z06wC9bNrmkYzVT4qB1FeBb0nKiV9nFNU5he_P2yTglgwQpTEwdBSra1ILym_eZ4cZh7WlU9Mgt3WeS73kAkTi43OmR2zmhrfAsYcDwrCEnT9SgxLwipZU9IJSNqL23l-d6EH2UsS3tezJd2zELDpaZOrqL2FzM_Pdn4Tsg.AIkxIqsYhEfBkrzyA1pMlw8ssXEYJmbQWVtQLigyREE&amp;dib_tag=se&amp;keywords=ChargePoint%2BHome%2BFlex%2BNACS&amp;qid=1794460189&amp;sprefix=chargepoint%2Bhome%2Bflex%2Bnacs%2Caps%2C239&amp;sr=8-2-spons&amp;sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&amp;th=1&amp;linkCode=ll2&amp;tag=frunkfob-20&amp;linkId=70992fdaccd123a7c3a628f39ab086d3&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
       </li>
+      <li class="still">Budget home charger: nothing has passed our bar here yet, so the slot stays empty.</li>
       <li class="pick rise" id="pk-holster" data-plug="j1772">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="8" y="10" width="18" height="24" rx="3" fill="#c6f24e"/><circle cx="17" cy="22" r="5" fill="#212427"/><path d="M36 10v20c0 6 8 6 8 0" fill="none" stroke="#c6f24e" stroke-width="3"/></svg></div>
-        <div><span class="tier">Budget pick</span><h3>Lectron holster dock and J-hook</h3><p class="who">Suits a J1772 home charger whose plug lives on the floor</p><p class="why">The maker says it gets the plug off the floor and gives the coil a hook. Trade-off: it fits J1772 plugs only, and it screws to the wall.</p></div>
-        <div class="buy"><a class="btn" href="https://www.amazon.com/dp/B07FC9M4YF?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
+        <div><span class="tier">Budget pick</span><h3>Lectron holster dock and J-hook</h3><p class="who">Suits a J1772 home charger whose plug lives on the floor</p><p class="why">The maker says it gets the plug off the floor and gives the coil a hook.</p><p class="give"><b>Trade-off:</b> It fits J1772 plugs only, and it screws to the wall.</p><p class="skip"><b>Skip it if</b> your charger has a Tesla plug.</p></div>
+        <div class="buy"><a class="btn" aria-label="Check today's price: Lectron holster dock and J-hook (paid link)" href="https://www.amazon.com/dp/B07FC9M4YF?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
       </li>
       <li class="pick rise" id="pk-tesla-holder" data-plug="nacs">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="10" y="10" width="22" height="30" fill="#c6f24e"/><path d="M15 20c0-3 3-5 6-5s6 2 6 5v6c0 3-3 5-6 5s-6-2-6-5z" fill="#212427"/><rect x="36" y="14" width="6" height="22" fill="#c6f24e"/></svg></div>
-        <div><span class="tier">Budget pick</span><h3>Flush-mount Tesla-plug wall holder</h3><p class="who">Suits a Tesla wall charger whose plug lives on the floor</p><p class="why">Does the same job for the NACS connector on a Tesla wall charger. Trade-off: it fits the Tesla plug only, and it screws to the wall.</p></div>
-        <div class="buy"><a class="btn" href="https://www.amazon.com/dp/B0DSJ38MCC?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
+        <div><span class="tier">Budget pick</span><h3>Flush-mount Tesla-plug wall holder</h3><p class="who">Suits a Tesla wall charger whose plug lives on the floor</p><p class="why">Does the same job for the NACS connector on a Tesla wall charger.</p><p class="give"><b>Trade-off:</b> It fits the Tesla plug only, and it screws to the wall.</p><p class="skip"><b>Skip it if</b> your charger has a J1772 plug.</p></div>
+        <div class="buy"><a class="btn" aria-label="Check today's price: Flush-mount Tesla-plug wall holder (paid link)" href="https://www.amazon.com/dp/B0DSJ38MCC?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
       </li>
-      <li class="still">Budget home charger: nothing has passed our bar here yet, so the slot stays empty.</li>
     </ul>
     <figure class="rise"><img src="../assets/home-charge.jpg" alt="A blue electric car charging from a wall charger on a house beside the garage" loading="lazy" style="object-position:72% 50%"><figcaption>Charging at home. Stock photo. Not one of the picks.</figcaption></figure>
   </div>
@@ -376,20 +378,20 @@ section.road{background:var(--bg)!important;color:var(--ink)!important;border-to
     <ul class="picks">
       <li class="pick rise" id="pk-nacs-j1772" data-plug="j1772">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="6" y="18" width="20" height="16" rx="8" fill="#c6f24e"/><rect x="26" y="20" width="8" height="12" fill="#c6f24e"/><circle cx="40" cy="26" r="9" fill="none" stroke="#c6f24e" stroke-width="3"/><circle cx="37" cy="24" r="1.6" fill="#c6f24e"/><circle cx="43" cy="24" r="1.6" fill="#c6f24e"/><circle cx="40" cy="29" r="1.4" fill="#c6f24e"/></svg></div>
-        <div><span class="tier">Premium pick</span><h3>Lectron NACS-to-J1772 adapter</h3><p class="who">Suits a non-Tesla EV driver who wants Tesla-plug destination chargers on road trips</p><p class="why">Lets a J1772 car use Tesla-plug AC chargers at destinations and homes. Lectron says it is UL 2252 listed. Trade-off: Superchargers need a different adapter. Skip it if you mostly fast-charge.</p></div>
-        <div class="buy"><a class="btn" href="https://www.amazon.com/dp/B0FQP87YDG?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
+        <div><span class="tier">Premium pick</span><h3>Lectron NACS-to-J1772 adapter</h3><p class="who">Suits a non-Tesla EV driver who wants Tesla-plug destination chargers on road trips</p><p class="why">Lets a J1772 car use Tesla-plug AC chargers at destinations and homes. Lectron says it is UL 2252 listed.</p><p class="give"><b>Trade-off:</b> Superchargers need a different adapter.</p><p class="skip"><b>Skip it if</b> you mostly fast-charge.</p></div>
+        <div class="buy"><a class="btn" aria-label="Check today's price: Lectron NACS-to-J1772 adapter (paid link)" href="https://www.amazon.com/dp/B0FQP87YDG?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
       </li>
       <li class="pick rise" id="pk-j1772-tesla" data-plug="nacs">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><circle cx="13" cy="26" r="9" fill="none" stroke="#c6f24e" stroke-width="3"/><rect x="22" y="22" width="8" height="8" fill="#c6f24e"/><path d="M30 18h10c4 0 6 3 6 8s-2 8-6 8H30z" fill="#c6f24e"/></svg></div>
-        <div><span class="tier">Mid-range pick</span><h3>Lectron J1772-to-Tesla adapter</h3><p class="who">Suits a Tesla owner who uses public J1772 stations now and then</p><p class="why">Lets a Tesla use public J1772 stations. Lectron says it is UL 2252 listed. Trade-off: it works on slower Level 2 (AC) stations only.</p></div>
-        <div class="buy"><a class="btn" href="https://www.amazon.com/dp/B0DFH43NYN?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
-      </li>
-      <li class="pick rise" id="pk-inflator" data-plug="all">
-        <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="8" y="20" width="28" height="20" rx="3" fill="#c6f24e"/><circle cx="22" cy="30" r="6" fill="#17191b"/><path d="M22 30l3-4" stroke="#c6f24e" stroke-width="2"/><path d="M36 26c8 0 8-14 0-14" fill="none" stroke="#c6f24e" stroke-width="3"/></svg></div>
-        <div><span class="any-tag">Good for any EV</span> <span class="tier">Budget pick</span><h3>AstroAI AIRUN H tire inflator</h3><p class="most-why">No charging here: it lives in the frunk until a cold morning drops your tire pressure.</p><p class="who">Suits any EV that came without a spare tire</p><p class="why">Check whether your EV has a spare. An inflator with auto-stop stops at the pressure you set. Trade-off: it tops up air for a soft tire. A puncture still needs a repair.</p></div>
-        <div class="buy"><a class="btn" href="https://www.amazon.com/dp/B08TWCMQ8D?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
+        <div><span class="tier">Mid-range pick</span><h3>Lectron J1772-to-Tesla adapter</h3><p class="who">Suits a Tesla owner who uses public J1772 stations now and then</p><p class="why">Lets a Tesla use public J1772 stations. Lectron says it is UL 2252 listed.</p><p class="give"><b>Trade-off:</b> It works on slower Level 2 (AC) stations only.</p><p class="skip"><b>Skip it if</b> you mostly use Superchargers.</p></div>
+        <div class="buy"><a class="btn" aria-label="Check today's price: Lectron J1772-to-Tesla adapter (paid link)" href="https://www.amazon.com/dp/B0DFH43NYN?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
       </li>
       <li class="still">Budget adapter: nothing has passed our bar here yet, so the slot stays empty.</li>
+      <li class="pick rise" id="pk-inflator" data-plug="all">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="8" y="20" width="28" height="20" rx="3" fill="#c6f24e"/><circle cx="22" cy="30" r="6" fill="#17191b"/><path d="M22 30l3-4" stroke="#c6f24e" stroke-width="2"/><path d="M36 26c8 0 8-14 0-14" fill="none" stroke="#c6f24e" stroke-width="3"/></svg></div>
+        <div><span class="any-tag">Good for any EV</span> <span class="tier">Budget pick</span><h3>AstroAI AIRUN H tire inflator</h3><p class="most-why">No charging here: it lives in the frunk until a cold morning drops your tire pressure.</p><p class="who">Suits any EV that came without a spare tire</p><p class="why">Check whether your EV has a spare. The maker says it stops at the pressure you set.</p><p class="give"><b>Trade-off:</b> It tops up air for a soft tire. A puncture still needs a repair.</p><p class="skip"><b>Skip it if</b> your EV already came with an inflator.</p></div>
+        <div class="buy"><a class="btn" aria-label="Check today's price: AstroAI AIRUN H tire inflator (paid link)" href="https://www.amazon.com/dp/B08TWCMQ8D?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
+      </li>
     </ul>
   </div>
 </section>
@@ -412,6 +414,7 @@ section.road{background:var(--bg)!important;color:var(--ink)!important;border-to
   <ul>
     <li class="rise"><strong>Plug first.</strong>We sort by the plug on your car, using each maker's own specs.</li>
     <li class="rise"><strong>Safety listing.</strong>An adapter carries your full charging current, so we only list ones whose maker says they're UL 2252 listed.</li>
+    <li class="rise"><strong>Owner complaints.</strong>We read the 1- and 2-star reviews before a pick goes up.</li>
     <li class="rise"><strong>Ratings bar.</strong>4.5 stars or more from at least 150 ratings when we check. Two home chargers fall a little short, and their cards say so.</li>
     <li class="rise"><strong>Empty tiers.</strong>If nothing meets our bar in a tier, we leave it empty.</li>
   </ul>
