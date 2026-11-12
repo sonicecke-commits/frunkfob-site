@@ -277,7 +277,7 @@ section.road{background:var(--bg)!important;color:var(--ink)!important;border-to
 body{font-size:18px}
 .hero,.gh{background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px;background-position:-1px -1px}
 .hero h1,.gh h2,.close h2{font-weight:800;letter-spacing:-.045em}
-.hero .kicker,.tier,.most-tag,.paidtag,.count,.facts li,.split figcaption,.spec li,.pl-sub,footer .cols strong{font-family:var(--mono);letter-spacing:0}
+.hero .kicker,.tier,.most-tag,.count,.facts li,.split figcaption,.spec li,.pl-sub,footer .cols strong{font-family:var(--mono);letter-spacing:0}
 .hero .kicker{font-size:15px;text-transform:uppercase;color:var(--muted);font-weight:500}
 .tier,.most-tag{font-size:12px;font-weight:500;text-transform:uppercase;border-radius:3px;padding:4px 8px}
 .tier{background:transparent;color:inherit;border:1px solid currentColor;opacity:.85}
@@ -317,6 +317,20 @@ body{font-size:18px}
 .su-mid input:focus-visible,.su-mid button:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
 .hero .paid{font-size:16px}
 @media (max-width:860px){.start a,a.start{display:inline-flex;align-items:center;min-height:44px}}
+.pick .ver{grid-column:2;margin:8px 0 0;font-size:15px;color:var(--muted);max-width:62ch}
+.how ol li strong,.how ul li strong,.how li strong{color:var(--ink)!important}
+.start a{color:var(--ink);text-decoration-color:var(--lime);text-decoration-thickness:2px;text-underline-offset:4px}
+.gl-arm tbody tr,.gl-arm .gl-most{opacity:1!important}
+@media (min-width:1000px){.split figure,.home .split figure{order:2;margin-top:24px}}
+@media (max-width:640px){
+ .pick{display:flex!important;flex-direction:column;align-items:stretch}
+ .pick>div{display:contents}
+ .pick>*,.pick>div>*{order:1}
+ .pick .tier,.pick .most-tag{align-self:flex-start}
+ .pick .ic{order:0;width:44px;height:44px;margin-bottom:10px}.pick .ic svg{width:32px;height:32px}
+ .pick .buy{order:2;margin:12px 0 4px!important;flex-direction:row!important;align-items:center!important;gap:12px}
+ .pick .why,.pick .most-why,.pick .give,.pick .skip,.pick .ver{order:3}
+}
 </style>
 </head>
 <body>
@@ -333,7 +347,7 @@ body{font-size:18px}
     <p class="kicker">Charge smarter. Carry less.</p>
     <h1 id="h1"><span>The right charger or adapter for the plug on your car.</span></h1>
     <p class="lede rise">EV charging gear, sorted by the plug on your car and labelled budget, mid-range or premium. Each one says who it suits and its trade-off.</p>
-    <p class="paid rise"><strong>Paid links:</strong> As an Amazon Associate we earn from qualifying purchases. The commission doesn't decide what we list.</p>
+    <p class="paid rise"><strong>Paid links:</strong> As an Amazon Associate we earn from qualifying purchases. The commission doesn't decide what we list: we choose on plug fit, safety listing and ratings first (<a href="#how">how we pick</a>).</p>
     <p class="start rise"><a href="#most">See where we'd start</a></p>
     <form class="rise" id="top" onsubmit="return false">
       <fieldset class="picker">
@@ -388,8 +402,8 @@ body{font-size:18px}
     <ul class="picks">
       <li class="pick most rise" id="most" data-plug="all">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="12" y="6" width="22" height="30" rx="4" fill="#c6f24e"/><rect x="17" y="12" width="12" height="8" fill="#212427"/><path d="M23 36v6c0 4 3 4 6 4h10" fill="none" stroke="#c6f24e" stroke-width="3"/></svg></div>
-        <div><span class="most-tag">Our pick for most cars · Mid-range</span><h3>Emporia Level 2 charger</h3><ul class="spec" aria-label="Key specs"><li>48 A max</li><li>J1772 or NACS</li><li>App tracking</li></ul><p class="most-why"><b>Start here.</b> It comes in J1772 and Tesla-plug versions, so it suits either car. Most EV charging happens at home (<a href="https://afdc.energy.gov/fuels/electricity-charging-home" rel="noopener" target="_blank">US Department of Energy</a>).</p><p class="who">Suits a garage or driveway</p><p class="why">The maker says up to 48 A (less on a plug-in), and its app tracks the energy each charge uses.</p><p class="give"><b>Trade-off:</b> The full 48 A needs hardwiring on a 60 A circuit.</p><p class="skip"><b>Skip it if</b> you park on the street.</p></div>
-        <div class="buy"><a class="btn" aria-label="Check today's price: Emporia Level 2 charger (paid link)" href="https://www.amazon.com/dp/B0CKKPTDPK?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
+        <div><span class="most-tag">Our pick for most cars · Mid&#8209;range</span><h3>Emporia Level 2 charger</h3><ul class="spec" aria-label="Key specs"><li>48 A max</li><li>J1772 or NACS</li><li>App tracking</li></ul><p class="most-why"><b>Start here.</b> It comes in J1772 and Tesla-plug versions, so it suits either car. Most EV charging happens at home (<a href="https://afdc.energy.gov/fuels/electricity-charging-home" rel="noopener" target="_blank">US Department of Energy</a>).</p><p class="who">Suits a garage or driveway</p><p class="why">The maker says up to 48 A (less on a plug-in), and its app tracks the energy each charge uses.</p><p class="give"><b>Trade-off:</b> The full 48 A needs hardwiring on a 60 A circuit.</p><p class="skip"><b>Skip it if</b> you park on the street.</p></div>
+        <div class="buy"><a class="btn" aria-label="Check today's price: Emporia Level 2 charger (paid link)" href="https://www.amazon.com/dp/B0CKKPTDPK?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div><p class="ver">On the listing, choose the J1772 version for most non-Tesla cars or the Tesla-plug (NACS) version for a Tesla.</p>
       </li>
       <li class="pick rise" id="pk-autel" data-plug="j1772">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="12" y="6" width="22" height="30" rx="4" fill="#c6f24e"/><rect x="17" y="12" width="12" height="8" fill="#212427"/><circle cx="23" cy="28" r="2.5" fill="#212427"/><path d="M23 36v6c0 4 3 4 6 4h10" fill="none" stroke="#c6f24e" stroke-width="3"/></svg></div>
@@ -498,7 +512,7 @@ document.getElementById('npicks').textContent=picks.length;
 function apply(v){let n=0;picks.forEach(p=>{const on=v==='all'||p.dataset.plug==='all'||p.dataset.plug===v;p.classList.toggle('off',!on);p.setAttribute('aria-hidden',on?'false':'true');p.inert=!on;if(on)n++});
  count.textContent=v==='all'?n+' picks below.':'Showing the '+n+' picks that fit a '+(v==='nacs'?'Tesla-plug':'J1772')+' car.';}
 const glRows=[...document.querySelectorAll('.gl tbody tr')];document.querySelectorAll('input[name=plug]').forEach(r=>r.addEventListener('change',()=>glRows.forEach(t=>t.classList.toggle('off',!(r.value==='all'||t.dataset.plug==='all'||t.dataset.plug===r.value)))));
-document.querySelectorAll('input[name=plug]').forEach(r=>r.addEventListener('change',()=>apply(r.value)));
+document.querySelectorAll('input[name=plug]').forEach(r=>r.addEventListener('change',()=>{apply(r.value);if(matchMedia('(max-width:860px)').matches){const g=document.getElementById('glance');if(g)g.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'})}}));
 const tpw=document.getElementById('tp-why');document.querySelectorAll('input[name=plug]').forEach(r=>r.addEventListener('change',()=>{tpw.textContent=r.value==='j1772'?'For your car, choose the J1772 version.':r.value==='nacs'?'For your car, choose the Tesla-plug (NACS) version.':'Comes in J1772 and Tesla-plug versions, so it suits either car.'}));
 </script>
 <script src="kit.js" data-gc="frunkfob" data-bar="Want a heads-up when a pick changes?" data-bar-btn="Email me" defer></script>
