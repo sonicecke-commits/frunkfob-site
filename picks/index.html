@@ -147,7 +147,9 @@ section.road{background:var(--bg)!important;color:var(--ink)!important;border-to
 .oneway{border-left-color:var(--lime)!important;background:var(--surface)!important}
 .road .most-tag,.road .any-tag{color:var(--ink)}
 .home .most-tag{background:var(--lime);color:var(--paper-ink)}
-.home .pick.most{box-shadow:inset 3px 0 0 var(--lime);padding-left:16px}@media (max-width:640px){.pick .buy{flex-direction:row;align-items:center;gap:10px;flex-wrap:wrap}}
+.home .pick.most{box-shadow:inset 3px 0 0 var(--lime);padding-left:16px}
+.pick .most-why{font-weight:400}.pick .most-why b{font-weight:700}
+.pick.most .buy{flex-wrap:nowrap}.paidtag{white-space:nowrap}@media (max-width:640px){.pick .buy{flex-direction:row;align-items:center;gap:10px;flex-wrap:wrap}}
 .most-tag{display:inline-block;margin:0 6px 8px 0;padding:3px 10px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.02em;background:var(--paper-ink);color:var(--lime)}
 .most-why{font-weight:600;margin:6px 0}
 .start{margin:0 0 18px}.start a{color:var(--lime);font-weight:600}
@@ -260,7 +262,7 @@ section.road{background:var(--bg)!important;color:var(--ink)!important;border-to
 <body>
 <header class="bar">
   <a class="mark" href="../">Frunk&amp;Fob</a>
-  <nav aria-label="Sections"><a href="#glance">At a glance</a><a href="#road">On the road</a><a href="#home">At home</a><a href="#how">How we pick</a></nav>
+  <nav aria-label="Sections"><a href="#glance">At a glance</a><a href="#home">At home</a><a href="#road">On the road</a><a href="#how">How we pick</a></nav>
   <a class="act" href="#road">See the picks</a>
 </header>
 
@@ -323,7 +325,7 @@ section.road{background:var(--bg)!important;color:var(--ink)!important;border-to
     <ul class="picks">
       <li class="pick most rise" id="most" data-plug="all">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="12" y="6" width="22" height="30" rx="4" fill="#c6f24e"/><rect x="17" y="12" width="12" height="8" fill="#212427"/><path d="M23 36v6c0 4 3 4 6 4h10" fill="none" stroke="#c6f24e" stroke-width="3"/></svg></div>
-        <div><span class="most-tag">Our pick for most cars</span> <span class="tier">Mid-range pick</span><h3>Emporia Level 2 charger</h3><p class="most-why">Not sure where to start? Start here. It comes in J1772 and Tesla-plug versions, so it suits either car, and home is where most EV owners do most of their charging (<a href="https://afdc.energy.gov/fuels/electricity-charging-home" rel="noopener" target="_blank">US Department of Energy</a>).</p><p class="who">Suits a garage or driveway</p><p class="why">The maker says up to 48 A when hardwired on a 60 A circuit (less on a plug-in). Its app tracks the energy each charge uses.</p></div>
+        <div><span class="most-tag">Our pick for most cars</span> <span class="tier">Mid-range pick</span><h3>Emporia Level 2 charger</h3><p class="most-why"><b>Not sure where to start? Start here.</b> It comes in J1772 and Tesla-plug versions, so it suits either car, and home is where most EV owners do most of their charging (<a href="https://afdc.energy.gov/fuels/electricity-charging-home" rel="noopener" target="_blank">US Department of Energy</a>).</p><p class="who">Suits a garage or driveway</p><p class="why">The maker says up to 48 A when hardwired on a 60 A circuit (less on a plug-in). Its app tracks the energy each charge uses. Choose the J1772 or Tesla-plug version for your car when you check the price.</p></div>
         <div class="buy"><a class="btn" href="https://www.amazon.com/dp/B0CKKPTDPK?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
       </li>
       <li class="pick rise" id="pk-autel" data-plug="j1772">
@@ -347,7 +349,7 @@ section.road{background:var(--bg)!important;color:var(--ink)!important;border-to
         <div class="buy"><a class="btn" href="https://www.amazon.com/dp/B0DSJ38MCC?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
       </li>
     </ul>
-    <figure class="rise"><img src="../assets/cable.jpg" alt="An EV charging cable plugged in at a home" loading="lazy"><figcaption>A charging cable at home</figcaption></figure>
+    <figure class="rise"><img src="../assets/home-charge.jpg" alt="A blue electric car charging from a wall charger on a house beside the garage" loading="lazy" style="object-position:72% 50%"><figcaption>Charging at home. Stock photo. Not one of the picks.</figcaption></figure>
   </div>
 </section>
 
@@ -413,7 +415,7 @@ section.road{background:var(--bg)!important;color:var(--ink)!important;border-to
   <div class="cols">
     <p><strong>Paid links</strong>Frunk &amp; Fob earns a commission on purchases made through this page. As an Amazon Associate we earn from qualifying purchases. Amazon and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.</p>
     <p><strong>About this page</strong>Product names belong to their makers. Neither Amazon nor any maker endorses this page. <a href="../privacy.html">Privacy notice</a>.</p>
-    <p><strong>Pictures</strong>"SAE J1772" by Michael Hicks, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>; "Gipe-Nies home charge cable 02" by Paul Gipe, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>; <a href="https://commons.wikimedia.org/wiki/File:LEVA_charging_station_at_night_in_Tuntorp_2.jpg">“LEVA charging station at night in Tuntorp 2”</a> by W.carter, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>; all via Wikimedia Commons. Top photo: <a href="https://www.pexels.com/photo/electric-vehicle-charging-close-up-in-sunlight-37576219/">“Electric Vehicle Charging Close-Up in Sunlight”</a>, Pexels licence. Icons drawn for this page.</p>
+    <p><strong>Pictures</strong>"SAE J1772" by Michael Hicks, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>; <a href="https://commons.wikimedia.org/wiki/File:LEVA_charging_station_at_night_in_Tuntorp_2.jpg">“LEVA charging station at night in Tuntorp 2”</a> by W.carter, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>; all via Wikimedia Commons. Photos from Pexels under the Pexels licence: <a href="https://www.pexels.com/photo/electric-vehicle-charging-close-up-in-sunlight-37576219/">“Electric Vehicle Charging Close-Up in Sunlight”</a> and <a href="https://www.pexels.com/photo/custom-finish-ev-charger-in-a-home-garage-showcasing-our-wide-range-of-colour-options-27355835/">a home charger in use</a>. Icons drawn for this page.</p>
   </div>
 </footer>
 
