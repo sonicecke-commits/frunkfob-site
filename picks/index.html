@@ -359,6 +359,17 @@ body{font-size:18px}
  .pick.most .buy{flex-direction:row;align-items:center}
  .road .still{justify-content:center;text-align:center}
 }
+/* more photos (Sam 11-12): two photos per section row, one in How we pick's empty cell; card grid unchanged */
+.split .photos{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-self:start}
+.split .photos figure{position:static!important;margin:0!important;order:0!important}
+@media (min-width:861px) and (max-width:999px){.split .photos{grid-template-columns:1fr;position:sticky;top:24px}.split .photos figure img{aspect-ratio:4/3}}
+@media (max-width:860px){.split .photos figure img{aspect-ratio:4/3}.home .split .photos{order:-1}}
+@media (max-width:640px){.split .photos,.home .split .photos{order:2}}
+@media (min-width:1000px){.split .photos{order:2;margin-top:24px}.road .split .photos{grid-template-columns:5fr 7fr}.home .split .photos{grid-template-columns:7fr 5fr}}
+.how li.how-photo{padding-left:0;max-width:none}.how li.how-photo::before{display:none}
+.how-photo figure{margin:0}.how-photo img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:4px}
+@media (max-width:640px){.split .photos{gap:10px}.split .photos figcaption{font-size:12px;line-height:1.4}}
+.how-photo figcaption{font-family:var(--mono);font-size:13px;color:var(--muted);margin-top:8px}
 /* minimal motion: once, transform only, text always readable */
 @media (prefers-reduced-motion:no-preference){
  .js .hero .kicker,.js .hero h1,.js .hero .lede{animation:mrise .7s cubic-bezier(.2,.8,.2,1) both}
@@ -481,7 +492,7 @@ body{font-size:18px}
         <div class="buy"><a class="btn" aria-label="Check today's price: Flush-mount Tesla-plug wall holder (paid link)" href="https://www.amazon.com/dp/B0DSJ38MCC?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
       </li>
     </ul>
-    <figure class="rise"><img src="../assets/home-charge.jpg" alt="A blue electric car charging from a wall charger on a house beside the garage" loading="lazy" style="object-position:72% 50%"><figcaption>Charging at home. Stock photo. Not one of the picks.</figcaption></figure>
+    <div class="photos"><figure class="rise"><img src="../assets/home-charge.jpg" alt="A blue electric car charging from a wall charger on a house beside the garage" loading="lazy" style="object-position:72% 50%"><figcaption>Charging at home. Stock photo. Not one of the picks.</figcaption></figure><figure class="rise"><img src="../assets/tesla-charging.jpg" alt="A grey Tesla parked nose-out with its charging cable plugged in at the back" loading="lazy" style="object-position:50% 60%"><figcaption>A Tesla-plug car charging. Stock photo. Not one of the picks.</figcaption></figure></div>
   </div>
 </section>
 
@@ -489,7 +500,7 @@ body{font-size:18px}
   <div class="gh"><h2 id="h-road" class="rise">On the road</h2><p class="rise">Adapters for when the station's plug isn't yours, and air for when the tire's soft.</p></div>
   <p class="oneway rise"><strong>Which way does an adapter work?</strong> One way only. Match the plug on the charger to the plug on your car before you buy.</p>
   <div class="split">
-    <figure class="rise"><img src="../assets/plug.jpg" alt="A J1772 charging plug on a public charger" loading="lazy"><figcaption>A J1772 plug on a public charger. Stock photo.</figcaption></figure>
+    <div class="photos"><figure class="rise"><img src="../assets/plug.jpg" alt="A J1772 charging plug on a public charger" loading="lazy"><figcaption>A J1772 plug on a public charger. Stock photo.</figcaption></figure><figure class="rise"><img src="../assets/supercharger-row.jpg" alt="A row of Tesla Supercharger posts beside parked cars" loading="lazy" style="object-position:60% 50%"><figcaption>Tesla Superchargers. Stock photo. Not one of the picks.</figcaption></figure></div>
     <ul class="picks">
       <li class="pick rise" id="pk-nacs-j1772" data-plug="j1772">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="6" y="18" width="20" height="16" rx="8" fill="#c6f24e"/><rect x="26" y="20" width="8" height="12" fill="#c6f24e"/><circle cx="40" cy="26" r="9" fill="none" stroke="#c6f24e" stroke-width="3"/><circle cx="37" cy="24" r="1.6" fill="#c6f24e"/><circle cx="43" cy="24" r="1.6" fill="#c6f24e"/><circle cx="40" cy="29" r="1.4" fill="#c6f24e"/></svg></div>
@@ -532,6 +543,7 @@ body{font-size:18px}
     <li class="rise"><strong>Owner complaints.</strong>We read the 1- and 2-star reviews before a pick goes up.</li>
     <li class="rise"><strong>Ratings bar.</strong>4.5 stars or more from at least 150 ratings when we check. Two home chargers fall a little short, and their cards say so.</li>
     <li class="rise"><strong>Empty tiers.</strong>If nothing meets our bar in a tier, we leave it empty.</li>
+    <li class="how-photo rise" aria-hidden="true"><figure><img src="../assets/public-chargers.jpg" alt="" loading="lazy"><figcaption>Public chargers. Stock photo.</figcaption></figure></li>
   </ul>
 </section>
 <section class="close" aria-labelledby="h-close">
@@ -550,7 +562,7 @@ body{font-size:18px}
   <div class="cols">
     <p><strong>Paid links</strong>Frunk &amp; Fob earns a commission on purchases made through this page, at no extra cost to you. Picks are chosen on plug fit, safety listing and ratings first; the commission doesn't decide what we list. As an Amazon Associate we earn from qualifying purchases. Amazon and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.</p>
     <p><strong>About this page</strong>Frunk &amp; Fob is a small independent picks site for EV owners. Contact: <a href="mailto:hello@frunkandfob.com">hello@frunkandfob.com</a>. Product names belong to their makers. Neither Amazon nor any maker endorses this page. <a href="../privacy.html">Privacy notice</a>.</p>
-    <p><strong>Pictures</strong>“SAE J1772” by Michael Hicks, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>; <a href="https://commons.wikimedia.org/wiki/File:LEVA_charging_station_at_night_in_Tuntorp_2.jpg">“LEVA charging station at night in Tuntorp 2”</a> by W.carter, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>; all via Wikimedia Commons. Photos from Pexels under the Pexels licence: <a href="https://www.pexels.com/photo/electric-vehicle-charging-close-up-in-sunlight-37576219/">“Electric Vehicle Charging Close-Up in Sunlight”</a> and <a href="https://www.pexels.com/photo/custom-finish-ev-charger-in-a-home-garage-showcasing-our-wide-range-of-colour-options-27355835/">a home charger in use</a>. Icons drawn for this page.</p>
+    <p><strong>Pictures</strong>“SAE J1772” by Michael Hicks, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>; <a href="https://commons.wikimedia.org/wiki/File:LEVA_charging_station_at_night_in_Tuntorp_2.jpg">“LEVA charging station at night in Tuntorp 2”</a> by W.carter, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>; all via Wikimedia Commons. Photos from Pexels under the Pexels licence: <a href="https://www.pexels.com/photo/electric-vehicle-charging-close-up-in-sunlight-37576219/">“Electric Vehicle Charging Close-Up in Sunlight”</a> and <a href="https://www.pexels.com/photo/custom-finish-ev-charger-in-a-home-garage-showcasing-our-wide-range-of-colour-options-27355835/">a home charger in use</a>. Public-domain (CC0) photos via rawpixel: <a href="https://www.rawpixel.com/image/6113478/tesla-car-location-unknown-date-unknown">a Tesla charging</a>, <a href="https://www.rawpixel.com/image/6111457/photo-image-public-domain-free-electric-car">Tesla Superchargers</a> and <a href="https://www.rawpixel.com/image/6020562/photo-image-public-domain-space-free">a public charging station</a>. Icons drawn for this page.</p>
   </div>
 </footer>
 
