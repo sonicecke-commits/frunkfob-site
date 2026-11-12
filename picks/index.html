@@ -276,10 +276,9 @@ section.road{background:var(--bg)!important;color:var(--ink)!important;border-to
 :root{--mono:"JetBrains Mono",ui-monospace,monospace;--line:#2c3034;--grid:#222528}
 body{font-size:18px}
 .hero,.gh{background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px;background-position:-1px -1px}
-.road .gh{background-image:linear-gradient(#c9ccc6 1px,transparent 1px),linear-gradient(90deg,#c9ccc6 1px,transparent 1px)}
 .hero h1,.gh h2,.close h2{font-weight:800;letter-spacing:-.045em}
 .hero .kicker,.tier,.most-tag,.paidtag,.count,.facts li,.split figcaption,.spec li,.pl-sub,footer .cols strong{font-family:var(--mono);letter-spacing:0}
-.hero .kicker{font-size:15px;text-transform:uppercase;color:var(--lime);font-weight:500}
+.hero .kicker{font-size:15px;text-transform:uppercase;color:var(--muted);font-weight:500}
 .tier,.most-tag{font-size:12px;font-weight:500;text-transform:uppercase;border-radius:3px;padding:4px 8px}
 .tier{background:transparent;color:inherit;border:1px solid currentColor;opacity:.85}
 .bar .act{background:transparent;color:var(--ink);border:1px solid var(--lime)}
@@ -289,7 +288,6 @@ body{font-size:18px}
 .home .pick .ic svg *,.how strong{color:var(--ink)}
 .spec{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;padding:0;list-style:none}
 .spec li{font-size:13px;line-height:1;padding:6px 8px;border:1px solid var(--line);border-radius:3px;color:var(--muted)}
-.road .spec li{border-color:#b9bcb6;color:var(--paper-muted)}
 /* picker: plug faces */
 .plugs{gap:12px}
 .plugs label{border-radius:10px;padding:12px 18px 12px 12px;border:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-items:center}
@@ -302,19 +300,23 @@ body{font-size:18px}
 @media (min-width:1000px){
  .split,.home .split{grid-template-columns:1fr}
  .split figure,.home .split figure{position:relative;top:0;order:-1}
- .split figure img{aspect-ratio:21/8}
+ .split figure img{aspect-ratio:auto;height:240px}
  .picks{display:grid;grid-template-columns:1fr 1fr;gap:16px}
  .pick+.pick{margin-top:0}
  .pick{grid-template-columns:56px 1fr;padding:24px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.015)}
- .road .pick{border-color:#bfc2bc;background:rgba(255,255,255,.25)}
  .pick .ic{width:56px;height:56px}.pick .ic svg{width:40px;height:40px}
  .pick .buy{grid-column:2;grid-row:auto;align-items:center;flex-direction:row;gap:12px;margin-top:14px}
  .pick.most{grid-column:1/-1;border-color:var(--lime);box-shadow:inset 0 0 0 1px var(--lime)}
- .road .pick.most{border-color:var(--paper-ink);box-shadow:inset 0 0 0 1px var(--paper-ink)}
  .still{grid-column:1/-1;margin:0}
 }
 /* phone: headline before photo */
 @media (max-width:860px){.film{order:0;margin-top:8px}.hero{row-gap:20px}}
+.pick .why,.pick .most-why,.pick .who,.pick .give,.pick .skip{max-width:62ch}
+.gl .tier{border:0;text-transform:none;font-family:inherit;font-size:inherit;padding:0;opacity:1}
+.how h3,.how strong{color:var(--ink)}
+.su-mid input:focus-visible,.su-mid button:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
+.hero .paid{font-size:16px}
+@media (max-width:860px){.start a,a.start{display:inline-flex;align-items:center;min-height:44px}}
 </style>
 </head>
 <body>
@@ -396,7 +398,7 @@ body{font-size:18px}
       </li>
       <li class="pick rise" id="pk-nexus" data-plug="nacs">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="12" y="6" width="22" height="30" rx="4" fill="#c6f24e"/><rect x="17" y="12" width="12" height="8" fill="#212427"/><circle cx="23" cy="28" r="2.5" fill="#212427"/><path d="M23 36v6c0 4 3 4 6 4h10" fill="none" stroke="#c6f24e" stroke-width="3"/></svg></div>
-        <div><span class="tier">Premium pick</span><h3>Lectron Nexus Level 2 charger (Tesla plug)</h3><ul class="spec" aria-label="Key specs"><li>48 A</li><li>23 ft cable</li><li>UL 2594</li></ul><p class="who">Suits a Tesla-plug (NACS) car and a hardwired install</p><p class="why">The maker says up to 48 A when hardwired, with a 23 ft cable and a plug holder, and says it's UL 2594 listed.</p><p class="give"><b>Trade-off:</b> It's hardwired only, and it's a newer listing, so fewer owners have reviewed it so far.</p><p class="skip"><b>Skip it if</b> your car has a J1772 port.</p></div>
+        <div><span class="tier">Premium pick</span><h3>Lectron Nexus Level 2 charger (Tesla plug)</h3><ul class="spec" aria-label="Key specs"><li>48 A</li><li>23 ft cable</li><li>UL 2594</li></ul><p class="who">Suits a Tesla-plug (NACS) car and a hardwired install</p><p class="why">The maker says up to 48 A when hardwired, with a 23 ft cable and a plug holder, and says it's UL 2594 listed.</p><p class="give"><b>Trade-off:</b> It's hardwired only, and it's a newer listing with fewer than our usual 150 ratings so far.</p><p class="skip"><b>Skip it if</b> your car has a J1772 port.</p></div>
         <div class="buy"><a class="btn" aria-label="Check today's price: Lectron Nexus Level 2 charger (Tesla plug) (paid link)" href="https://www.amazon.com/Lectron-Certified-Charging-Hardwired-Compatible/dp/B0GVSFPHMG?crid=1YRK9LSAF3INB&amp;dib=eyJ2IjoiMSJ9.l2KGUFNdDmnjQlzsivUMvInejFrRcZTrb6sDG5FySw-cWz54IbKSI44k3DMJucFoKHwY6YA6dvn7Zme32-24sX22GILyDz423iFwkBRuMZ2PF0OOpNSqadq0WnRzxrdso4s_Z06wC9bNrmkYzVT4qB1FeBb0nKiV9nFNU5he_P2yTglgwQpTEwdBSra1ILym_eZ4cZh7WlU9Mgt3WeS73kAkTi43OmR2zmhrfAsYcDwrCEnT9SgxLwipZU9IJSNqL23l-d6EH2UsS3tezJd2zELDpaZOrqL2FzM_Pdn4Tsg.AIkxIqsYhEfBkrzyA1pMlw8ssXEYJmbQWVtQLigyREE&amp;dib_tag=se&amp;keywords=ChargePoint%2BHome%2BFlex%2BNACS&amp;qid=1794460189&amp;sprefix=chargepoint%2Bhome%2Bflex%2Bnacs%2Caps%2C239&amp;sr=8-2-spons&amp;sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&amp;th=1&amp;linkCode=ll2&amp;tag=frunkfob-20&amp;linkId=70992fdaccd123a7c3a628f39ab086d3&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
       </li>
       <li class="still">Budget home charger: nothing has passed our bar here yet, so the slot stays empty.</li>
@@ -407,7 +409,7 @@ body{font-size:18px}
       </li>
       <li class="pick rise" id="pk-tesla-holder" data-plug="nacs">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="10" y="10" width="22" height="30" fill="#c6f24e"/><path d="M15 20c0-3 3-5 6-5s6 2 6 5v6c0 3-3 5-6 5s-6-2-6-5z" fill="#212427"/><rect x="36" y="14" width="6" height="22" fill="#c6f24e"/></svg></div>
-        <div><span class="tier">Budget pick</span><h3>Flush-mount Tesla-plug wall holder</h3><ul class="spec" aria-label="Key specs"><li>NACS</li><li>Wall mount</li></ul><p class="who">Suits a Tesla wall charger whose plug lives on the floor</p><p class="why">Does the same job for the NACS connector on a Tesla wall charger.</p><p class="give"><b>Trade-off:</b> It fits the Tesla plug only, and it screws to the wall.</p><p class="skip"><b>Skip it if</b> your charger has a J1772 plug.</p></div>
+        <div><span class="tier">Budget pick</span><h3>Flush-mount Tesla-plug wall holder</h3><ul class="spec" aria-label="Key specs"><li>NACS</li><li>Wall mount</li></ul><p class="who">Suits a Tesla wall charger whose plug lives on the floor</p><p class="why">Gets the Tesla plug off the floor and onto the wall, the same job the holster does for J1772.</p><p class="give"><b>Trade-off:</b> It fits the Tesla plug only, and it screws to the wall.</p><p class="skip"><b>Skip it if</b> your charger has a J1772 plug.</p></div>
         <div class="buy"><a class="btn" aria-label="Check today's price: Flush-mount Tesla-plug wall holder (paid link)" href="https://www.amazon.com/dp/B0DSJ38MCC?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
       </li>
     </ul>
@@ -493,7 +495,7 @@ addEventListener('scroll',revealPast,{passive:true});setTimeout(revealPast,400);
 requestAnimationFrame(()=>document.querySelector('.hero h1').classList.add('in'));
 const picks=[...document.querySelectorAll('.pick')],count=document.getElementById('count');
 document.getElementById('npicks').textContent=picks.length;
-function apply(v){let n=0;picks.forEach(p=>{const on=v==='all'||p.dataset.plug==='all'||p.dataset.plug===v;p.classList.toggle('off',!on);p.setAttribute('aria-hidden',on?'false':'true');if(on)n++});
+function apply(v){let n=0;picks.forEach(p=>{const on=v==='all'||p.dataset.plug==='all'||p.dataset.plug===v;p.classList.toggle('off',!on);p.setAttribute('aria-hidden',on?'false':'true');p.inert=!on;if(on)n++});
  count.textContent=v==='all'?n+' picks below.':'Showing the '+n+' picks that fit a '+(v==='nacs'?'Tesla-plug':'J1772')+' car.';}
 const glRows=[...document.querySelectorAll('.gl tbody tr')];document.querySelectorAll('input[name=plug]').forEach(r=>r.addEventListener('change',()=>glRows.forEach(t=>t.classList.toggle('off',!(r.value==='all'||t.dataset.plug==='all'||t.dataset.plug===r.value)))));
 document.querySelectorAll('input[name=plug]').forEach(r=>r.addEventListener('change',()=>apply(r.value)));
