@@ -24,15 +24,30 @@ img,video{display:block;max-width:100%}
 .bar .act:hover{transform:translateY(-2px)}
 @media (max-width:760px){.bar nav{display:none}.bar .act{margin-left:auto}}
 /* hero */
-.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(24px,4vw,64px);align-items:end;padding:clamp(24px,5vw,72px) var(--m) clamp(64px,8vw,120px)}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(24px,4vw,64px);align-items:stretch;padding:clamp(24px,5vw,72px) var(--m) clamp(64px,8vw,120px)}
 .hero h1{font-size:clamp(52px,8.4vw,132px);line-height:.92;letter-spacing:-.045em;font-weight:700;margin:0 0 28px}
 .hero h1 span{display:block}
 .hero .lede{font-size:clamp(19px,1.6vw,23px);max-width:34ch;margin:0 0 18px}
 .hero .paid{max-width:46ch;margin:0 0 36px;color:var(--ink);font-size:16px;background:var(--surface);padding:14px 16px;border-left:4px solid var(--lime)}
-.film{position:relative;aspect-ratio:4/5;overflow:hidden;background:#000}
-.film video,.film img{width:100%;height:100%;object-fit:cover}
-.film figcaption{position:absolute;left:14px;bottom:12px;font-size:13px;color:#fff;background:rgba(0,0,0,.55);padding:4px 8px}
-@media (max-width:860px){.hero{grid-template-columns:1fr}.film{aspect-ratio:4/3;order:-1;margin-inline:calc(var(--m)*-1)}}
+.film{position:relative;margin:0;min-height:560px;overflow:hidden;background:#000;border-radius:4px}
+.film video,.film img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.film::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,11,12,.55) 0%,rgba(10,11,12,0) 38%,rgba(10,11,12,0) 70%,rgba(10,11,12,.6) 100%);pointer-events:none}
+.film figcaption{position:absolute;z-index:2;left:14px;bottom:12px;font-size:13px;color:#fff;background:rgba(0,0,0,.55);padding:4px 8px}
+/* top-pick card over the film: fills the top right on first load */
+.toppick{position:absolute;z-index:2;top:clamp(16px,2vw,28px);left:clamp(16px,2vw,28px);right:clamp(16px,2vw,28px);display:grid;grid-template-columns:64px 1fr;gap:6px 16px;align-items:center;max-width:440px;padding:18px 20px;background:rgba(23,25,27,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(198,242,78,.35);border-radius:14px;color:var(--ink);text-decoration:none;transition:transform .25s,border-color .25s}
+.toppick:hover{transform:translateY(-3px);border-color:var(--lime)}
+.toppick:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+.toppick .tp-ic{grid-row:1/span 3;width:64px;height:64px;border-radius:10px;background:var(--bg);display:grid;place-items:center}
+.toppick .tp-ic svg{width:46px;height:46px}
+.toppick .most-tag{justify-self:start;margin:0;background:var(--lime);color:var(--paper-ink)}
+.toppick strong{font-size:clamp(20px,1.7vw,24px);line-height:1.15;letter-spacing:-.02em}
+.toppick .tp-why{font-size:15px;line-height:1.4;color:var(--muted)}
+.toppick .tp-go{grid-column:1/-1;margin-top:10px;justify-self:start;background:var(--lime);color:var(--paper-ink);font-weight:600;font-size:16px;padding:10px 16px;border-radius:999px}
+.facts{position:absolute;z-index:2;right:clamp(16px,2vw,28px);bottom:clamp(16px,2vw,28px);display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;margin:0;padding:0;list-style:none}
+.facts li{background:rgba(23,25,27,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-radius:999px;padding:8px 14px;font-size:14px;color:var(--ink)}
+.facts b{color:var(--lime);font-weight:700;margin-right:4px}
+@media (max-width:860px){.hero{grid-template-columns:1fr}.film{min-height:0;aspect-ratio:4/3;order:-1;margin-inline:calc(var(--m)*-1);border-radius:0}.toppick,.facts{display:none}}
+@media (min-width:861px){.start{display:none}}
 /* picker */
 fieldset.picker{border:0;margin:0;padding:0}
 .picker legend{font-size:20px;font-weight:500;margin-bottom:12px;padding:0}
@@ -146,6 +161,14 @@ footer .cols strong{color:var(--ink);font-weight:500;display:block;margin-bottom
     <video autoplay muted loop playsinline poster="../assets/station-poster.jpg" aria-label="A car charging at a public station at night">
       <source src="../assets/station.mp4" type="video/mp4">
     </video>
+    <a class="toppick" href="#most">
+      <span class="tp-ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="8" y="20" width="28" height="20" rx="3" fill="#c6f24e"/><circle cx="22" cy="30" r="6" fill="#17191b"/><path d="M22 30l3-4" stroke="#c6f24e" stroke-width="2"/><path d="M36 26c8 0 8-14 0-14" fill="none" stroke="#c6f24e" stroke-width="3"/></svg></span>
+      <span class="most-tag">Our pick for most people</span>
+      <strong>AstroAI AIRUN H tire inflator</strong>
+      <span class="tp-why">Works with any car, so there's no plug to match.</span>
+      <span class="tp-go">Not sure? Start here &darr;</span>
+    </a>
+    <ul class="facts" aria-label="On this page"><li><b>6</b>picks</li><li><b>2</b>plug types</li><li><b>3</b>price tiers</li></ul>
     <figcaption>A public charging station at night</figcaption>
   </figure>
 </section>
