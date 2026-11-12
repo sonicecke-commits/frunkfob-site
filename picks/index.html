@@ -377,6 +377,13 @@ body{font-size:18px}
  .pick:hover .spec li{border-color:#4a5056}
 }
 @media (prefers-reduced-motion:reduce){.rise,.js .rise:not(.in),.hero h1 span,.js .hero h1:not(.in) span{transform:none!important;transition:none!important}.gh h2::after{display:none}}
+/* round-4 fixes */
+.gl .gl-most{white-space:normal}
+@media (max-width:700px){.gl tr{grid-template-columns:minmax(0,1fr) auto!important}}
+.film .kb{animation:none!important}
+.gl-arm .gl-m b,.gl-arm td a::after,.gl-arm .gl-most{transform:none!important;opacity:1!important;transition:none!important}
+.gl-arm tbody tr{transition-duration:.4s!important;transition-delay:calc(var(--i,0) * 50ms)!important}
+.split figure img{transition-duration:.6s!important}
 </style>
 <script>(function(){if(!('IntersectionObserver' in window)){document.documentElement.classList.add('no-io');return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -12% 0px'});document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.gh,.split figure').forEach(function(el){io.observe(el)})})})();</script>
 </head>
