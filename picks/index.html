@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>EV charging picks, sorted by your plug · Frunk &amp; Fob</title>
 <meta name="description" content="EV charging gear, sorted by the plug on your car: adapters, home chargers and cable storage. Paid links.">
-<link href="../assets/fonts/fonts.css" rel="stylesheet">
+<link rel="preload" href="../assets/fonts/hanken-grotesk-normal-400.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="../assets/fonts/jetbrains-mono-normal-500.woff2" as="font" type="font/woff2" crossorigin><link href="../assets/fonts/fonts.css" rel="stylesheet">
 <style>
 :root{--bg:#17191b;--surface:#212427;--ink:#eceeea;--muted:#a2a9ad;--paper:#d9dcd6;--paper-ink:#17191b;--paper-muted:#454b50;--lime:#c6f24e;--m:clamp(16px,3vw,40px)}
 *{box-sizing:border-box}
@@ -328,10 +328,57 @@ body{font-size:18px}
  .pick>*,.pick>div>*{order:1}
  .pick .tier,.pick .most-tag{align-self:flex-start}
  .pick .ic{order:0;width:44px;height:44px;margin-bottom:10px}.pick .ic svg{width:32px;height:32px}
- .pick .buy{order:2;margin:12px 0 4px!important;flex-direction:row!important;align-items:center!important;gap:12px}
- .pick .why,.pick .most-why,.pick .give,.pick .skip,.pick .ver{order:3}
+ .pick .why,.pick .most-why{order:2}
+ .pick .buy{order:4;margin:14px 0 2px!important;flex-direction:row!important;align-items:center!important;gap:12px}
+ .pick .ver{order:5;margin-top:6px}
+ .pick .give,.pick .skip{order:3}
+ .pick+.pick{border-top:1px solid var(--line);padding-top:28px}
+ .split figure,.home .split figure{order:2}
 }
+/* consistency */
+.pick .who{color:var(--ink)!important;opacity:1}
+.road .pick .who,.home .pick .who{color:var(--ink)!important}
+.gl-most{font-family:var(--mono);font-weight:500;text-transform:uppercase;border-radius:3px!important;letter-spacing:0}
+.how ul{counter-reset:how;list-style:none;padding:0}
+.how li{counter-increment:how;position:relative;padding-left:56px}
+.how li::before{content:counter(how,decimal-leading-zero);position:absolute;left:0;top:2px;font-family:var(--mono);font-size:14px;color:var(--muted);border:1px solid var(--line);border-radius:3px;padding:3px 6px}
+.su-mid input[type=email]{background:var(--surface)!important;color:var(--ink)!important;border:1px solid #4a5056!important}
+.su-mid input[type=email]::placeholder{color:var(--muted)}
+@media (max-width:700px){.gl-arm tbody tr,.gl-arm.gl-in tbody tr{clip-path:none!important}}
+@media (min-width:1000px){
+ .road .still{order:3;grid-column:auto;align-self:stretch;display:flex;align-items:center;border:1px dashed var(--line);border-radius:8px;padding:24px}
+ .road #pk-inflator{order:2}
+ .pick.most{grid-template-columns:56px minmax(0,1fr) minmax(0,1fr);grid-auto-flow:row dense;column-gap:40px}
+ .pick.most>div:not(.ic):not(.buy){display:contents}
+ .pick.most>div:not(.ic):not(.buy)>*{grid-column:2}
+ .pick.most .ic{grid-column:1;grid-row:1/span 4}
+ .pick.most .most-why,.pick.most .why,.pick.most .give,.pick.most .skip{grid-column:3!important}
+ .pick.most .buy,.pick.most .ver{grid-column:2}
+ .pick.most>div>.ic,.pick.most>.ic{grid-column:1!important;grid-row:1/span 4}
+ .pick.most .most-tag,.pick.most .tier,.pick.most .buy{justify-self:start}
+ .pick.most .buy{flex-direction:row;align-items:center}
+ .road .still{justify-content:center;text-align:center}
+}
+/* minimal motion: once, transform only, text always readable */
+@media (prefers-reduced-motion:no-preference){
+ .js .hero .kicker,.js .hero h1,.js .hero .lede{animation:mrise .7s cubic-bezier(.2,.8,.2,1) both}
+ .js .hero h1{animation-delay:.06s}.js .hero .lede{animation-delay:.14s}
+ .js .film{animation:mfilm 1s cubic-bezier(.2,.8,.2,1) both}
+ @keyframes mrise{from{transform:translateY(14px)}to{transform:none}}
+ @keyframes mfilm{from{transform:scale(.985)}to{transform:none}}
+ .gh h2{position:relative;padding-bottom:18px}
+ .gh h2::after{content:"";position:absolute;left:0;bottom:0;width:72px;height:2px;background:var(--lime);transform-origin:left;transform:scaleX(0);transition:transform .8s cubic-bezier(.2,.8,.2,1) .15s}
+ .gh.in h2::after,.no-io .gh h2::after{transform:scaleX(1)}
+ .pick{transition:transform .25s ease,border-color .25s ease,opacity .35s}
+ @media (hover:hover){.pick:hover{transform:translateY(-3px);border-color:#4a5056}.pick.most:hover{border-color:var(--lime)}}
+ .split figure img{transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+ .split figure:not(.in) img{transform:scale(1.04)}
+ .spec li{transition:border-color .3s}
+ .pick:hover .spec li{border-color:#4a5056}
+}
+@media (prefers-reduced-motion:reduce){.rise,.js .rise:not(.in),.hero h1 span,.js .hero h1:not(.in) span{transform:none!important;transition:none!important}.gh h2::after{display:none}}
 </style>
+<script>(function(){if(!('IntersectionObserver' in window)){document.documentElement.classList.add('no-io');return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -12% 0px'});document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.gh,.split figure').forEach(function(el){io.observe(el)})})})();</script>
 </head>
 <body>
 <a class="skiplink" href="#glance">Skip to the picks</a>
@@ -423,7 +470,7 @@ body{font-size:18px}
       </li>
       <li class="pick rise" id="pk-tesla-holder" data-plug="nacs">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="10" y="10" width="22" height="30" fill="#c6f24e"/><path d="M15 20c0-3 3-5 6-5s6 2 6 5v6c0 3-3 5-6 5s-6-2-6-5z" fill="#212427"/><rect x="36" y="14" width="6" height="22" fill="#c6f24e"/></svg></div>
-        <div><span class="tier">Budget pick</span><h3>Flush-mount Tesla-plug wall holder</h3><ul class="spec" aria-label="Key specs"><li>NACS</li><li>Wall mount</li></ul><p class="who">Suits a Tesla wall charger whose plug lives on the floor</p><p class="why">Gets the Tesla plug off the floor and onto the wall, the same job the holster does for J1772.</p><p class="give"><b>Trade-off:</b> It fits the Tesla plug only, and it screws to the wall.</p><p class="skip"><b>Skip it if</b> your charger has a J1772 plug.</p></div>
+        <div><span class="tier">Budget pick</span><h3>Flush-mount Tesla-plug wall holder</h3><ul class="spec" aria-label="Key specs"><li>NACS</li><li>Wall mount</li></ul><p class="who">Suits a Tesla wall charger whose plug lives on the floor</p><p class="why">The listing says it gets the Tesla plug off the floor and onto the wall, the same job the holster does for J1772.</p><p class="give"><b>Trade-off:</b> It fits the Tesla plug only, and it screws to the wall.</p><p class="skip"><b>Skip it if</b> your charger has a J1772 plug.</p></div>
         <div class="buy"><a class="btn" aria-label="Check today's price: Flush-mount Tesla-plug wall holder (paid link)" href="https://www.amazon.com/dp/B0DSJ38MCC?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
       </li>
     </ul>
