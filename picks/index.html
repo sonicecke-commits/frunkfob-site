@@ -440,7 +440,7 @@ body{font-size:18px}
     <figcaption>Stock photo · An EV plugged in to charge</figcaption>
   </figure>
 </section>
-<nav class="jump" aria-label="Jump to a section"><a href="#glance">At a glance</a><a href="#home">At home</a><a href="#road">On the road</a><a href="#how">How we pick</a></nav>
+<nav class="jump" aria-label="Jump to a section"><a href="#gifts">Gifts</a><a href="#glance">At a glance</a><a href="#home">At home</a><a href="#road">On the road</a><a href="#how">How we pick</a></nav>
 
 <section class="glance" id="glance" aria-labelledby="h-glance">
   <h2 id="h-glance" class="rise">At a glance</h2>
@@ -460,6 +460,54 @@ body{font-size:18px}
   </table>
 </section>
 
+
+<style>/* gift guide (seasonal, remove after Dec 25) */
+.gift-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gift-card{display:flex;flex-direction:column;gap:10px;padding:24px}
+.gift-card p{margin:0;font-size:16px;line-height:1.5}
+.gift-card .buy{margin-top:auto;padding-top:8px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px}
+.gift-card .more{font-size:15px;font-weight:600}
+.gift .after{margin-top:20px;font-size:16px}
+@media (max-width:880px){.gift-list{grid-template-columns:1fr}}
+.gift{padding:clamp(56px,7vw,104px) var(--m);background:var(--surface)}
+.gift .label{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--lime);margin:0 0 12px}
+.gift h2{font-size:clamp(40px,6vw,92px);line-height:.95;letter-spacing:-.04em;margin:0 0 18px}
+.gift .lede{font-size:20px;max-width:44ch;color:var(--muted);margin:0 0 clamp(24px,3vw,36px)}
+.gift-card{background:var(--bg);border:1px solid #3a3f44;border-radius:6px}
+.gift-card h3{font-size:20px;line-height:1.2;margin:0}
+.gift-card p.if{font-size:clamp(22px,2vw,28px);font-weight:700;letter-spacing:-.02em;line-height:1.1;color:var(--ink)}
+.gift-card p{color:var(--muted)}
+.gift-card .tier{align-self:flex-start}
+.gift .after{color:var(--muted)}
+.gift .btn{background:var(--lime);color:var(--paper-ink)}
+.gift-card .more{color:var(--ink)}
+</style>
+<section class="gift" id="gifts" aria-labelledby="h-gifts"><div>
+  <p class="label rise">Gift guide</p>
+  <h2 id="h-gifts" class="rise">For the EV driver who has everything.</h2>
+  <p class="lede rise">Gear that needs no electrician. Start from what you know about their car.</p>
+  <ul class="gift-list">
+      <li class="gift-card rise">
+        <p class="if">If you don't know their car</p>
+        <span class="tier">Budget pick</span><h3>AstroAI AIRUN H tire inflator</h3>
+        <p>It suits any EV that came without a spare tire, and the maker says it stops at the pressure you set. It tops up a soft tire; a puncture still needs a repair.</p>
+        <div class="buy"><a class="btn" aria-label="Check today's price: AstroAI AIRUN H tire inflator (paid link)" href="https://www.amazon.com/dp/B08TWCMQ8D?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span><a class="more" href="#pk-inflator">See the trade-off</a></div>
+      </li>
+      <li class="gift-card rise">
+        <p class="if">If they drive a Tesla</p>
+        <span class="tier">Mid-range pick</span><h3>Lectron J1772-to-Tesla adapter</h3>
+        <p>It lets a Tesla use public J1772 stations, and Lectron says it is UL 2252 listed. It works on slower Level 2 (AC) stations only.</p>
+        <div class="buy"><a class="btn" aria-label="Check today's price: Lectron J1772-to-Tesla adapter (paid link)" href="https://www.amazon.com/dp/B0DFH43NYN?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span><a class="more" href="#pk-j1772-tesla">See the trade-off</a></div>
+      </li>
+      <li class="gift-card rise">
+        <p class="if">If their EV has a J1772 port</p>
+        <span class="tier">Premium pick</span><h3>Lectron NACS-to-J1772 adapter</h3>
+        <p>It lets a J1772 car use Tesla-plug AC chargers at destinations and homes, and Lectron says it is UL 2252 listed. Superchargers need a different adapter.</p>
+        <div class="buy"><a class="btn" aria-label="Check today's price: Lectron NACS-to-J1772 adapter (paid link)" href="https://www.amazon.com/dp/B0FQP87YDG?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span><a class="more" href="#pk-nacs-j1772">See the trade-off</a></div>
+      </li>
+  </ul>
+  <p class="after rise">Unsure about fit? Check the return window on the Amazon page before you buy.</p>
+</div></section>
 
 <section class="group home" id="home" aria-labelledby="h-home">
   <div class="gh"><h2 id="h-home" class="rise">At home</h2><p class="rise">A Level 2 charger on the wall, and somewhere tidy to park the plug.</p></div>
