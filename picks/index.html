@@ -132,11 +132,20 @@ footer .cols strong{color:var(--ink);font-weight:500;display:block;margin-bottom
 /* paid-link label: darker and near body size (site review 2026-11-12) */
 .paidtag{font-size:15px;font-weight:500;letter-spacing:0;color:inherit;opacity:1}
 /* calmer colour: lime only for actions and our pick (site review 2026-11-12) */
-.tier{background:transparent!important;color:inherit!important;border:1px solid currentColor;opacity:.85}
+.pick .tier{background:transparent!important;color:inherit!important;border:1px solid currentColor;opacity:.85}
 .home .pick .who{color:var(--muted)}
 .facts b{color:var(--ink)}
 .any-tag{display:inline-block;margin:0 6px 8px 0;padding:3px 10px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.02em;border:1px solid currentColor}
 .most-why a{color:inherit}
+.plughelp{margin:12px 0 0;font-size:15px;color:var(--muted)}
+/* one dark ground: On the road joins the dark page, set off by a rule (site review round 2) */
+section.road{background:var(--bg)!important;color:var(--ink)!important;border-top:1px solid #33383c}
+.road .pick .ic{background:var(--surface)!important}
+.road .pick .who{color:var(--muted)!important}
+.road .btn{background:var(--lime)!important;color:var(--paper-ink)!important}
+.road .pick{border-color:#33383c!important}
+.oneway{border-left-color:var(--lime)!important;background:var(--surface)!important}
+.road .most-tag,.road .any-tag{color:var(--ink)}
 .home .most-tag{background:var(--lime);color:var(--paper-ink)}
 .home .pick.most{box-shadow:inset 3px 0 0 var(--lime);padding-left:16px}@media (max-width:640px){.pick .buy{flex-direction:row;align-items:center;gap:10px;flex-wrap:wrap}}
 .most-tag{display:inline-block;margin:0 6px 8px 0;padding:3px 10px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.02em;background:var(--paper-ink);color:var(--lime)}
@@ -271,6 +280,7 @@ footer .cols strong{color:var(--ink);font-weight:500;display:block;margin-bottom
           <input type="radio" name="plug" id="p-a" value="all" checked><label for="p-a"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="#17191b"/><path d="M22 7 12 22h7l-2 11 11-16h-7z" fill="#c6f24e"/></svg>Show everything</label>
         </div>
       </fieldset>
+      <p class="plughelp">Not sure which plug? Look at the charging port on your car, or check the manual.</p>
       <p class="count" id="count" aria-live="polite">8 picks below.</p>
     </form>
   </div>
@@ -313,7 +323,7 @@ footer .cols strong{color:var(--ink);font-weight:500;display:block;margin-bottom
     <ul class="picks">
       <li class="pick most rise" id="most" data-plug="all">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="12" y="6" width="22" height="30" rx="4" fill="#c6f24e"/><rect x="17" y="12" width="12" height="8" fill="#212427"/><path d="M23 36v6c0 4 3 4 6 4h10" fill="none" stroke="#c6f24e" stroke-width="3"/></svg></div>
-        <div><span class="most-tag">Our pick for most cars</span> <span class="tier">Mid-range pick</span><h3>Emporia Level 2 charger</h3><p class="most-why">Not sure where to start? Start here. It comes in J1772 and Tesla-plug versions, so it suits either car, and home is where most EV owners do most of their charging (<a href="https://afdc.energy.gov/fuels/electricity-charging-home" rel="noopener" target="_blank">US Department of Energy</a>).</p><p class="who">Suits someone with a garage or driveway who wants faster charging at home</p><p class="why">The maker says up to 48 A when hardwired on a 60 A circuit (less on a plug-in). Its app tracks the energy each charge uses.</p></div>
+        <div><span class="most-tag">Our pick for most cars</span> <span class="tier">Mid-range pick</span><h3>Emporia Level 2 charger</h3><p class="most-why">Not sure where to start? Start here. It comes in J1772 and Tesla-plug versions, so it suits either car, and home is where most EV owners do most of their charging (<a href="https://afdc.energy.gov/fuels/electricity-charging-home" rel="noopener" target="_blank">US Department of Energy</a>).</p><p class="who">Suits a garage or driveway</p><p class="why">The maker says up to 48 A when hardwired on a 60 A circuit (less on a plug-in). Its app tracks the energy each charge uses.</p></div>
         <div class="buy"><a class="btn" href="https://www.amazon.com/dp/B0CKKPTDPK?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
       </li>
       <li class="pick rise" id="pk-autel" data-plug="j1772">
