@@ -168,8 +168,8 @@ footer .cols strong{color:var(--ink);font-weight:500;display:block;margin-bottom
       <span class="tp-why">Works with any car, so there's no plug to match.</span>
       <span class="tp-go">Not sure? Start here &darr;</span>
     </a>
-    <ul class="facts" aria-label="On this page"><li><b>6</b>picks</li><li><b>2</b>plug types</li><li><b>3</b>price tiers</li></ul>
-    <figcaption>A public charging station at night</figcaption>
+    <ul class="facts" aria-label="On this page"><li><b id="npicks">6</b>picks</li><li><b>2</b>plug types</li><li><b>3</b>price tiers</li></ul>
+    <figcaption>Stock footage · A public charging station</figcaption>
   </figure>
 </section>
 
@@ -264,6 +264,7 @@ const revealPast=()=>document.querySelectorAll('.rise:not(.in)').forEach(el=>{if
 addEventListener('scroll',revealPast,{passive:true});setTimeout(revealPast,400);
 requestAnimationFrame(()=>document.querySelector('.hero h1').classList.add('in'));
 const picks=[...document.querySelectorAll('.pick')],count=document.getElementById('count');
+document.getElementById('npicks').textContent=picks.length;
 function apply(v){let n=0;picks.forEach(p=>{const on=v==='all'||p.dataset.plug==='all'||p.dataset.plug===v;p.classList.toggle('off',!on);p.setAttribute('aria-hidden',on?'false':'true');if(on)n++});
  count.textContent=v==='all'?n+' picks below.':'Showing the '+n+' picks that fit a '+(v==='nacs'?'Tesla-plug':'J1772')+' car.';}
 document.querySelectorAll('input[name=plug]').forEach(r=>r.addEventListener('change',()=>apply(r.value)));
