@@ -397,6 +397,7 @@ body{font-size:18px}
 .split figure img{transition-duration:.6s!important}
 </style>
 <script>(function(){if(!('IntersectionObserver' in window)){document.documentElement.classList.add('no-io');return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -12% 0px'});document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.gh,.split figure').forEach(function(el){io.observe(el)})})})();</script>
+<style>/* from-video match (2026-11-18) */.fromvid{margin:0 var(--m);padding:22px clamp(16px,2.4vw,28px) 8px;background:var(--surface);border:1px solid rgba(198,242,78,.45);border-radius:14px}.fromvid h2{margin:0 0 6px;font-size:clamp(22px,2.4vw,30px);line-height:1.2}.fromvid .fv-check{margin:0 0 6px;max-width:60ch}.fromvid .fv-paid{margin:0 0 4px;font-size:15px;color:var(--muted)}.fromvid .fv-alt{margin:14px 0 0;color:var(--muted);font-size:15px;font-weight:600;letter-spacing:.02em}.fromvid .picks{list-style:none;margin:0;padding:0}.fromvid .pick{opacity:1!important;transform:none!important}.fromvid .fv-all{display:inline-block;margin:10px 0 14px;color:var(--ink)}</style>
 </head>
 <body>
 <a class="skiplink" href="#glance">Skip to the picks</a>
@@ -628,6 +629,19 @@ function apply(v){let n=0;picks.forEach(p=>{const on=v==='all'||p.dataset.plug==
 const glRows=[...document.querySelectorAll('.gl tbody tr')];document.querySelectorAll('input[name=plug]').forEach(r=>r.addEventListener('change',()=>glRows.forEach(t=>t.classList.toggle('off',!(r.value==='all'||t.dataset.plug==='all'||t.dataset.plug===r.value)))));
 document.querySelectorAll('input[name=plug]').forEach(r=>r.addEventListener('change',()=>{apply(r.value);if(matchMedia('(max-width:860px)').matches){const g=document.getElementById('glance');if(g)g.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'})}}));
 const tpw=document.getElementById('tp-why');document.querySelectorAll('input[name=plug]').forEach(r=>r.addEventListener('change',()=>{tpw.textContent=r.value==='j1772'?'For your car, choose the J1772 version.':r.value==='nacs'?'For your car, choose the Tesla-plug (NACS) version.':'Comes in J1772 and Tesla-plug versions, so it suits either car.'}));
+</script>
+<script>/* from-video match: a reel link with #pk-<id> (or ?pick=<id>) opens on that pick, its plug check and one alternative (2026-11-18) */
+(function(){var alt={'pk-holster':'pk-tesla-holder','pk-tesla-holder':'pk-holster','pk-nacs-j1772':'pk-j1772-tesla','pk-j1772-tesla':'pk-nacs-j1772','pk-autel':'pk-nexus','pk-nexus':'pk-autel'};
+var q=(location.search.match(/[?&]pick=([a-z0-9-]+)/)||[])[1];var id=q?(q==='most'?'most':'pk-'+q.replace(/^pk-/,'')):(location.hash||'').slice(1);
+var src=id&&document.getElementById(id);if(!src||!src.classList.contains('pick'))return;
+function copy(el){var c=el.cloneNode(true);c.removeAttribute('id');c.classList.remove('rise');c.classList.add('in');c.querySelectorAll('[id]').forEach(function(x){x.removeAttribute('id')});c.querySelectorAll('a.more').forEach(function(a){a.remove()});return c}
+var sec=document.createElement('section');sec.className='fromvid';sec.setAttribute('aria-labelledby','h-fromvid');
+sec.innerHTML='<h2 id="h-fromvid">The pick from the video</h2><p class="fv-check"><b>Check your plug first.</b> J1772 is round and on most non-Tesla EVs. The Tesla plug (NACS) is slim. Each pick says which one it fits.</p><p class="fv-paid">Paid links: Frunk &amp; Fob earns a commission if you buy through them.</p><ul class="picks"></ul>';
+var ul=sec.querySelector('ul');ul.appendChild(copy(src));var a=alt[id]&&document.getElementById(alt[id]);
+if(a){var h=document.createElement('p');h.className='fv-alt';h.textContent='If your car has the other plug';ul.appendChild(h);ul.appendChild(copy(a))}
+var all=document.createElement('a');all.className='fv-all';all.href='#home';all.textContent='See all the picks';sec.appendChild(all);
+var hero=document.querySelector('.hero');hero.parentNode.insertBefore(sec,hero);
+if(location.hash){history.replaceState(null,'',location.pathname+location.search)}scrollTo(0,0);addEventListener('load',function(){scrollTo(0,0)})})();
 </script>
 <script src="kit.js" data-gc="frunkfob" data-bar="Want a heads-up when a pick changes?" data-bar-btn="Email me" defer></script>
 <script>/* gl-v2 reveal */(function(){var t=document.querySelector('.gl');if(!t||!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;[].forEach.call(t.querySelectorAll('tbody tr'),function(r,i){r.style.setProperty('--i',i)});t.classList.add('gl-arm');var io=new IntersectionObserver(function(e){if(!e[0].isIntersecting)return;t.classList.add('gl-in');io.disconnect();setTimeout(function(){t.classList.add('gl-done')},t.querySelectorAll('tbody tr').length*90+1500)},{threshold:.12});io.observe(t)})();</script>
