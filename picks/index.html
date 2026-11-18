@@ -640,7 +640,7 @@ function copy(el){var c=el.cloneNode(true);c.removeAttribute('id');c.classList.r
 function face(fid,t){var l=document.querySelector('label[for="'+fid+'"] svg');return l?'<span class="fv-face">'+l.outerHTML.replace('<svg ','<svg aria-hidden="true" ')+'<small>'+t+'</small></span>':''}
 var w=whose[id]||'car',sec=document.createElement('section');sec.className='fromvid';sec.setAttribute('aria-labelledby','h-fromvid');
 var h='<h2 id="h-fromvid">The '+(kind[id]||'pick')+' from the video</h2>';
-if(src.dataset.plug!=='all')h+='<div class="fv-check"><span class="fv-faces" aria-hidden="true">'+face('p-j','J1772: round, most non-Tesla EVs')+face('p-n','Tesla plug (NACS): slim, on Teslas and some newer EVs')+'</span><p><b>Check your '+w+'&rsquo;s plug first.</b> Each pick says which one it fits.</p></div>';
+if(src.dataset.plug!=='all')h+='<div class="fv-check"><span class="fv-faces" aria-hidden="true">'+face('p-j','J1772: round, most non-Tesla EVs')+face('p-n','Tesla plug (NACS): slim, on Teslas and some newer EVs')+'</span>'+(/^pk-(nacs-j1772|j1772-tesla)$/.test(id)?'':'<p><b>Check your '+w+'&rsquo;s plug first.</b> Each pick says which one it fits.</p>')+'</div>';
 var dir={'pk-nacs-j1772':'This one takes a Tesla-plug (NACS) charger and fits a J1772 car.','pk-j1772-tesla':'This one takes a J1772 charger and fits a Tesla-plug car.'};if(kind[id]==='adapter')h+='<p class="fv-oneway"><strong>Adapters work one way.</strong> '+dir[id]+'</p>';
 h+='<p class="fv-paid">Paid links: Frunk &amp; Fob earns a commission if you buy through them. (<a href="#how">How we pick</a>)</p><ul class="picks"></ul>';
 sec.innerHTML=h;var ul=sec.querySelector('ul');ul.appendChild(copy(src));var a=alt[id]&&document.getElementById(alt[id]);
