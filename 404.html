@@ -6,20 +6,38 @@
 <title>Page not found · Frunk &amp; Fob</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="preload" href="/assets/fonts/hanken-grotesk-normal-400.woff2" as="font" type="font/woff2" crossorigin><link href="/assets/fonts/fonts.css" rel="stylesheet">
 <style>
-:root{--bg:#141414;--fg:#ECEEEA;--muted:#A9ADA6;--link:#E8E3D3;--body:#DCE1EA;color-scheme:dark}
-body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
-main{max-width:680px;margin:0 auto;padding:40px 16px 80px}
-h1{font:600 34px/1.15 Georgia,serif;margin:0 0 8px}h2{font:600 22px/1.3 Georgia,serif;margin:32px 0 8px}
-p,li{color:var(--body)}a{color:var(--link)}.small{color:var(--muted);font-size:15px}
-a:focus-visible{outline:3px solid var(--link);outline-offset:2px}
+:root{--bg:#17191b;--surface:#212427;--ink:#eceeea;--muted:#a2a9ad;--line:#2c3034;--grid:#222528;--lime:#c6f24e;--mono:"JetBrains Mono",ui-monospace,monospace;
+ --fs-1:13px;--fs-2:15px;--fs-3:18px;--fs-4:clamp(20px,1.7vw,24px);--fs-6:clamp(40px,6vw,72px);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--fs-3)/1.6 "Hanken Grotesk",system-ui,sans-serif}
+.bar{display:flex;align-items:center;padding:22px clamp(16px,3vw,40px);border-bottom:1px solid var(--line)}
+.bar .mark{font-weight:700;font-size:var(--fs-4);letter-spacing:-.03em;color:var(--ink);text-decoration:none}
+.top{background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px;background-position:-1px -1px;border-bottom:1px solid var(--line)}
+.top .in,.body{max-width:720px;margin:0 auto;padding-inline:16px}
+.top .in{padding-top:clamp(32px,6vw,72px);padding-bottom:clamp(28px,4vw,48px)}
+.body{padding-top:8px;padding-bottom:80px}
+.nf{min-height:60vh}
+h1{font-size:var(--fs-6);line-height:.98;letter-spacing:-.04em;font-weight:700;margin:0 0 16px;text-wrap:balance}
+h1::after{content:"";display:block;width:72px;height:2px;background:var(--lime);margin-top:20px}
+h2{font-size:var(--fs-4);line-height:1.25;letter-spacing:-.01em;font-weight:700;margin:40px 0 8px}
+p,li{color:var(--ink)}
+ul{padding-left:1.1em}li{margin:0 0 8px}li::marker{color:var(--muted)}
+a{color:var(--ink);text-decoration-color:var(--muted);text-underline-offset:3px}
+a:hover{text-decoration-color:var(--ink)}
+.small,.back{font-family:var(--mono);font-size:var(--fs-1);color:var(--muted);letter-spacing:0;margin:0}
+.back{margin:0 0 20px}.back a{color:var(--muted);display:inline-block;padding:4px 0}
+.links{font-size:var(--fs-3)}
+a:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
 </style>
 </head>
 <body>
-<main>
-<h1>That page isn't here.</h1>
+<header class="bar"><a class="mark" href="/picks/">Frunk&amp;Fob</a></header>
+<main class="top nf"><div class="in">
+<h1>That page isn’t here.</h1>
 <p>It may have moved, or the link has a typo.</p>
-<p><a href="/picks/">See the Frunk &amp; Fob picks</a> · <a href="/privacy.html">Privacy</a></p>
-</main>
+<p class="links"><a href="/picks/">See the Frunk &amp; Fob picks</a> · <a href="/privacy.html">Privacy</a></p>
+</div></main>
 </body>
 </html>
