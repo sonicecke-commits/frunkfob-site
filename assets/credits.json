@@ -87,7 +87,8 @@
   "bytes": 460887,
   "credit": "\"LEVA charging station at night in Tuntorp 2\" by W.carter, CC BY-SA 4.0, via Wikimedia Commons",
   "notes": [
-   "Share-alike: an altered version (recoloured, combined with other pictures) must be shared under the same licence."
+   "Share-alike: an altered version (recoloured, combined with other pictures) must be shared under the same licence.",
+   "Used on /picks/ behind Not sure which one?, under a dark ink scrim (an overlay in the page, the file itself is unchanged), labelled on the image: Stock photo \u00b7 Not one of the picks."
   ],
   "saved": "2026-10-27T09:23:03.219Z"
  },
@@ -138,5 +139,51 @@
    "Share-alike: an altered version (recoloured, combined with other pictures) must be shared under the same licence."
   ],
   "saved": "2026-10-27T09:23:32.048Z"
+ },
+ {
+  "file": "assets/plug-in.jpg",
+  "media": "image",
+  "ref": "pexels:37576219",
+  "title": "Electric Vehicle Charging Close-Up in Sunlight",
+  "creator": null,
+  "creatorUrl": null,
+  "date": null,
+  "license": "Pexels licence",
+  "licenseCode": "pexels",
+  "licenseUrl": null,
+  "creditRequired": false,
+  "page": "https://www.pexels.com/photo/electric-vehicle-charging-close-up-in-sunlight-37576219/",
+  "via": "Pexels",
+  "image": null,
+  "credit": "\"Electric Vehicle Charging Close-Up in Sunlight\", photo from Pexels under the Pexels licence",
+  "notes": [
+   "Source and licence as already credited in the /picks/ footer since commit 738af64 (2026-11-12). The creator's name, the download URL and the save date are not recorded anywhere in git history, so they are left empty rather than guessed.",
+   "The footer names the photo, not the file. It is matched to plug-in.jpg because it is the only Pexels photo still credited and the only charging close-up on the page.",
+   "Used on /picks/ as the hero photo, labelled on the image: Stock photo \u00b7 Not one of the picks."
+  ],
+  "saved": null
+ },
+ {
+  "file": "assets/public-chargers.jpg",
+  "media": "image",
+  "ref": "rawpixel:6020562",
+  "title": "a public charging station",
+  "creator": null,
+  "creatorUrl": null,
+  "date": null,
+  "license": "CC0 (public domain)",
+  "licenseCode": "cc0",
+  "licenseUrl": null,
+  "creditRequired": false,
+  "page": "https://www.rawpixel.com/image/6020562/photo-image-public-domain-space-free",
+  "via": "rawpixel",
+  "image": null,
+  "credit": "Public-domain (CC0) photo via rawpixel: a public charging station",
+  "notes": [
+   "Source and licence as already credited in the /picks/ footer since commit 738af64 (2026-11-12). The title is the footer's own description; the photo's original title, creator, download URL and save date are not recorded anywhere in git history, so they are left empty rather than guessed.",
+   "The footer names the photo, not the file. It is matched to public-chargers.jpg because it is the only rawpixel photo still credited and the only public-charger photo on the page.",
+   "Used on /picks/ in How we pick, labelled: Public chargers. Stock photo. Not one of the picks."
+  ],
+  "saved": null
  }
 ]

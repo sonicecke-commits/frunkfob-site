@@ -485,6 +485,10 @@ footer .name{font-size:var(--fs-7)!important}
 .split .dgm img{display:none}
 .gift-card .more{padding:3px 0}
 
+/* round 2: close photo toned to ink, on-image stock label, phone section chips wrap */
+.close .scrim{background:linear-gradient(180deg,rgba(23,25,27,.72) 0%,rgba(23,25,27,.80) 45%,rgba(23,25,27,.94) 100%),linear-gradient(#222528 1px,transparent 1px) 0 0/32px 32px,linear-gradient(90deg,#222528 1px,transparent 1px) 0 0/32px 32px}
+.close .photo-tag{position:absolute;z-index:2;top:14px;left:14px;margin:0;font-family:var(--mono);font-size:var(--fs-1);color:#fff;background:rgba(0,0,0,.62);padding:4px 8px}
+@media (max-width:860px){.jump{flex-wrap:wrap;overflow-x:visible}}
 </style>
 </head>
 <body>
@@ -526,7 +530,7 @@ footer .name{font-size:var(--fs-7)!important}
       <span class="tp-go">See our pick &darr;</span>
     </a>
     <ul class="facts" aria-label="On this page"><li><b id="npicks">6</b>picks</li><li><b>2</b>plug types</li><li><b>3</b>price tiers</li></ul>
-    <figcaption>Stock photo · An EV plugged in to charge</figcaption>
+    <figcaption>Stock photo · An EV plugged in to charge · Not one of the picks</figcaption>
   </figure>
 </section>
 <nav class="jump" aria-label="Jump to a section"><a href="#gifts">Gifts</a><a href="#glance">At a glance</a><a href="#home">At home</a><a href="#road">On the road</a><a href="#how">How we pick</a></nav>
@@ -680,12 +684,13 @@ footer .name{font-size:var(--fs-7)!important}
     <li class="rise"><strong>Owner complaints.</strong>We read the 1- and 2-star reviews before a pick goes up.</li>
     <li class="rise"><strong>Ratings bar.</strong>4.5 stars or more from at least 150 ratings when we check. Two home chargers fall a little short, and their cards say so.</li>
     <li class="rise"><strong>Empty tiers.</strong>If nothing meets our bar in a tier, we leave it empty.</li>
-    <li class="how-photo rise" aria-hidden="true"><figure><img src="../assets/public-chargers.jpg" alt="" loading="lazy"><figcaption>Public chargers. Stock photo.</figcaption></figure></li>
+    <li class="how-photo rise" aria-hidden="true"><figure><img src="../assets/public-chargers.jpg" alt="" loading="lazy"><figcaption>Public chargers. Stock photo. Not one of the picks.</figcaption></figure></li>
   </ul>
 </section>
 <section class="close" aria-labelledby="h-close">
   <img src="../assets/night.jpg" alt="" loading="lazy">
   <div class="scrim"></div>
+  <span class="photo-tag">Stock photo · Not one of the picks</span>
   <div class="inner">
     <h2 id="h-close" class="rise">Not sure which one?</h2>
     <p class="rise">Start with the plug on your car, then pick the budget that suits you. Check your car’s manual for plug type and charging amps before you buy.</p>

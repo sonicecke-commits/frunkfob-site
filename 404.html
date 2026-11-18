@@ -8,36 +8,53 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="preload" href="/assets/fonts/hanken-grotesk-normal-400.woff2" as="font" type="font/woff2" crossorigin><link href="/assets/fonts/fonts.css" rel="stylesheet">
 <style>
-:root{--bg:#17191b;--surface:#212427;--ink:#eceeea;--muted:#a2a9ad;--line:#2c3034;--grid:#222528;--lime:#c6f24e;--mono:"JetBrains Mono",ui-monospace,monospace;
+:root{--bg:#17191b;--surface:#212427;--ink:#eceeea;--muted:#a2a9ad;--line:#2c3034;--grid:#222528;--wire:#4a5056;--lime:#c6f24e;--mono:"JetBrains Mono",ui-monospace,monospace;
  --fs-1:13px;--fs-2:15px;--fs-3:18px;--fs-4:clamp(20px,1.7vw,24px);--fs-6:clamp(40px,6vw,72px);color-scheme:dark}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--fs-3)/1.6 "Hanken Grotesk",system-ui,sans-serif}
+html,body{min-height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--fs-3)/1.6 "Hanken Grotesk",system-ui,sans-serif;display:flex;flex-direction:column;min-height:100vh}
 .bar{display:flex;align-items:center;padding:22px clamp(16px,3vw,40px);border-bottom:1px solid var(--line)}
 .bar .mark{font-weight:700;font-size:var(--fs-4);letter-spacing:-.03em;color:var(--ink);text-decoration:none}
-.top{background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px;background-position:-1px -1px;border-bottom:1px solid var(--line)}
-.top .in,.body{max-width:720px;margin:0 auto;padding-inline:16px}
-.top .in{padding-top:clamp(32px,6vw,72px);padding-bottom:clamp(28px,4vw,48px)}
-.body{padding-top:8px;padding-bottom:80px}
-.nf{min-height:60vh}
-h1{font-size:var(--fs-6);line-height:.98;letter-spacing:-.04em;font-weight:700;margin:0 0 16px;text-wrap:balance}
+main{flex:1;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px;background-position:-1px -1px}
+.in{max-width:1040px;margin:0 auto;padding:clamp(32px,6vw,80px) 16px 64px;display:grid;gap:clamp(28px,4vw,56px);align-items:center}
+@media (min-width:880px){.in{grid-template-columns:minmax(0,1fr) minmax(0,1fr);padding-inline:40px}}
+.code{font-family:var(--mono);font-size:var(--fs-1);color:var(--muted);margin:0 0 14px;letter-spacing:0}
+.code b{font-weight:500;color:var(--ink);border:1px solid var(--wire);border-radius:3px;padding:2px 6px;margin-right:8px}
+h1{font-size:var(--fs-6);line-height:.98;letter-spacing:-.045em;font-weight:800;margin:0 0 16px;text-wrap:balance}
 h1::after{content:"";display:block;width:72px;height:2px;background:var(--lime);margin-top:20px}
-h2{font-size:var(--fs-4);line-height:1.25;letter-spacing:-.01em;font-weight:700;margin:40px 0 8px}
-p,li{color:var(--ink)}
-ul{padding-left:1.1em}li{margin:0 0 8px}li::marker{color:var(--muted)}
-a{color:var(--ink);text-decoration-color:var(--muted);text-underline-offset:3px}
-a:hover{text-decoration-color:var(--ink)}
-.small,.back{font-family:var(--mono);font-size:var(--fs-1);color:var(--muted);letter-spacing:0;margin:0}
-.back{margin:0 0 20px}.back a{color:var(--muted);display:inline-block;padding:4px 0}
-.links{font-size:var(--fs-3)}
+.lede{margin:0 0 28px;max-width:34ch;color:var(--ink)}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:var(--fs-3);padding:12px 22px;border-radius:999px;background:var(--ink);color:var(--bg);transition:transform .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(1px)}
+.jump{list-style:none;padding:0;margin:28px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.jump a{display:inline-block;padding:10px 14px;border:1px solid #3a3f44;border-radius:999px;color:var(--ink);text-decoration:none;font-weight:600;font-size:var(--fs-2);background:var(--bg)}
+.jump a:hover{border-color:var(--muted)}
+.dgm{margin:0;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:12px 12px 10px}
+.dgm svg{display:block;width:100%;height:auto}
+.dgm text{font-family:"Hanken Grotesk",system-ui,sans-serif;font-size:15px;fill:var(--ink)}
+.dgm text.dm{font-family:var(--mono);font-size:13px;fill:var(--muted)}
+.dgm figcaption{margin-top:8px;color:var(--muted);font-size:var(--fs-2);line-height:1.45}
+.dgm figcaption .ill{font-family:var(--mono);font-size:var(--fs-1);text-transform:uppercase;color:var(--ink);border:1px solid var(--wire);border-radius:3px;padding:2px 6px;margin-right:6px;white-space:nowrap}
+.foot{border-top:1px solid var(--line);padding:18px clamp(16px,3vw,40px);font-family:var(--mono);font-size:var(--fs-1);color:var(--muted)}
+.foot a{color:var(--muted);text-underline-offset:3px;display:inline-block;padding:4px 0}
 a:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 <header class="bar"><a class="mark" href="/picks/">Frunk&amp;Fob</a></header>
-<main class="top nf"><div class="in">
+<main><div class="in">
+<div>
+<p class="code"><b>404</b>Page not found</p>
 <h1>That page isn’t here.</h1>
-<p>It may have moved, or the link has a typo.</p>
-<p class="links"><a href="/picks/">See the Frunk &amp; Fob picks</a> · <a href="/privacy.html">Privacy</a></p>
+<p class="lede">It may have moved, or the link has a typo.</p>
+<a class="btn" href="/picks/">Back to the picks</a>
+<ul class="jump" aria-label="Jump to a section of the picks">
+<li><a href="/picks/#glance">At a glance</a></li><li><a href="/picks/#home">At home</a></li><li><a href="/picks/#road">On the road</a></li><li><a href="/picks/#how">How we pick</a></li>
+</ul>
+</div>
+<figure class="dgm"><svg viewBox="0 0 340 220" role="img" aria-label="Illustration: a charger on the wall with its cable and plug hanging loose, a short gap away from a car’s charging port"><path d="M24 12v184" stroke="#4a5056" stroke-width="2"/><path d="M8 196h324" stroke="#4a5056" stroke-width="2"/><g fill="none" stroke="#a2a9ad" stroke-width="2"><rect x="34" y="58" width="44" height="66" rx="6"/><rect x="43" y="68" width="26" height="12" rx="2"/></g><g transform="translate(250 72)" fill="none" stroke="#a2a9ad" stroke-width="2"><rect x="0" y="0" width="64" height="64" rx="8"/><circle cx="32" cy="32" r="22"/><circle cx="24" cy="26" r="4"/><circle cx="40" cy="26" r="4"/><circle cx="32" cy="42" r="4"/></g><path d="M56 124C56 196 150 200 172 136" fill="none" stroke="#c6f24e" stroke-width="3" stroke-linecap="round"/><g transform="translate(172 104) rotate(-20)" fill="none" stroke="#a2a9ad" stroke-width="2"><rect x="-12" y="18" width="24" height="18" rx="3"/><circle cx="0" cy="4" r="16"/><circle cx="-6" cy="0" r="2.5" fill="#a2a9ad"/><circle cx="6" cy="0" r="2.5" fill="#a2a9ad"/><circle cx="0" cy="10" r="2.5" fill="#a2a9ad"/></g><path d="M200 104h36" stroke="#a2a9ad" stroke-width="2" stroke-dasharray="4 5"/><path d="M230 98l7 6-7 6" fill="none" stroke="#a2a9ad" stroke-width="2"/><text x="30" y="44" class="dl" text-anchor="start">Charger</text><text x="172" y="70" class="dl" text-anchor="middle">Plug</text><text x="282" y="58" class="dl" text-anchor="middle">Port</text><text x="330" y="214" class="dm" text-anchor="end">No connection</text></svg><figcaption><span class="ill">Illustration</span> The plug is a short way off its port.</figcaption></figure>
 </div></main>
+<p class="foot"><a href="/privacy.html">Privacy</a></p>
 </body>
 </html>
