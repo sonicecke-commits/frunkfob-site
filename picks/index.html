@@ -33,7 +33,7 @@ img,video{display:block;max-width:100%}
 .hero .paid{display:inline-block;margin:0 0 28px;color:var(--ink);font-size:15px;line-height:1.4;background:var(--surface);padding:5px 10px;border-left:3px solid var(--lime)}
 .film{position:relative;margin:0;min-height:560px;overflow:hidden;background:#000;border-radius:4px}
 .film video,.film img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 50%}
-.film .kb{animation:kb 4.5s ease-out 1 both;transform-origin:70% 55%}@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.12)}}@media (prefers-reduced-motion:reduce){.film .kb{animation:none}}
+.film .kb{animation:kb .3s ease-out 1 both;transform-origin:70% 55%}@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.12)}}@media (prefers-reduced-motion:reduce){.film .kb{animation:none}}
 .film::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,11,12,.55) 0%,rgba(10,11,12,0) 38%,rgba(10,11,12,0) 70%,rgba(10,11,12,.6) 100%);pointer-events:none}
 .film figcaption{position:absolute;z-index:2;left:14px;bottom:12px;font-size:13px;color:#fff;background:rgba(0,0,0,.55);padding:4px 8px}
 /* top-pick card over the film: fills the top right on first load */
@@ -76,7 +76,7 @@ section.road{background:var(--paper);color:var(--paper-ink)}
 @media (max-width:860px){.gh,.split,.home .split{grid-template-columns:1fr}.split figure{position:static}.split figure img{aspect-ratio:16/10}.home .split figure{order:-1}}
 /* pick rows */
 .picks{list-style:none;margin:0;padding:0}
-.pick{display:grid;grid-template-columns:72px 1fr auto;gap:8px 24px;align-items:start;padding:28px 0;transition:opacity .35s,transform .35s}
+.pick{display:grid;grid-template-columns:72px 1fr auto;gap:8px 24px;align-items:start;padding:28px 0;transition:opacity .3s,transform .3s}
 .pick+.pick{margin-top:8px}
 .road .pick{background:transparent}
 .pick .ic{width:72px;height:72px;background:var(--bg);display:grid;place-items:center}
@@ -115,10 +115,10 @@ footer .cols p{margin:0}
 footer .cols strong{color:var(--ink);font-weight:500;display:block;margin-bottom:4px}
 @media (max-width:760px){footer .cols{grid-template-columns:1fr}}
 /* motion */
-.rise{transition:opacity .6s cubic-bezier(.2,.8,.2,1),transform .6s cubic-bezier(.2,.8,.2,1)}
-.js .rise:not(.in){opacity:0;transform:translateY(24px)}
-.hero h1 span{transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1)}
-.js .hero h1:not(.in) span{opacity:0;transform:translateY(40px)}
+.rise{transition:transform .28s cubic-bezier(.2,.8,.2,1)}
+.js .rise:not(.in){transform:translateY(8px)}
+.hero h1 span{transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.js .hero h1:not(.in) span{transform:translateY(8px)}
 .hero h1 span:nth-child(2){transition-delay:.09s}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}.js .rise:not(.in),.js .hero h1:not(.in) span{opacity:1;transform:none}}
 .su{background:var(--paper);color:var(--paper-ink);padding:clamp(48px,7vw,96px) var(--m)}.su .su-in{max-width:760px}.su h2{font-size:clamp(34px,4.6vw,64px);line-height:.95;letter-spacing:-.04em;font-weight:700;margin:0 0 16px}.su p{max-width:52ch;margin:0 0 20px}.su label{display:block;font-weight:500;margin-bottom:8px}.su-row{display:flex;gap:10px;flex-wrap:wrap}.su input[type=email]{flex:1 1 260px;min-height:56px;border:0;border-radius:8px;background:#c7cbc4;color:var(--paper-ink);font:inherit;padding:0 16px}.su button{min-height:56px;border:0;border-radius:999px;background:var(--paper-ink);color:var(--lime);font:500 18px/1 "Hanken Grotesk",sans-serif;padding:0 26px;cursor:pointer}.su button:disabled{opacity:.6}.su input:focus-visible,.su button:focus-visible{outline:3px solid var(--paper-ink);outline-offset:2px}.su .su-small{font-size:15px;color:var(--paper-muted);margin:14px 0 0}.su .su-msg{font-weight:500;margin:10px 0 0;min-height:1.5em}.su-done .su-row{display:none}
@@ -168,7 +168,7 @@ section.road{background:var(--bg)!important;color:var(--ink)!important;border-to
 .gl td{position:static;background:var(--gl-row);color:var(--gl-ink);padding:22px 20px;vertical-align:middle;border:0;line-height:1.4;transition:background-color .25s,color .25s}
 .gl td:first-child{border-radius:var(--gl-r) 0 0 var(--gl-r);width:36%}
 .gl td:last-child{border-radius:0 var(--gl-r) var(--gl-r) 0;white-space:nowrap}
-.gl tbody tr{position:relative;transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .5s cubic-bezier(.2,.8,.2,1)}
+.gl tbody tr{position:relative;transition:transform .3s cubic-bezier(.2,.8,.2,1),opacity .3s cubic-bezier(.2,.8,.2,1)}
 .gl tbody tr:hover td{background:var(--gl-row-hi)}
 .gl td a{font:var(--gl-name);text-transform:var(--gl-name-case);color:inherit;text-decoration:none;border:0;letter-spacing:-.01em}
 .gl td a::before{content:"";position:absolute;inset:0;z-index:1;border-radius:var(--gl-r)}
@@ -181,7 +181,7 @@ section.road{background:var(--bg)!important;color:var(--ink)!important;border-to
 .gl tr.gl-top:hover td{background:var(--gl-top)}
 .gl tr.gl-top td a::after{color:var(--gl-top-acc)}
 .gl-m{display:inline-flex;gap:4px;margin-right:10px;vertical-align:middle;position:relative;top:-1px}
-.gl-m b{display:block;width:8px;height:8px;border-radius:50%;background:var(--gl-off);transition:transform .45s cubic-bezier(.3,1.6,.5,1),background-color .25s}
+.gl-m b{display:block;width:8px;height:8px;border-radius:50%;background:var(--gl-off);transition:transform .3s cubic-bezier(.3,1.6,.5,1),background-color .25s}
 .gl-t[data-t="1"] .gl-m b:nth-child(1),.gl-t[data-t="2"] .gl-m b:nth-child(-n+2),.gl-t[data-t="3"] .gl-m b{background:var(--gl-acc)}
 .gl tr.gl-top .gl-m b{background:var(--gl-top-off)}
 .gl tr.gl-top .gl-t[data-t="1"] .gl-m b:nth-child(1),.gl tr.gl-top .gl-t[data-t="2"] .gl-m b:nth-child(-n+2),.gl tr.gl-top .gl-t[data-t="3"] .gl-m b{background:var(--gl-top-acc)}
@@ -189,23 +189,19 @@ section.road{background:var(--bg)!important;color:var(--ink)!important;border-to
 @media (hover:hover){.gl tbody tr:hover{transform:translateX(6px)}.gl tbody tr:hover td a::after{transform:translateX(5px)}}
 .gl tbody tr:active{transform:scale(.985)}
 /* gl-v3 reveal: rise + wipe per row, arrow glides in, dots pop, our-pick chip pops (Sam 2026-11-12 03:51) */
-.gl-arm tbody tr{opacity:0;transform:translateY(26px) scale(.985)}
-.gl-arm td a::after{opacity:0;transform:translateX(-10px)}
-.gl-arm .gl-m b{transform:scale(0)}
-.gl-arm .gl-most{opacity:0;transform:scale(.7)}
-.gl-arm.gl-in tbody tr{opacity:1;transform:none;transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--i,0) * 90ms)}
-.gl-arm.gl-in td a::after{opacity:1;transform:none;transition:opacity .4s ease calc(var(--i,0) * 90ms + 520ms),transform .6s cubic-bezier(.16,1,.3,1) calc(var(--i,0) * 90ms + 520ms)}
-.gl-arm.gl-in .gl-m b{transform:none;transition:transform .45s cubic-bezier(.3,1.6,.5,1) calc(var(--i,0) * 90ms + 420ms)}
+.gl-arm tbody tr{transform:translateY(8px)}
+.gl-arm.gl-in tbody tr{opacity:1;transform:none;transition:opacity .3s cubic-bezier(.16,1,.3,1),transform .3s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--i,0) * 90ms)}
+.gl-arm.gl-in td a::after{opacity:1;transform:none;transition:opacity .3s ease calc(var(--i,0) * 90ms + 520ms),transform .3s cubic-bezier(.16,1,.3,1) calc(var(--i,0) * 90ms + 520ms)}
+.gl-arm.gl-in .gl-m b{transform:none;transition:transform .3s cubic-bezier(.3,1.6,.5,1) calc(var(--i,0) * 90ms + 420ms)}
 .gl-arm.gl-in .gl-m b:nth-child(2){transition-delay:calc(var(--i,0) * 90ms + 500ms)}
 .gl-arm.gl-in .gl-m b:nth-child(3){transition-delay:calc(var(--i,0) * 90ms + 580ms)}
-.gl-arm.gl-in .gl-most{opacity:1;transform:none;transition:opacity .3s ease calc(var(--i,0) * 90ms + 700ms),transform .55s cubic-bezier(.3,1.7,.5,1) calc(var(--i,0) * 90ms + 700ms)}
+.gl-arm.gl-in .gl-most{opacity:1;transform:none;transition:opacity .3s ease calc(var(--i,0) * 90ms + 700ms),transform .3s cubic-bezier(.3,1.7,.5,1) calc(var(--i,0) * 90ms + 700ms)}
 .gl-arm.gl-done td{clip-path:none;transition:background-color .25s,color .25s}
-.gl-arm.gl-done tbody tr{transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.gl-arm.gl-done tbody tr{transition:transform .3s cubic-bezier(.2,.8,.2,1)}
 .gl-arm.gl-done td a::after{transition:transform .3s cubic-bezier(.2,.8,.2,1)}
 .gl-arm.gl-done .gl-m b,.gl-arm.gl-done .gl-most{transition:none}
 @media (hover:hover){.gl-arm.gl-done tbody tr:hover{transform:translateX(6px)}.gl-arm.gl-done tbody tr:hover td a::after{transform:translateX(5px)}}
 .gl-arm.gl-done tbody tr:active{transform:scale(.985)}
-@media (max-width:700px){.gl-arm td{clip-path:none!important}.gl-arm tbody tr{clip-path:inset(0 100% 0 0 round var(--gl-r))}.gl-arm.gl-in tbody tr{clip-path:inset(0 0 0 0 round var(--gl-r));transition:opacity .6s cubic-bezier(.16,1,.3,1) calc(var(--i,0) * 90ms),transform .8s cubic-bezier(.16,1,.3,1) calc(var(--i,0) * 90ms),clip-path .9s cubic-bezier(.16,1,.3,1) calc(var(--i,0) * 90ms + 40ms)}.gl-arm.gl-done tbody tr{clip-path:none;transition:transform .35s cubic-bezier(.2,.8,.2,1)}}
 @media (max-width:700px){
 .gl thead{display:none}
 .gl,.gl tbody{display:block;width:100%;margin:0}
@@ -372,17 +368,17 @@ body{font-size:18px}
 .how-photo figcaption{font-family:var(--mono);font-size:13px;color:var(--muted);margin-top:8px}
 /* minimal motion: once, transform only, text always readable */
 @media (prefers-reduced-motion:no-preference){
- .js .hero .kicker,.js .hero h1,.js .hero .lede{animation:mrise .7s cubic-bezier(.2,.8,.2,1) both}
+ .js .hero .kicker,.js .hero h1,.js .hero .lede{animation:mrise .3s cubic-bezier(.2,.8,.2,1) both}
  .js .hero h1{animation-delay:.06s}.js .hero .lede{animation-delay:.14s}
- .js .film{animation:mfilm 1s cubic-bezier(.2,.8,.2,1) both}
+ .js .film{animation:mfilm .3s cubic-bezier(.2,.8,.2,1) both}
  @keyframes mrise{from{transform:translateY(14px)}to{transform:none}}
  @keyframes mfilm{from{transform:scale(.985)}to{transform:none}}
  .gh h2{position:relative;padding-bottom:18px}
- .gh h2::after{content:"";position:absolute;left:0;bottom:0;width:72px;height:2px;background:var(--lime);transform-origin:left;transform:scaleX(0);transition:transform .8s cubic-bezier(.2,.8,.2,1) .15s}
+ .gh h2::after{content:"";position:absolute;left:0;bottom:0;width:72px;height:2px;background:var(--lime);transform-origin:left;transform:scaleX(0);transition:transform .3s cubic-bezier(.2,.8,.2,1) .15s}
  .gh.in h2::after,.no-io .gh h2::after{transform:scaleX(1)}
- .pick{transition:transform .25s ease,border-color .25s ease,opacity .35s}
+ .pick{transition:transform .25s ease,border-color .25s ease,opacity .3s}
  @media (hover:hover){.pick:hover{transform:translateY(-3px);border-color:#4a5056}.pick.most:hover{border-color:var(--lime)}}
- .split figure img{transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+ .split figure img{transition:transform .3s cubic-bezier(.2,.8,.2,1)}
  .split figure:not(.in) img{transform:scale(1.04)}
  .spec li{transition:border-color .3s}
  .pick:hover .spec li{border-color:#4a5056}
@@ -393,11 +389,107 @@ body{font-size:18px}
 @media (max-width:700px){.gl tr{grid-template-columns:minmax(0,1fr) auto!important}}
 .film .kb{animation:none!important}
 .gl-arm .gl-m b,.gl-arm td a::after,.gl-arm .gl-most{transform:none!important;opacity:1!important;transition:none!important}
-.gl-arm tbody tr{transition-duration:.4s!important;transition-delay:calc(var(--i,0) * 50ms)!important}
-.split figure img{transition-duration:.6s!important}
+.gl-arm tbody tr{transition-duration:.3s!important;transition-delay:calc(var(--i,0) * 50ms)!important}
+.split figure img{transition-duration:.3s!important}
 </style>
 <script>(function(){if(!('IntersectionObserver' in window)){document.documentElement.classList.add('no-io');return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -12% 0px'});document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.gh,.split figure').forEach(function(el){io.observe(el)})})})();</script>
 <style>/* from-video match (2026-11-18) */.fromvid{margin:0 var(--m);padding:18px clamp(16px,2.4vw,28px) 8px;background:var(--surface);border:1px solid #3a3f44;border-radius:14px}.fromvid h2{margin:0 0 6px;font-size:clamp(22px,2.4vw,30px);line-height:1.2}.fromvid .fv-check{display:flex;flex-direction:column;gap:8px;align-items:stretch;margin:0 0 8px;max-width:64ch}.fromvid .fv-check p{margin:0}.fromvid .fv-faces{display:grid;grid-template-columns:1fr 1fr;gap:10px;color:var(--ink)}.fromvid .fv-face{display:flex;align-items:center;gap:8px}.fromvid .fv-face small{font-size:14px;color:var(--ink);line-height:1.3}.fromvid .fv-faces svg{width:44px;height:44px;flex:none}.fromvid .btn{background:var(--lime);color:var(--paper-ink)}.fromvid .dealtag{display:none}.fromvid .fv-paid a{color:inherit}.fromvid .fv-oneway{margin:0 0 6px;max-width:64ch;font-size:16px}.fromvid .fv-paid{margin:0 0 4px;font-size:15px;color:var(--muted)}.fromvid .fv-alt{grid-column:1/-1;list-style:none;margin:14px 0 0;color:var(--muted);font-size:15px;font-weight:600;letter-spacing:.02em}.fromvid .picks{list-style:none;margin:0;padding:0}.fromvid .pick{opacity:1!important;transform:none!important}.fromvid .pick .fv-pre{order:1!important;margin:8px 0 0!important}.fromvid .pick .fv-buy{order:1!important;margin:10px 0 4px!important}.fromvid .fv-all{display:inline-block;margin:10px 0 14px;color:var(--ink)}</style>
+<style id="v3">
+/* F&F v3 sample (2026-11-18): one lime mark, a 7-step type scale, drawn diagrams, short motion */
+:root{
+ --fs-1:13px;                         /* mono labels, tags, spec chips, captions */
+ --fs-2:15px;                         /* small print, secondary lines */
+ --fs-3:18px;                         /* body */
+ --fs-4:clamp(20px,1.7vw,24px);       /* card names, ledes, legend */
+ --fs-5:clamp(30px,3.6vw,48px);       /* secondary section titles */
+ --fs-6:clamp(40px,6vw,88px);         /* h1, section titles */
+ --fs-7:clamp(56px,13vw,180px);       /* footer wordmark only */
+ --rule:#a2a9ad;                      /* light-grey rules, dots, arrows (6.6:1 on surface) */
+}
+
+/* ---------- type scale ---------- */
+body{font-size:var(--fs-3)}
+.pl-sub,.tier,.most-tag,.gl .gl-most,.gift .label,.spec li,.film figcaption,.split figcaption,.how-photo figcaption,.hero .kicker,.how li::before,.dgm figcaption .ill{font-size:var(--fs-1)!important}
+.plugs .pl-sub{font-size:var(--fs-1)!important}
+.gl td .tier,.gl td:nth-child(4){font-size:var(--fs-2)!important}
+.paidtag,.su .su-small,.su-mid .su-small,.su-mid label,.plughelp,.jump a,.count,.hero .paid,.pick .ver,.still,.gift-card .more,.gift-card p,.gift .after,.toppick .tp-why,.toppick .tp-go,.facts li,.gl-toggle,.fromvid .fv-paid,.fromvid .fv-alt,.fromvid .fv-face small,.fromvid .fv-oneway,.gl td[data-l],.gl th,.dgm figcaption,footer .cols,.gl td[data-l]:not(:nth-child(4)){font-size:var(--fs-2)!important}
+.gl td[data-l]:not(:nth-child(4))::before{font-size:var(--fs-2)!important}
+.oneway,.gl td a,.gl,.picker legend,.su label,.su button,.btn,.bar nav a,.bar .act,.start a,.pick .who,.pick .why,.pick .most-why,.pick .give,.pick .skip,.how li,.close p,.gh p,.su p{font-size:var(--fs-3)!important}
+.pick h3,.gift-card h3,.toppick strong,.hero .lede,.gift .lede,.glance>p,.bar .mark,.how li strong,.fromvid h2{font-size:var(--fs-4)!important}
+.glance h2,.how h2,.su h2,.su-mid h2{font-size:var(--fs-5)!important}
+.hero h1,.gh h2,.gift h2,.close h2{font-size:var(--fs-6)!important}
+footer .name{font-size:var(--fs-7)!important}
+.kbar .kl,.kbar button,.kbar .su-msg{font-size:var(--fs-2)!important}
+.kbar .su-small,.dealtag b,.dealtag small{font-size:var(--fs-1)!important}
+.kbar input[type=email]{font-size:var(--fs-3)!important}
+.kbar{transition-duration:.3s!important}
+.glance>p{color:var(--muted)}
+.hero .lede{max-width:34ch}
+
+/* gift cards: product name first, the situation as a small line under it */
+.gift-card h3{margin:0;letter-spacing:-.01em}
+.gift-card p.if{font-family:var(--mono);font-weight:500;letter-spacing:0;line-height:1.4;color:var(--ink)}
+.gift-card .tier{order:0}
+
+/* ---------- one lime mark: the price buttons and the "Our pick" tag ---------- */
+:focus-visible{outline-color:var(--ink)!important}
+.skiplink{background:var(--ink)!important;color:var(--paper-ink)!important}
+.bar .act{border-color:#4a5056!important}
+.bar .act:hover{background:var(--ink)!important;color:var(--paper-ink)!important}
+.hero .paid{border-left-color:var(--rule)!important}
+.start a{text-decoration-color:var(--rule)!important}
+.oneway{border-left-color:var(--rule)!important}
+.gift .label{color:var(--muted)!important}
+.gh h2::after{background:var(--rule)!important}
+.plugs input:checked+label{border-color:var(--ink)!important;box-shadow:inset 0 0 0 1px var(--ink)!important}
+.plugs input:checked+label svg{color:var(--ink)!important}
+.plugs svg [fill="#c6f24e"]{fill:var(--paper)}
+.plugs svg [fill="#17191b"]{fill:#33383c}
+.pick .ic svg [fill="#c6f24e"],.toppick .tp-ic svg [fill="#c6f24e"]{fill:var(--paper)}
+.pick .ic svg [stroke="#c6f24e"],.toppick .tp-ic svg [stroke="#c6f24e"]{stroke:var(--paper)}
+.toppick{border-color:#3a3f44!important}
+.toppick:hover{border-color:var(--rule)!important}
+.toppick .tp-go{background:var(--ink)!important;color:var(--paper-ink)!important}
+.close .btn{background:var(--ink)!important;color:var(--paper-ink)!important}
+.most-tag,.home .most-tag,.road .most-tag,.toppick .most-tag,.gl .gl-most,.gl tr.gl-top .gl-most{background:var(--lime)!important;color:var(--paper-ink)!important}
+.home .pick.most{box-shadow:inset 3px 0 0 var(--rule)}
+@media (min-width:1000px){.pick.most{border-color:#4a5056!important;box-shadow:none!important}.pick.most:hover{border-color:var(--rule)!important}}
+/* at a glance: every row on ink; our pick marked by a lime left rule and its tag */
+.glance{--gl-acc:var(--rule);--gl-top:var(--surface);--gl-top-ink:var(--ink);--gl-top-muted:var(--muted);--gl-top-acc:var(--rule);--gl-top-off:var(--gl-off)}
+.gl tr.gl-top td:first-child{box-shadow:inset 4px 0 0 var(--lime)}
+.gl tr.gl-top:hover td{background:var(--gl-row-hi)}
+@media (max-width:700px){.gl tr.gl-top{box-shadow:inset 4px 0 0 var(--lime)}.gl tr.gl-top td:first-child{box-shadow:none}.gl tbody tr.gl-top:hover{background:var(--gl-row-hi)}}
+/* the arrow stays on the name's last line */
+.gl td a::after{content:"\00a0\2192"!important;display:inline!important;margin-left:0!important}
+
+/* ---------- desk: the Emporia card without the dead gap ---------- */
+@media (min-width:1000px){
+ .pick.most{grid-template-columns:56px minmax(0,1fr) auto!important;column-gap:32px}
+ .pick.most>div:not(.ic):not(.buy){display:block!important;grid-column:2;grid-row:1}
+ .pick.most>div:not(.ic):not(.buy)>*{grid-column:auto}
+ .pick.most .ic{grid-column:1;grid-row:1/span 2}
+ .pick.most .buy{grid-column:3!important;grid-row:1;align-self:start;flex-direction:row!important;align-items:center!important;gap:12px;margin-top:0!important}
+ .pick.most .ver{grid-column:2!important;grid-row:2}
+ .pick.most .spec{margin-bottom:10px}
+}
+
+/* ---------- drawn diagrams (replace 4 stock photos) ---------- */
+.dgm{margin:0;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:12px 12px 10px}
+.dgm svg{display:block;width:100%;height:auto}
+.dgm text{font-family:"Hanken Grotesk",system-ui,sans-serif;font-size:15px;fill:var(--ink)}
+.dgm text.dm{font-family:var(--mono);font-size:13px;fill:var(--muted)}
+.dgm figcaption{font-family:"Hanken Grotesk",system-ui,sans-serif!important;margin-top:8px;color:var(--muted);opacity:1!important;line-height:1.45}
+.dgm figcaption .ill{font-family:var(--mono);text-transform:uppercase;color:var(--ink);border:1px solid #4a5056;border-radius:3px;padding:2px 6px;margin-right:6px;white-space:nowrap}
+.split .photos.dgms{grid-template-columns:1fr!important;gap:16px}
+@media (min-width:1000px){.split .photos.dgms,.road .split .photos.dgms,.home .split .photos.dgms{grid-template-columns:1fr 1fr!important;max-width:980px}}
+.split .dgm img{display:none}
+.gift-card .more{padding:3px 0}
+
+/* round 2: close photo toned to ink, on-image stock label, phone section chips wrap */
+.close .scrim{background:linear-gradient(180deg,rgba(23,25,27,.72) 0%,rgba(23,25,27,.80) 45%,rgba(23,25,27,.94) 100%),linear-gradient(#222528 1px,transparent 1px) 0 0/32px 32px,linear-gradient(90deg,#222528 1px,transparent 1px) 0 0/32px 32px}
+.close .photo-tag{position:absolute;z-index:2;top:14px;left:14px;margin:0;font-family:var(--mono);font-size:var(--fs-1);color:#fff;background:rgba(0,0,0,.62);padding:4px 8px}
+@media (max-width:860px){.jump{flex-wrap:wrap;overflow-x:visible}}
+</style>
 </head>
 <body>
 <a class="skiplink" href="#glance">Skip to the picks</a>
@@ -413,8 +505,8 @@ body{font-size:18px}
     <p class="kicker">Charge smarter. Carry less.</p>
     <h1 id="h1"><span>The right charger or adapter for the plug on your car.</span></h1>
     <p class="lede rise">EV charging gear, sorted by the plug on your car and labelled budget, mid-range or premium. Each one says who it suits and its trade-off.</p>
-    <p class="paid rise"><strong>Paid links:</strong> As an Amazon Associate we earn from qualifying purchases. The commission doesn't decide what we list: we choose on plug fit, safety listing and ratings first (<a href="#how">how we pick</a>).</p>
-    <p class="start rise"><a href="#most">See where we'd start</a></p>
+    <p class="paid rise"><strong>Paid links:</strong> As an Amazon Associate we earn from qualifying purchases. The commission doesn’t decide what we list: we choose on plug fit, safety listing and ratings first (<a href="#how">how we pick</a>).</p>
+    <p class="start rise"><a href="#most">See where we’d start</a></p>
     <form class="rise" id="top" onsubmit="return false">
       <fieldset class="picker">
         <legend>Which plug is on your car?</legend>
@@ -438,7 +530,7 @@ body{font-size:18px}
       <span class="tp-go">See our pick &darr;</span>
     </a>
     <ul class="facts" aria-label="On this page"><li><b id="npicks">6</b>picks</li><li><b>2</b>plug types</li><li><b>3</b>price tiers</li></ul>
-    <figcaption>Stock photo · An EV plugged in to charge</figcaption>
+    <figcaption>Stock photo · An EV plugged in to charge · Not one of the picks</figcaption>
   </figure>
 </section>
 <nav class="jump" aria-label="Jump to a section"><a href="#gifts">Gifts</a><a href="#glance">At a glance</a><a href="#home">At home</a><a href="#road">On the road</a><a href="#how">How we pick</a></nav>
@@ -454,7 +546,7 @@ body{font-size:18px}
       <tr data-plug="j1772"><td><a href="#pk-holster">Lectron holster dock and J‑hook</a></td><td data-l="Suits">A J1772 home charger</td><td data-l="Trade-off">Fits J1772 plugs only</td><td class="gl-t" data-t="1"><i class="gl-m" aria-hidden="true"><b></b><b></b><b></b></i><span class="tier">Budget</span></td></tr>
       <tr data-plug="j1772"><td><a href="#pk-autel">Autel MaxiCharger 50A Level 2 charger</a></td><td data-l="Suits">J1772 cars, hardwired at home</td><td data-l="Trade-off">Hardwired only, so it needs an electrician</td><td class="gl-t" data-t="3"><i class="gl-m" aria-hidden="true"><b></b><b></b><b></b></i><span class="tier">Premium</span></td></tr>
       <tr data-plug="nacs"><td><a href="#pk-nexus">Lectron Nexus Level 2 charger (Tesla plug)</a></td><td data-l="Suits">Tesla-plug cars, hardwired at home</td><td data-l="Trade-off">Hardwired only; newer listing</td><td class="gl-t" data-t="3"><i class="gl-m" aria-hidden="true"><b></b><b></b><b></b></i><span class="tier">Premium</span></td></tr>
-      <tr data-plug="j1772"><td><a href="#pk-nacs-j1772">Lectron NACS-to-J1772 adapter</a></td><td data-l="Suits">J1772 cars at Tesla-plug AC chargers</td><td data-l="Trade-off">Doesn't work at Superchargers</td><td class="gl-t" data-t="3"><i class="gl-m" aria-hidden="true"><b></b><b></b><b></b></i><span class="tier">Premium</span></td></tr>
+      <tr data-plug="j1772"><td><a href="#pk-nacs-j1772">Lectron NACS-to-J1772 adapter</a></td><td data-l="Suits">J1772 cars at Tesla-plug AC chargers</td><td data-l="Trade-off">Doesn’t work at Superchargers</td><td class="gl-t" data-t="3"><i class="gl-m" aria-hidden="true"><b></b><b></b><b></b></i><span class="tier">Premium</span></td></tr>
       <tr data-plug="nacs"><td><a href="#pk-tesla-holder">Flush-mount Tesla-plug wall holder</a></td><td data-l="Suits">A Tesla wall charger</td><td data-l="Trade-off">Fits the Tesla plug only</td><td class="gl-t" data-t="1"><i class="gl-m" aria-hidden="true"><b></b><b></b><b></b></i><span class="tier">Budget</span></td></tr>
       <tr data-plug="all"><td><a href="#pk-inflator">AstroAI AIRUN H tire inflator</a></td><td data-l="Suits">Any EV without a spare tire</td><td data-l="Trade-off">Tops up air only</td><td class="gl-t" data-t="1"><i class="gl-m" aria-hidden="true"><b></b><b></b><b></b></i><span class="tier">Budget</span></td></tr>
     </tbody>
@@ -489,22 +581,22 @@ body{font-size:18px}
   <p class="lede rise">Gear that needs no electrician. Start from what you know about their car.</p>
   <ul class="gift-list">
       <li class="gift-card rise">
-        <p class="if">If you don't know their car</p>
         <span class="tier">Budget pick</span><h3>AstroAI AIRUN H tire inflator</h3>
+        <p class="if">If you don’t know their car</p>
         <p>It suits EVs that came without a spare tire, and it shuts off at the pressure you set (our summary of the listing). It tops up a soft tire; a puncture still needs a repair.</p>
-        <div class="buy"><a class="btn" aria-label="Check today's price: AstroAI AIRUN H tire inflator (paid link)" href="https://www.amazon.com/dp/B08TWCMQ8D?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span><a class="more" href="#pk-inflator">See the trade-off</a></div>
+        <div class="buy"><a class="btn" aria-label="Check today's price: AstroAI AIRUN H tire inflator (paid link)" href="https://www.amazon.com/dp/B08TWCMQ8D?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today’s price</a><span class="paidtag">Paid link</span><a class="more" href="#pk-inflator">See the trade-off</a></div>
       </li>
       <li class="gift-card rise">
-        <p class="if">If they drive a Tesla</p>
         <span class="tier">For Teslas</span><h3>Lectron J1772-to-Tesla adapter</h3>
+        <p class="if">If they drive a Tesla</p>
         <p>Lets a Tesla use public J1772 stations. Lectron says it is UL 2252 listed, and it works on slower Level 2 (AC) stations only. Ask if one is already in the car.</p>
-        <div class="buy"><a class="btn" aria-label="Check today's price: Lectron J1772-to-Tesla adapter (paid link)" href="https://www.amazon.com/dp/B0DFH43NYN?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span><a class="more" href="#pk-j1772-tesla">See the trade-off</a></div>
+        <div class="buy"><a class="btn" aria-label="Check today's price: Lectron J1772-to-Tesla adapter (paid link)" href="https://www.amazon.com/dp/B0DFH43NYN?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today’s price</a><span class="paidtag">Paid link</span><a class="more" href="#pk-j1772-tesla">See the trade-off</a></div>
       </li>
       <li class="gift-card rise">
-        <p class="if">If they drive another EV</p>
         <span class="tier">For J1772 cars</span><h3>Lectron NACS-to-J1772 adapter</h3>
+        <p class="if">If they drive another EV</p>
         <p>Lets a J1772 car use Tesla-plug AC chargers at destinations and homes. Check first that their car has a J1772 port. Lectron says it is UL 2252 listed. It does not work at Superchargers.</p>
-        <div class="buy"><a class="btn" aria-label="Check today's price: Lectron NACS-to-J1772 adapter (paid link)" href="https://www.amazon.com/dp/B0FQP87YDG?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span><a class="more" href="#pk-nacs-j1772">See the trade-off</a></div>
+        <div class="buy"><a class="btn" aria-label="Check today's price: Lectron NACS-to-J1772 adapter (paid link)" href="https://www.amazon.com/dp/B0FQP87YDG?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today’s price</a><span class="paidtag">Paid link</span><a class="more" href="#pk-nacs-j1772">See the trade-off</a></div>
       </li>
   </ul>
   <p class="after rise">Unsure about fit? Check the return window on the Amazon page before you buy.</p>
@@ -516,56 +608,56 @@ body{font-size:18px}
     <ul class="picks">
       <li class="pick most rise" id="most" data-plug="all">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="12" y="6" width="22" height="30" rx="4" fill="#c6f24e"/><rect x="17" y="12" width="12" height="8" fill="#212427"/><path d="M23 36v6c0 4 3 4 6 4h10" fill="none" stroke="#c6f24e" stroke-width="3"/></svg></div>
-        <div><span class="most-tag">Our pick for most cars · Mid&#8209;range</span><h3>Emporia Level 2 charger</h3><ul class="spec" aria-label="Key specs"><li>48 A max</li><li>J1772 or NACS</li><li>App tracking</li></ul><p class="most-why"><b>Start here.</b> It comes in J1772 and Tesla-plug versions, so it suits either car. Most EV drivers charge overnight at home (<a href="https://afdc.energy.gov/fuels/electricity-charging-home" rel="noopener" target="_blank">US Department of Energy</a>).</p><p class="who">Suits a garage or driveway</p><p class="why">Up to 48 A when hardwired, less on a plug-in (our summary of the maker's specs). Hardwiring is a job for a licensed electrician. Its app tracks the energy each charge uses.</p><p class="give"><b>Trade-off:</b> The full 48 A needs hardwiring on a 60 A circuit.</p><p class="skip"><b>Skip it if</b> you park on the street.</p></div>
-        <div class="buy"><a class="btn" aria-label="Check today's price: Emporia Level 2 charger (paid link)" href="https://www.amazon.com/dp/B0CKKPTDPK?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div><p class="ver">On the listing, choose the J1772 version for most non-Tesla cars or the Tesla-plug (NACS) version for a Tesla.</p>
+        <div><span class="most-tag">Our pick for most cars · Mid&#8209;range</span><h3>Emporia Level 2 charger</h3><ul class="spec" aria-label="Key specs"><li>48 A max</li><li>J1772 or NACS</li><li>App tracking</li></ul><p class="most-why"><b>Start here.</b> It comes in J1772 and Tesla-plug versions, so it suits either car. Most EV drivers charge overnight at home (<a href="https://afdc.energy.gov/fuels/electricity-charging-home" rel="noopener" target="_blank">US Department of Energy</a>).</p><p class="who">Suits a garage or driveway</p><p class="why">Up to 48 A when hardwired, less on a plug-in (our summary of the maker’s specs). Hardwiring is a job for a licensed electrician. Its app tracks the energy each charge uses.</p><p class="give"><b>Trade-off:</b> The full 48 A needs hardwiring on a 60 A circuit.</p><p class="skip"><b>Skip it if</b> you park on the street.</p></div>
+        <div class="buy"><a class="btn" aria-label="Check today's price: Emporia Level 2 charger (paid link)" href="https://www.amazon.com/dp/B0CKKPTDPK?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today’s price</a><span class="paidtag">Paid link</span></div><p class="ver">On the listing, choose the J1772 version for most non-Tesla cars or the Tesla-plug (NACS) version for a Tesla.</p>
       </li>
       <li class="pick rise" id="pk-autel" data-plug="j1772">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="12" y="6" width="22" height="30" rx="4" fill="#c6f24e"/><rect x="17" y="12" width="12" height="8" fill="#212427"/><circle cx="23" cy="28" r="2.5" fill="#212427"/><path d="M23 36v6c0 4 3 4 6 4h10" fill="none" stroke="#c6f24e" stroke-width="3"/></svg></div>
-        <div><span class="tier">Premium pick</span><h3>Autel MaxiCharger 50A Level 2 charger</h3><ul class="spec" aria-label="Key specs"><li>50 A</li><li>25 ft cable</li><li>CSA</li></ul><p class="who">Suits a J1772 car and a garage or driveway with a hardwired install</p><p class="why">The maker says up to 50 A when hardwired, with a 25 ft cable and an outdoor-rated case. The listing says it's CSA certified.</p><p class="give"><b>Trade-off:</b> It's hardwired only, so you'll need an electrician to fit it, and it sits just under our usual ratings bar.</p><p class="skip"><b>Skip it if</b> you want to plug in without an electrician.</p></div>
-        <div class="buy"><a class="btn" aria-label="Check today's price: Autel MaxiCharger 50A Level 2 charger (paid link)" href="https://www.amazon.com/Autel-MaxiCharger-Electric-Bluetooth-Charging/dp/B0B8NFFYXT?dib=eyJ2IjoiMSJ9.j7kNaO22YamMBb1gALE7GAPHanhqUovrrKD2OD4Z1dc00y4arUZohXXPAvWXw-8t_MauXLWzgh3LUPegzoGS2LjXGraCrdDSBD4Dxh9u_cVfP_3SqvFOtSLSE9n2wSEYewb-egOoSYLYJbeRsqCknaafCLZuKXa8qWzAhfiFlXonQ3BEZSbjWleXvsSVV3T3maVyTMPyfR5t8ds2Fsmi6LUKqBj8-5ZIQgq-pMYvgZpmBD2L8owaZz1rgGvGodhlGCZlD0c2EcBbbTS0NDv9zUzSzhtkrV8_N5aEBxKw6P8.5xM9zEmvguhpd3erIEBA0cdizz4pnydqZhiNtjIDdjU&amp;dib_tag=se&amp;keywords=Autel+MaxiCharger+Home+50A&amp;qid=1794460013&amp;sr=8-1-spons&amp;sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&amp;psc=1&amp;linkCode=ll2&amp;tag=frunkfob-20&amp;linkId=6e2ecd19a6e4116ab915337268e3cf52&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
+        <div><span class="tier">Premium pick</span><h3>Autel MaxiCharger 50A Level 2 charger</h3><ul class="spec" aria-label="Key specs"><li>50 A</li><li>25 ft cable</li><li>CSA</li></ul><p class="who">Suits a J1772 car and a garage or driveway with a hardwired install</p><p class="why">The maker says up to 50 A when hardwired, with a 25 ft cable and an outdoor-rated case. The listing says it’s CSA certified.</p><p class="give"><b>Trade-off:</b> It’s hardwired only, so you’ll need an electrician to fit it, and it sits just under our usual ratings bar.</p><p class="skip"><b>Skip it if</b> you want to plug in without an electrician.</p></div>
+        <div class="buy"><a class="btn" aria-label="Check today's price: Autel MaxiCharger 50A Level 2 charger (paid link)" href="https://www.amazon.com/Autel-MaxiCharger-Electric-Bluetooth-Charging/dp/B0B8NFFYXT?dib=eyJ2IjoiMSJ9.j7kNaO22YamMBb1gALE7GAPHanhqUovrrKD2OD4Z1dc00y4arUZohXXPAvWXw-8t_MauXLWzgh3LUPegzoGS2LjXGraCrdDSBD4Dxh9u_cVfP_3SqvFOtSLSE9n2wSEYewb-egOoSYLYJbeRsqCknaafCLZuKXa8qWzAhfiFlXonQ3BEZSbjWleXvsSVV3T3maVyTMPyfR5t8ds2Fsmi6LUKqBj8-5ZIQgq-pMYvgZpmBD2L8owaZz1rgGvGodhlGCZlD0c2EcBbbTS0NDv9zUzSzhtkrV8_N5aEBxKw6P8.5xM9zEmvguhpd3erIEBA0cdizz4pnydqZhiNtjIDdjU&amp;dib_tag=se&amp;keywords=Autel+MaxiCharger+Home+50A&amp;qid=1794460013&amp;sr=8-1-spons&amp;sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&amp;psc=1&amp;linkCode=ll2&amp;tag=frunkfob-20&amp;linkId=6e2ecd19a6e4116ab915337268e3cf52&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl" rel="sponsored nofollow noopener" target="_blank">Check today’s price</a><span class="paidtag">Paid link</span></div>
       </li>
       <li class="pick rise" id="pk-nexus" data-plug="nacs">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="12" y="6" width="22" height="30" rx="4" fill="#c6f24e"/><rect x="17" y="12" width="12" height="8" fill="#212427"/><circle cx="23" cy="28" r="2.5" fill="#212427"/><path d="M23 36v6c0 4 3 4 6 4h10" fill="none" stroke="#c6f24e" stroke-width="3"/></svg></div>
-        <div><span class="tier">Premium pick</span><h3>Lectron Nexus Level 2 charger (Tesla plug)</h3><ul class="spec" aria-label="Key specs"><li>48 A</li><li>23 ft cable</li><li>UL 2594</li></ul><p class="who">Suits a Tesla-plug (NACS) car and a hardwired install</p><p class="why">The maker says up to 48 A when hardwired, with a 23 ft cable and a plug holder, and says it's UL 2594 listed.</p><p class="give"><b>Trade-off:</b> It's hardwired only, and it's a newer listing with fewer than our usual 150 ratings so far.</p><p class="skip"><b>Skip it if</b> your car has a J1772 port.</p></div>
-        <div class="buy"><a class="btn" aria-label="Check today's price: Lectron Nexus Level 2 charger (Tesla plug) (paid link)" href="https://www.amazon.com/Lectron-Certified-Charging-Hardwired-Compatible/dp/B0GVSFPHMG?crid=1YRK9LSAF3INB&amp;dib=eyJ2IjoiMSJ9.l2KGUFNdDmnjQlzsivUMvInejFrRcZTrb6sDG5FySw-cWz54IbKSI44k3DMJucFoKHwY6YA6dvn7Zme32-24sX22GILyDz423iFwkBRuMZ2PF0OOpNSqadq0WnRzxrdso4s_Z06wC9bNrmkYzVT4qB1FeBb0nKiV9nFNU5he_P2yTglgwQpTEwdBSra1ILym_eZ4cZh7WlU9Mgt3WeS73kAkTi43OmR2zmhrfAsYcDwrCEnT9SgxLwipZU9IJSNqL23l-d6EH2UsS3tezJd2zELDpaZOrqL2FzM_Pdn4Tsg.AIkxIqsYhEfBkrzyA1pMlw8ssXEYJmbQWVtQLigyREE&amp;dib_tag=se&amp;keywords=ChargePoint%2BHome%2BFlex%2BNACS&amp;qid=1794460189&amp;sprefix=chargepoint%2Bhome%2Bflex%2Bnacs%2Caps%2C239&amp;sr=8-2-spons&amp;sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&amp;th=1&amp;linkCode=ll2&amp;tag=frunkfob-20&amp;linkId=70992fdaccd123a7c3a628f39ab086d3&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
+        <div><span class="tier">Premium pick</span><h3>Lectron Nexus Level 2 charger (Tesla plug)</h3><ul class="spec" aria-label="Key specs"><li>48 A</li><li>23 ft cable</li><li>UL 2594</li></ul><p class="who">Suits a Tesla-plug (NACS) car and a hardwired install</p><p class="why">The maker says up to 48 A when hardwired, with a 23 ft cable and a plug holder, and says it’s UL 2594 listed.</p><p class="give"><b>Trade-off:</b> It’s hardwired only, and it’s a newer listing with fewer than our usual 150 ratings so far.</p><p class="skip"><b>Skip it if</b> your car has a J1772 port.</p></div>
+        <div class="buy"><a class="btn" aria-label="Check today's price: Lectron Nexus Level 2 charger (Tesla plug) (paid link)" href="https://www.amazon.com/Lectron-Certified-Charging-Hardwired-Compatible/dp/B0GVSFPHMG?crid=1YRK9LSAF3INB&amp;dib=eyJ2IjoiMSJ9.l2KGUFNdDmnjQlzsivUMvInejFrRcZTrb6sDG5FySw-cWz54IbKSI44k3DMJucFoKHwY6YA6dvn7Zme32-24sX22GILyDz423iFwkBRuMZ2PF0OOpNSqadq0WnRzxrdso4s_Z06wC9bNrmkYzVT4qB1FeBb0nKiV9nFNU5he_P2yTglgwQpTEwdBSra1ILym_eZ4cZh7WlU9Mgt3WeS73kAkTi43OmR2zmhrfAsYcDwrCEnT9SgxLwipZU9IJSNqL23l-d6EH2UsS3tezJd2zELDpaZOrqL2FzM_Pdn4Tsg.AIkxIqsYhEfBkrzyA1pMlw8ssXEYJmbQWVtQLigyREE&amp;dib_tag=se&amp;keywords=ChargePoint%2BHome%2BFlex%2BNACS&amp;qid=1794460189&amp;sprefix=chargepoint%2Bhome%2Bflex%2Bnacs%2Caps%2C239&amp;sr=8-2-spons&amp;sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&amp;th=1&amp;linkCode=ll2&amp;tag=frunkfob-20&amp;linkId=70992fdaccd123a7c3a628f39ab086d3&amp;language=en_US&amp;gaOptInStatus=true&amp;ref_=as_li_ss_tl" rel="sponsored nofollow noopener" target="_blank">Check today’s price</a><span class="paidtag">Paid link</span></div>
       </li>
       <li class="still">Budget home charger: nothing has passed our bar here yet, so the slot stays empty.</li>
       <li class="pick rise" id="pk-holster" data-plug="j1772">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="8" y="10" width="18" height="24" rx="3" fill="#c6f24e"/><circle cx="17" cy="22" r="5" fill="#212427"/><path d="M36 10v20c0 6 8 6 8 0" fill="none" stroke="#c6f24e" stroke-width="3"/></svg></div>
         <div><span class="tier">Budget pick</span><h3>Lectron holster dock and J‑hook</h3><ul class="spec" aria-label="Key specs"><li>J1772</li><li>Wall mount</li></ul><p class="who">Suits a J1772 home charger whose plug lives on the floor</p><p class="why">It keeps the plug off the floor and gives the coil a hook (our summary of the product details).</p><p class="give"><b>Trade-off:</b> It fits J1772 plugs only, and it screws to the wall.</p><p class="skip"><b>Skip it if</b> your charger has a Tesla plug.</p></div>
-        <div class="buy"><a class="btn" aria-label="Check today's price: Lectron holster dock and J‑hook (paid link)" href="https://www.amazon.com/dp/B07FC9M4YF?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
+        <div class="buy"><a class="btn" aria-label="Check today's price: Lectron holster dock and J‑hook (paid link)" href="https://www.amazon.com/dp/B07FC9M4YF?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today’s price</a><span class="paidtag">Paid link</span></div>
       </li>
       <li class="pick rise" id="pk-tesla-holder" data-plug="nacs">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="10" y="10" width="22" height="30" fill="#c6f24e"/><path d="M15 20c0-3 3-5 6-5s6 2 6 5v6c0 3-3 5-6 5s-6-2-6-5z" fill="#212427"/><rect x="36" y="14" width="6" height="22" fill="#c6f24e"/></svg></div>
-        <div><span class="tier">Budget pick</span><h3>Flush-mount Tesla-plug wall holder</h3><ul class="spec" aria-label="Key specs"><li>NACS</li><li>Wall mount</li></ul><p class="who">Suits a Tesla wall charger whose plug lives on the floor</p><p class="why">It does the holster's job for the Tesla plug: off the floor and onto the wall (our summary of the listing).</p><p class="give"><b>Trade-off:</b> It fits the Tesla plug only, and it screws to the wall.</p><p class="skip"><b>Skip it if</b> your charger has a J1772 plug.</p></div>
-        <div class="buy"><a class="btn" aria-label="Check today's price: Flush-mount Tesla-plug wall holder (paid link)" href="https://www.amazon.com/dp/B0DSJ38MCC?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
+        <div><span class="tier">Budget pick</span><h3>Flush-mount Tesla-plug wall holder</h3><ul class="spec" aria-label="Key specs"><li>NACS</li><li>Wall mount</li></ul><p class="who">Suits a Tesla wall charger whose plug lives on the floor</p><p class="why">It does the holster’s job for the Tesla plug: off the floor and onto the wall (our summary of the listing).</p><p class="give"><b>Trade-off:</b> It fits the Tesla plug only, and it screws to the wall.</p><p class="skip"><b>Skip it if</b> your charger has a J1772 plug.</p></div>
+        <div class="buy"><a class="btn" aria-label="Check today's price: Flush-mount Tesla-plug wall holder (paid link)" href="https://www.amazon.com/dp/B0DSJ38MCC?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today’s price</a><span class="paidtag">Paid link</span></div>
       </li>
     </ul>
-    <div class="photos"><figure class="rise"><img src="../assets/home-charge.jpg" alt="A blue electric car charging from a wall charger on a house beside the garage" loading="lazy" style="object-position:72% 50%"><figcaption>Charging at home. Stock photo. Not one of the picks.</figcaption></figure><figure class="rise"><img src="../assets/tesla-charging.jpg" alt="A grey Tesla parked nose-out with its charging cable plugged in at the back" loading="lazy" style="object-position:50% 60%"><figcaption>A Tesla-plug car charging. Stock photo. Not one of the picks.</figcaption></figure></div>
+    <div class="photos dgms"><figure class="dgm rise"><svg viewBox="0 0 340 220" role="img" aria-label="Illustration: a Level 2 charger on the wall, its cable running to the charging port of a car"><path d="M24 12v184" stroke="#4a5056" stroke-width="2"/><path d="M8 196h324" stroke="#4a5056" stroke-width="2"/><g fill="none" stroke="#a2a9ad" stroke-width="2"><rect x="34" y="58" width="44" height="66" rx="6"/><rect x="43" y="68" width="26" height="12" rx="2"/></g><g transform="translate(156 115)" fill="none" stroke="#a2a9ad" stroke-width="2"><path d="M0 63V41q2-10 14-12l28-3 24-21q6-5 16-5h44q10 0 18 9l16 18q10 3 10 14v22z"/><path d="M54 26 72 9h30v17zM110 26V9h20q6 0 12 8l7 9z"/><circle cx="34" cy="65" r="15" fill="#17191b"/><circle cx="140" cy="65" r="15" fill="#17191b"/><circle cx="6" cy="37" r="4"/></g><text x="30" y="44" class="dl" text-anchor="start">Level 2 charger</text><text x="242" y="100" class="dl" text-anchor="middle">Your car</text><path d="M56 124C56 190 140 196 162 152" fill="none" stroke="#c6f24e" stroke-width="3" stroke-linecap="round"/></svg><figcaption><span class="ill">Illustration</span> A Level 2 charger on the wall.</figcaption></figure><figure class="dgm rise"><svg viewBox="0 0 340 220" role="img" aria-label="Illustration: a charger on the garage wall, its cable hung on a J-hook and its plug parked in a holster dock, off the floor"><path d="M24 12v184" stroke="#4a5056" stroke-width="2"/><path d="M8 196h324" stroke="#4a5056" stroke-width="2"/><g fill="none" stroke="#a2a9ad" stroke-width="2"><rect x="34" y="58" width="44" height="66" rx="6"/><rect x="43" y="68" width="26" height="12" rx="2"/></g><g fill="none" stroke="#a2a9ad" stroke-width="2"><path d="M164 72v58q0 16 14 16t14-14" stroke-width="3"/><rect x="262" y="64" width="40" height="58" rx="6"/><rect x="270" y="74" width="24" height="58" rx="9"/></g><text x="30" y="44" class="dl" text-anchor="start">Charger</text><text x="164" y="58" class="dl" text-anchor="middle">J-hook</text><text x="282" y="50" class="dl" text-anchor="middle">Holster dock</text><text x="330" y="214" class="dm" text-anchor="end">Plug off the floor</text><path d="M56 124C56 184 164 190 178 146C192 190 282 192 282 132" fill="none" stroke="#c6f24e" stroke-width="3" stroke-linecap="round"/></svg><figcaption><span class="ill">Illustration</span> It keeps the plug off the floor and gives the coil a hook.</figcaption></figure></div>
   </div>
 </section>
 
 <section class="group road" id="road" aria-labelledby="h-road">
-  <div class="gh"><h2 id="h-road" class="rise">On the road</h2><p class="rise">Adapters for when the station's plug isn't yours, and air for when the tire's soft.</p></div>
+  <div class="gh"><h2 id="h-road" class="rise">On the road</h2><p class="rise">Adapters for when the station’s plug isn’t yours, and air for when the tire’s soft.</p></div>
   <p class="oneway rise"><strong>Which way does an adapter work?</strong> One way only. Match the plug on the charger to the plug on your car before you buy.</p>
   <div class="split">
-    <div class="photos"><figure class="rise"><img src="../assets/plug.jpg" alt="A J1772 charging plug on a public charger" loading="lazy"><figcaption>A J1772 plug on a public charger. Stock photo.</figcaption></figure><figure class="rise"><img src="../assets/supercharger-row.jpg" alt="A row of Tesla Supercharger posts beside parked cars" loading="lazy" style="object-position:60% 50%"><figcaption>Tesla Superchargers. Stock photo. Not one of the picks.</figcaption></figure></div>
+    <div class="photos dgms"><figure class="dgm rise"><svg viewBox="0 0 340 220" role="img" aria-label="Illustration: a public J1772 station, its plug going into a J1772-to-Tesla adapter, which goes into the port of a Tesla-plug car"><path d="M8 196h324" stroke="#4a5056" stroke-width="2"/><g fill="none" stroke="#a2a9ad" stroke-width="2"><rect x="20" y="58" width="46" height="138" rx="5"/><rect x="29" y="70" width="28" height="18" rx="2"/></g><g fill="none" stroke="#a2a9ad" stroke-width="2"><circle cx="112" cy="152" r="13"/><circle cx="107" cy="147" r="2.5"/><circle cx="117" cy="147" r="2.5"/><circle cx="112" cy="158" r="2.5"/></g><rect x="126" y="144" width="34" height="16" rx="3" fill="none" stroke="#a2a9ad" stroke-width="2"/><path d="M143 164v24" stroke="#4a5056" stroke-width="1.5" stroke-dasharray="3 3"/><g transform="translate(160 115)" fill="none" stroke="#a2a9ad" stroke-width="2"><path d="M0 63V41q2-10 14-12l28-3 24-21q6-5 16-5h44q10 0 18 9l16 18q10 3 10 14v22z"/><path d="M54 26 72 9h30v17zM110 26V9h20q6 0 12 8l7 9z"/><circle cx="34" cy="65" r="15" fill="#17191b"/><circle cx="140" cy="65" r="15" fill="#17191b"/><circle cx="6" cy="37" r="4"/></g><text x="16" y="26" class="dl" text-anchor="start">J1772 station</text><text x="16" y="44" class="dm" text-anchor="start">Level 2 (AC)</text><text x="245" y="100" class="dl" text-anchor="middle">Tesla-plug car</text><text x="143" y="214" class="dm" text-anchor="middle">J1772-to-Tesla adapter</text><path d="M66 120C92 120 84 152 99 152" fill="none" stroke="#c6f24e" stroke-width="3" stroke-linecap="round"/></svg><figcaption><span class="ill">Illustration</span> Lets a Tesla use public J1772 stations.</figcaption></figure><figure class="dgm rise"><svg viewBox="0 0 340 220" role="img" aria-label="Illustration: a Tesla-plug AC charger on a wall, its plug going into a NACS-to-J1772 adapter, which goes into the port of a J1772 car"><path d="M24 12v184" stroke="#4a5056" stroke-width="2"/><path d="M8 196h324" stroke="#4a5056" stroke-width="2"/><g fill="none" stroke="#a2a9ad" stroke-width="2"><rect x="34" y="58" width="44" height="66" rx="6"/><rect x="43" y="68" width="26" height="12" rx="2"/></g><g fill="none" stroke="#a2a9ad" stroke-width="2"><path d="M110 135c-6.5 0-10.5 4.5-10.5 10v7c0 5.5 4.5 9 10.5 9s10.5-3.5 10.5-9v-7c0-5.5-4-10-10.5-10z"/><circle cx="106.5" cy="142" r="1.5"/><circle cx="113.5" cy="142" r="1.5"/><circle cx="110" cy="147.5" r="1.7"/><circle cx="105" cy="154" r="2.8"/><circle cx="115" cy="154" r="2.8"/></g><rect x="124" y="144" width="34" height="16" rx="3" fill="none" stroke="#a2a9ad" stroke-width="2"/><path d="M141 164v24" stroke="#4a5056" stroke-width="1.5" stroke-dasharray="3 3"/><g transform="translate(160 115)" fill="none" stroke="#a2a9ad" stroke-width="2"><path d="M0 63V41q2-10 14-12l28-3 24-21q6-5 16-5h44q10 0 18 9l16 18q10 3 10 14v22z"/><path d="M54 26 72 9h30v17zM110 26V9h20q6 0 12 8l7 9z"/><circle cx="34" cy="65" r="15" fill="#17191b"/><circle cx="140" cy="65" r="15" fill="#17191b"/><circle cx="6" cy="37" r="4"/></g><text x="30" y="44" class="dl" text-anchor="start">Tesla-plug AC charger</text><text x="245" y="100" class="dl" text-anchor="middle">J1772 car</text><text x="141" y="214" class="dm" text-anchor="middle">NACS-to-J1772 adapter</text><path d="M56 124C56 160 80 152 99 152" fill="none" stroke="#c6f24e" stroke-width="3" stroke-linecap="round"/></svg><figcaption><span class="ill">Illustration</span> Lets a J1772 car use Tesla-plug AC chargers at destinations and homes.</figcaption></figure></div>
     <ul class="picks">
       <li class="pick rise" id="pk-nacs-j1772" data-plug="j1772">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="6" y="18" width="20" height="16" rx="8" fill="#c6f24e"/><rect x="26" y="20" width="8" height="12" fill="#c6f24e"/><circle cx="40" cy="26" r="9" fill="none" stroke="#c6f24e" stroke-width="3"/><circle cx="37" cy="24" r="1.6" fill="#c6f24e"/><circle cx="43" cy="24" r="1.6" fill="#c6f24e"/><circle cx="40" cy="29" r="1.4" fill="#c6f24e"/></svg></div>
         <div><span class="tier">Premium pick</span><h3>Lectron NACS-to-J1772 adapter</h3><ul class="spec" aria-label="Key specs"><li>NACS → J1772</li><li>AC only</li><li>UL 2252</li></ul><p class="who">Suits a non-Tesla EV driver who wants Tesla-plug destination chargers on road trips</p><p class="why">Lets a J1772 car use Tesla-plug AC chargers at destinations and homes. Lectron says it is UL 2252 listed.</p><p class="give"><b>Trade-off:</b> Superchargers need a different adapter.</p><p class="skip"><b>Skip it if</b> you mostly fast-charge.</p></div>
-        <div class="buy"><a class="btn" aria-label="Check today's price: Lectron NACS-to-J1772 adapter (paid link)" href="https://www.amazon.com/dp/B0FQP87YDG?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
+        <div class="buy"><a class="btn" aria-label="Check today's price: Lectron NACS-to-J1772 adapter (paid link)" href="https://www.amazon.com/dp/B0FQP87YDG?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today’s price</a><span class="paidtag">Paid link</span></div>
       </li>
       <li class="pick rise" id="pk-j1772-tesla" data-plug="nacs">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><circle cx="13" cy="26" r="9" fill="none" stroke="#c6f24e" stroke-width="3"/><rect x="22" y="22" width="8" height="8" fill="#c6f24e"/><path d="M30 18h10c4 0 6 3 6 8s-2 8-6 8H30z" fill="#c6f24e"/></svg></div>
         <div><span class="tier">Mid-range pick</span><h3>Lectron J1772-to-Tesla adapter</h3><ul class="spec" aria-label="Key specs"><li>J1772 → NACS</li><li>AC only</li><li>UL 2252</li></ul><p class="who">Suits a Tesla owner who uses public J1772 stations now and then</p><p class="why">Lets a Tesla use public J1772 stations. Lectron says it is UL 2252 listed.</p><p class="give"><b>Trade-off:</b> It works on slower Level 2 (AC) stations only.</p><p class="skip"><b>Skip it if</b> you mostly use Superchargers.</p></div>
-        <div class="buy"><a class="btn" aria-label="Check today's price: Lectron J1772-to-Tesla adapter (paid link)" href="https://www.amazon.com/dp/B0DFH43NYN?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
+        <div class="buy"><a class="btn" aria-label="Check today's price: Lectron J1772-to-Tesla adapter (paid link)" href="https://www.amazon.com/dp/B0DFH43NYN?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today’s price</a><span class="paidtag">Paid link</span></div>
       </li>
       <li class="still">Budget adapter: nothing has passed our bar here yet, so the slot stays empty.</li>
       <li class="pick rise" id="pk-inflator" data-plug="all">
         <div class="ic" aria-hidden="true"><svg viewBox="0 0 52 52"><rect x="8" y="20" width="28" height="20" rx="3" fill="#c6f24e"/><circle cx="22" cy="30" r="6" fill="#17191b"/><path d="M22 30l3-4" stroke="#c6f24e" stroke-width="2"/><path d="M36 26c8 0 8-14 0-14" fill="none" stroke="#c6f24e" stroke-width="3"/></svg></div>
         <div><span class="tier">Budget pick</span><h3>AstroAI AIRUN H tire inflator</h3><ul class="spec" aria-label="Key specs"><li>Auto-stop</li><li>Any EV</li></ul><p class="who">Suits any EV that came without a spare tire</p><p class="why">Check whether your EV has a spare. It shuts off at the pressure you set (our summary of the listing).</p><p class="give"><b>Trade-off:</b> It tops up air for a soft tire. A puncture still needs a repair.</p><p class="skip"><b>Skip it if</b> your EV already came with an inflator.</p></div>
-        <div class="buy"><a class="btn" aria-label="Check today's price: AstroAI AIRUN H tire inflator (paid link)" href="https://www.amazon.com/dp/B08TWCMQ8D?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today's price</a><span class="paidtag">Paid link</span></div>
+        <div class="buy"><a class="btn" aria-label="Check today's price: AstroAI AIRUN H tire inflator (paid link)" href="https://www.amazon.com/dp/B08TWCMQ8D?tag=frunkfob-20" rel="sponsored nofollow noopener" target="_blank">Check today’s price</a><span class="paidtag">Paid link</span></div>
       </li>
     </ul>
   </div>
@@ -587,20 +679,21 @@ body{font-size:18px}
   <h2 id="h-how" class="rise">How we pick</h2>
   <p class="checked rise">Picks checked November 12, 2026.</p>
   <ul>
-    <li class="rise"><strong>Plug first.</strong>We sort by the plug on your car, using each maker's own specs.</li>
-    <li class="rise"><strong>Safety listing.</strong>An adapter carries your full charging current, so we only list ones whose maker says they're UL 2252 listed.</li>
+    <li class="rise"><strong>Plug first.</strong>We sort by the plug on your car, using each maker’s own specs.</li>
+    <li class="rise"><strong>Safety listing.</strong>An adapter carries your full charging current, so we only list ones whose maker says they’re UL 2252 listed.</li>
     <li class="rise"><strong>Owner complaints.</strong>We read the 1- and 2-star reviews before a pick goes up.</li>
     <li class="rise"><strong>Ratings bar.</strong>4.5 stars or more from at least 150 ratings when we check. Two home chargers fall a little short, and their cards say so.</li>
     <li class="rise"><strong>Empty tiers.</strong>If nothing meets our bar in a tier, we leave it empty.</li>
-    <li class="how-photo rise" aria-hidden="true"><figure><img src="../assets/public-chargers.jpg" alt="" loading="lazy"><figcaption>Public chargers. Stock photo.</figcaption></figure></li>
+    <li class="how-photo rise" aria-hidden="true"><figure><img src="../assets/public-chargers.jpg" alt="" loading="lazy"><figcaption>Public chargers. Stock photo. Not one of the picks.</figcaption></figure></li>
   </ul>
 </section>
 <section class="close" aria-labelledby="h-close">
   <img src="../assets/night.jpg" alt="" loading="lazy">
   <div class="scrim"></div>
+  <span class="photo-tag">Stock photo · Not one of the picks</span>
   <div class="inner">
     <h2 id="h-close" class="rise">Not sure which one?</h2>
-    <p class="rise">Start with the plug on your car, then pick the budget that suits you. Check your car's manual for plug type and charging amps before you buy.</p>
+    <p class="rise">Start with the plug on your car, then pick the budget that suits you. Check your car’s manual for plug type and charging amps before you buy.</p>
     <a class="btn rise" href="#top">Choose your plug</a>
   </div>
 </section>
@@ -609,16 +702,16 @@ body{font-size:18px}
 <footer>
   <p class="name" aria-hidden="true">Frunk&amp;Fob</p>
   <div class="cols">
-    <p><strong>Paid links</strong>Frunk &amp; Fob earns a commission on purchases made through this page, at no extra cost to you. Picks are chosen on plug fit, safety listing and ratings first; the commission doesn't decide what we list. As an Amazon Associate we earn from qualifying purchases. Amazon and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.</p>
+    <p><strong>Paid links</strong>Frunk &amp; Fob earns a commission on purchases made through this page, at no extra cost to you. Picks are chosen on plug fit, safety listing and ratings first; the commission doesn’t decide what we list. As an Amazon Associate we earn from qualifying purchases. Amazon and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.</p>
     <p><strong>About this page</strong>Frunk &amp; Fob is a small independent picks site for EV owners. Contact: <a href="mailto:hello@frunkandfob.com">hello@frunkandfob.com</a>. Product names belong to their makers. Neither Amazon nor any maker endorses this page. <a href="../privacy.html">Privacy notice</a>.</p>
-    <p><strong>Pictures</strong>“SAE J1772” by Michael Hicks, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>; <a href="https://commons.wikimedia.org/wiki/File:LEVA_charging_station_at_night_in_Tuntorp_2.jpg">“LEVA charging station at night in Tuntorp 2”</a> by W.carter, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>; all via Wikimedia Commons. Photos from Pexels under the Pexels licence: <a href="https://www.pexels.com/photo/electric-vehicle-charging-close-up-in-sunlight-37576219/">“Electric Vehicle Charging Close-Up in Sunlight”</a> and <a href="https://www.pexels.com/photo/custom-finish-ev-charger-in-a-home-garage-showcasing-our-wide-range-of-colour-options-27355835/">a home charger in use</a>. Public-domain (CC0) photos via rawpixel: <a href="https://www.rawpixel.com/image/6113478/tesla-car-location-unknown-date-unknown">a Tesla charging</a>, <a href="https://www.rawpixel.com/image/6111457/photo-image-public-domain-free-electric-car">Tesla Superchargers</a> and <a href="https://www.rawpixel.com/image/6020562/photo-image-public-domain-space-free">a public charging station</a>. Icons drawn for this page.</p>
+    <p><strong>Pictures</strong><a href="https://commons.wikimedia.org/wiki/File:LEVA_charging_station_at_night_in_Tuntorp_2.jpg">“LEVA charging station at night in Tuntorp 2”</a> by W.carter, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons. Photo from Pexels under the Pexels licence: <a href="https://www.pexels.com/photo/electric-vehicle-charging-close-up-in-sunlight-37576219/">“Electric Vehicle Charging Close-Up in Sunlight”</a>. Public-domain (CC0) photo via rawpixel: <a href="https://www.rawpixel.com/image/6020562/photo-image-public-domain-space-free">a public charging station</a>. Icons and diagrams drawn for this page.</p>
   </div>
 </footer>
 
 <script>
 document.documentElement.classList.add('js');
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.rise').forEach((el,i)=>{el.style.transitionDelay=((i%4)*75)+'ms';io.observe(el)});
+document.querySelectorAll('.rise').forEach((el,i)=>{el.style.transitionDelay=((i%4)*30)+'ms';io.observe(el)});
 const revealPast=()=>document.querySelectorAll('.rise:not(.in)').forEach(el=>{if(el.getBoundingClientRect().top<innerHeight)el.classList.add('in')});
 addEventListener('scroll',revealPast,{passive:true});setTimeout(revealPast,400);
 requestAnimationFrame(()=>document.querySelector('.hero h1').classList.add('in'));
@@ -650,7 +743,7 @@ var hero=document.querySelector('.hero');hero.parentNode.insertBefore(sec,hero);
 scrollTo(0,0);addEventListener('load',function(){scrollTo(0,0);try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'vid-view/'+id,title:'From-video block shown',event:true})}catch(e){}})})();
 </script>
 <script src="kit.js" data-gc="frunkfob" data-bar="Want a heads-up when a pick changes?" data-bar-btn="Email me" defer></script>
-<script>/* gl-v2 reveal */(function(){var t=document.querySelector('.gl');if(!t||!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;[].forEach.call(t.querySelectorAll('tbody tr'),function(r,i){r.style.setProperty('--i',i)});t.classList.add('gl-arm');var io=new IntersectionObserver(function(e){if(!e[0].isIntersecting)return;t.classList.add('gl-in');io.disconnect();setTimeout(function(){t.classList.add('gl-done')},t.querySelectorAll('tbody tr').length*90+1500)},{threshold:.12});io.observe(t)})();</script>
+<script>/* gl-v2 reveal */(function(){var t=document.querySelector('.gl');if(!t||!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;[].forEach.call(t.querySelectorAll('tbody tr'),function(r,i){r.style.setProperty('--i',i)});t.classList.add('gl-arm');var io=new IntersectionObserver(function(e){if(!e[0].isIntersecting)return;t.classList.add('gl-in');io.disconnect();setTimeout(function(){t.classList.add('gl-done')},t.querySelectorAll('tbody tr').length*50+400)},{threshold:.12});io.observe(t)})();</script>
 <script>/* gl-compact */(function(){var sec=document.querySelector('.glance');if(!sec)return;var rows=sec.querySelectorAll('.gl tbody tr');var SHOW=3;if(rows.length<=SHOW+1)return;
 [].forEach.call(rows,function(r,i){if(i>=SHOW)r.classList.add('gl-more')});
 [].forEach.call(sec.querySelectorAll('.gl'),function(t){if(!t.querySelector('tbody tr:not(.gl-more)')){t.classList.add('gl-hidegroup');var h=t.previousElementSibling;if(h&&h.classList.contains('gl-h'))h.classList.add('gl-hidegroup')}});

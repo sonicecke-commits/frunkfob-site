@@ -7,38 +7,58 @@
 <meta name="description" content="How Frunk &amp; Fob handles your information, and how its paid links work.">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/hanken-grotesk-normal-400.woff2" as="font" type="font/woff2" crossorigin><link href="assets/fonts/fonts.css" rel="stylesheet">
 <style>
-:root{--bg:#141414;--fg:#ECEEEA;--muted:#A9ADA6;--link:#E8E3D3;--body:#DCE1EA;color-scheme:dark}
-body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
-main{max-width:680px;margin:0 auto;padding:40px 16px 80px}
-h1{font:600 34px/1.15 Georgia,serif;margin:0 0 8px}h2{font:600 22px/1.3 Georgia,serif;margin:32px 0 8px}
-p,li{color:var(--body)}a{color:var(--link)}.small{color:var(--muted);font-size:15px}
-a:focus-visible{outline:3px solid var(--link);outline-offset:2px}
+:root{--bg:#17191b;--surface:#212427;--ink:#eceeea;--muted:#a2a9ad;--line:#2c3034;--grid:#222528;--lime:#c6f24e;--mono:"JetBrains Mono",ui-monospace,monospace;
+ --fs-1:13px;--fs-2:15px;--fs-3:18px;--fs-4:clamp(20px,1.7vw,24px);--fs-6:clamp(40px,6vw,72px);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--fs-3)/1.6 "Hanken Grotesk",system-ui,sans-serif}
+.bar{display:flex;align-items:center;padding:22px clamp(16px,3vw,40px);border-bottom:1px solid var(--line)}
+.bar .mark{font-weight:700;font-size:var(--fs-4);letter-spacing:-.03em;color:var(--ink);text-decoration:none}
+.top{background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px;background-position:-1px -1px;border-bottom:1px solid var(--line)}
+.top .in,.body{max-width:720px;margin:0 auto;padding-inline:16px}
+.top .in{padding-top:clamp(32px,6vw,72px);padding-bottom:clamp(28px,4vw,48px)}
+.body{padding-top:8px;padding-bottom:80px}
+h1{font-size:var(--fs-6);line-height:.98;letter-spacing:-.04em;font-weight:700;margin:0 0 16px;text-wrap:balance}
+h1::after{content:"";display:block;width:72px;height:2px;background:var(--lime);margin-top:20px}
+h2{font-size:var(--fs-4);line-height:1.25;letter-spacing:-.01em;font-weight:700;margin:40px 0 8px}
+p,li{color:var(--ink)}
+ul{padding-left:1.1em}li{margin:0 0 8px}li::marker{color:var(--muted)}
+a{color:var(--ink);text-decoration-color:var(--muted);text-underline-offset:3px}
+a:hover{text-decoration-color:var(--ink)}
+.small,.back{font-family:var(--mono);font-size:var(--fs-1);color:var(--muted);letter-spacing:0;margin:0}
+.back{margin:0 0 20px}.back a{color:var(--muted);display:inline-block;padding:4px 0}
+.links{font-size:var(--fs-3)}
+a:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
 </style>
 </head>
 <body>
+<header class="bar"><a class="mark" href="picks/">Frunk&amp;Fob</a></header>
 <main>
-<p><a href="picks/">← Frunk &amp; Fob picks</a></p>
+<div class="top"><div class="in">
+<p class="back"><a href="picks/">← Frunk &amp; Fob picks</a></p>
 <h1>Privacy</h1>
 <p class="small">Effective date: November 11, 2026.</p>
+</div></div>
+<div class="body">
 
-<p>Frunk &amp; Fob is a one-person business. This site shares picks of EV charging gear and earns a commission through paid links. We don't sell anything ourselves. This page explains what information is involved, who handles it, and your choices.</p>
+<p>Frunk &amp; Fob is a one-person business. This site shares picks of EV charging gear and earns a commission through paid links. We don’t sell anything ourselves. This page explains what information is involved, who handles it, and your choices.</p>
 
 <h2>Paid links</h2>
-<p>Links marked "Paid link" go to Amazon. If you buy through one, Frunk &amp; Fob earns a commission at no extra cost to you. As an Amazon Associate we earn from qualifying purchases.</p>
-<p>When you click a paid link, you leave this site. Amazon records that the visit came from us (using a tracking ID in the link and its own cookies) so it can credit the commission. Amazon's own privacy notice covers what it collects; we only see totals such as how many clicks and orders a tracking ID got, never who you are or what else you bought.</p>
+<p>Links marked “Paid link” go to Amazon. If you buy through one, Frunk &amp; Fob earns a commission at no extra cost to you. As an Amazon Associate we earn from qualifying purchases.</p>
+<p>When you click a paid link, you leave this site. Amazon records that the visit came from us (using a tracking ID in the link and its own cookies) so it can credit the commission. Amazon’s own privacy notice covers what it collects; we only see totals such as how many clicks and orders a tracking ID got, never who you are or what else you bought.</p>
 
 <h2>What this site collects</h2>
 <ul>
 <li><strong>Nothing you type, unless you sign up.</strong> The filters on the picks page run in your browser and send nothing.</li>
-<li><strong>Which post sent you.</strong> Some links to this site end in a tag such as ?src=instagram. It tells us which posts work. It isn't linked to you.</li>
-<li><strong>Visit counts.</strong> We use <a href="https://www.goatcounter.com/">GoatCounter</a>, which sets no cookies and stores no personal data. It counts page visits, where they came from (including the ?src= tag), and taps on the "Check today's price" buttons and on the sign-up button. We only see totals.</li>
+<li><strong>Which post sent you.</strong> Some links to this site end in a tag such as ?src=instagram. It tells us which posts work. It isn’t linked to you.</li>
+<li><strong>Visit counts.</strong> We use <a href="https://www.goatcounter.com/">GoatCounter</a>, which sets no cookies and stores no personal data. It counts page visits, where they came from (including the ?src= tag), and taps on the “Check today’s price” buttons and on the sign-up button. We only see totals.</li>
 <li><strong>Your email, only if you sign up.</strong> If you join the email list, we keep your email address, when you joined and confirmed, and which post sent you (from the ?src= tag). Our email tool records whether emails are opened or clicked. We use it only to send what you signed up for. You confirm by email before anything is sent (double opt-in).</li>
 <li><strong>If you email us:</strong> your address and what you write.</li>
 </ul>
 
 <h2>Who else handles it</h2>
-<p>We don't sell your personal information and don't share it for advertising. These services are involved:</p>
+<p>We don’t sell your personal information and don’t share it for advertising. These services are involved:</p>
 <ul>
 <li><strong>GitHub</strong> hosts this site and its fonts. It receives your IP address and browser details when a page loads.</li>
 <li><strong>Amazon</strong> handles everything after you click a paid link, as described above.</li>
@@ -49,24 +69,25 @@ a:focus-visible{outline:3px solid var(--link);outline-offset:2px}
 </ul>
 
 <h2>How long we keep it</h2>
-<p>Email addresses: until you unsubscribe or ask us to delete them. After you unsubscribe we keep only a note of the address so we don't email it again. Messages: as long as needed to answer them.</p>
+<p>Email addresses: until you unsubscribe or ask us to delete them. After you unsubscribe we keep only a note of the address so we don’t email it again. Messages: as long as needed to answer them.</p>
 
 <h2>Your choices</h2>
 <ul>
 <li><strong>Unsubscribe</strong> with the link in any email.</li>
 <li><strong>Ask for a copy, a correction or deletion</strong> by emailing <a href="mailto:hello@frunkandfob.com">hello@frunkandfob.com</a>. We aim to reply within 10 business days.</li>
-<li><strong>Cookies:</strong> this site and its visit counter set no cookies. You can block or clear Amazon's cookies in your browser; a purchase then may not credit us, which costs you nothing.</li>
-<li><strong>Do Not Track and Global Privacy Control:</strong> we don't track you across other sites, so these signals change nothing here.</li>
+<li><strong>Cookies:</strong> this site and its visit counter set no cookies. You can block or clear Amazon’s cookies in your browser; a purchase then may not credit us, which costs you nothing.</li>
+<li><strong>Do Not Track and Global Privacy Control:</strong> we don’t track you across other sites, so these signals change nothing here.</li>
 </ul>
 
 <h2>Children</h2>
-<p>This site isn't meant for children under 13, and we don't knowingly collect their information. If a child has signed up, email us and we'll delete it.</p>
+<p>This site isn’t meant for children under 13, and we don’t knowingly collect their information. If a child has signed up, email us and we’ll delete it.</p>
 
 <h2>Changes</h2>
-<p>If this page changes, the effective date above changes too. If a change affects how your email address is used, we'll tell subscribers by email before it applies.</p>
+<p>If this page changes, the effective date above changes too. If a change affects how your email address is used, we’ll tell subscribers by email before it applies.</p>
 
 <h2>Contact</h2>
 <p>Frunk &amp; Fob · <a href="mailto:hello@frunkandfob.com">hello@frunkandfob.com</a></p>
+</div>
 </main>
 </body>
 </html>
